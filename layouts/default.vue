@@ -1,7 +1,10 @@
 <template>
-  <main class="main">
-    <nuxt />
-  </main>
+  <div>
+    <DesktopNavbar />
+    <main class="main">
+      <nuxt />
+    </main>
+  </div>
 </template>
 
 <script>

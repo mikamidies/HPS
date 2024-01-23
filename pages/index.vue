@@ -1,8 +1,6 @@
 <template>
   <div class="master">
-    <div class="container">
-      <p>Hello World</p>
-    </div>
+    <HomeHero />
   </div>
 </template>
 
