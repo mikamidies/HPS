@@ -2,6 +2,7 @@
   <div class="master">
     <HomeHero />
     <HomePopular />
+    <HomeCards />
   </div>
 </template>
 

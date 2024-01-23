@@ -4,6 +4,7 @@
       <h4 class="title">Популярные товары</h4>
       <div class="items">
         <div class="cardo">
+          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
           <NuxtLink to="/">
             <div class="content">
               <h2 class="name">HPE ProLiant ML350</h2>
@@ -40,6 +41,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
+          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
           <NuxtLink to="/">
             <div class="content">
               <h2 class="name">HPE ProLiant ML350</h2>
@@ -73,6 +75,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
+          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
           <NuxtLink to="/">
             <div class="content">
               <h2 class="name">HPE ProLiant ML350</h2>
@@ -106,6 +109,7 @@
           </NuxtLink>
         </div>
         <div class="cardo">
+          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
           <NuxtLink to="/">
             <div class="content">
               <h2 class="name">HPE ProLiant ML350</h2>
@@ -192,9 +196,24 @@ export default {};
   border-radius: 16px;
   background: var(--Server-white-grey, #f3f5f7);
   padding: 24px;
-  height: 540px;
+  height: 600px;
   transition: 0.3s;
   overflow: hidden;
+  position: relative;
+}
+.vector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(40%) scale(1.6);
+  opacity: 0;
+  transition: 0.3s;
+}
+.cardo:hover .vector {
+  opacity: 0.3;
 }
 .cardo:hover {
   background: var(--green);
@@ -228,12 +247,13 @@ export default {};
   height: 52px;
   overflow: hidden;
   transition: 0.3s;
+  margin-bottom: 52px;
 }
 .img img {
   width: 100%;
   height: 300px;
   object-fit: contain;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .cardo button {
   margin-top: 44px;
