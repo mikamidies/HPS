@@ -124,6 +124,11 @@ meter {
   margin: 0 auto;
   padding: 0 4px;
 }
+.container.small {
+  max-width: 1330px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
 p,
 ul,
 h1,

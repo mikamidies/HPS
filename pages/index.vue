@@ -3,6 +3,10 @@
     <HomeHero />
     <HomePopular />
     <HomeCards />
+    <HomeServices />
+    <HomeWhat />
+    <HomeForm />
+    <HomeReviews />
   </div>
 </template>
 
