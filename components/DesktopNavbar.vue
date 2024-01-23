@@ -272,5 +272,6 @@ export default {
 .wrap.scroll .bottom {
   padding: 16px 0;
   background: var(--dark);
+  border-bottom: 1px solid #ebebeb17;
 }
 </style>

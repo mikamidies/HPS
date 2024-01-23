@@ -1,6 +1,7 @@
 <template>
   <div class="master">
     <HomeHero />
+    <HomePopular />
   </div>
 </template>
 
