@@ -7,6 +7,8 @@
     <HomeWhat />
     <HomeForm />
     <HomeReviews />
+    <HomeText />
+    <HomeFeedback />
   </div>
 </template>
 

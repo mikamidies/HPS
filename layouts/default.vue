@@ -4,6 +4,7 @@
     <main class="main">
       <nuxt />
     </main>
+    <DesktopFooter />
   </div>
 </template>
 
