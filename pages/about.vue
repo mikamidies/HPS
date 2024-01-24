@@ -1,0 +1,412 @@
+<template>
+  <div class="master">
+    <SiteTop />
+
+    <div class="first">
+      <div class="container small separator">
+        <div class="left">
+          <h4 class="paragraph">О нас</h4>
+        </div>
+        <div class="right">
+          <div class="content">
+            <h4 class="title">
+              Ваши надежные серверы с технологией
+              <span class="green"> последнего поколения </span>
+            </h4>
+            <p class="sub">
+              Ваши надежные серверы, оснащенные передовыми технологиями
+              последнегопоколения, обеспечивают высокую степень надежности.
+            </p>
+          </div>
+
+          <div class="nums">
+            <div class="num">
+              <div class="log">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_193_2455)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.315638 5.49503e-06L104.208 1.45776e-05C106.275 1.47583e-05 108.257 0.820915 109.718 2.28213C111.179 3.74334 112 5.72518 112 7.79165L112 111.684L96.4167 111.684L96.4167 26.6026L11.0193 112L-6.66584e-06 100.978L85.3975 15.5858L0.315636 15.5858L0.315638 5.49503e-06Z"
+                      fill="url(#paint0_linear_193_2455)"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_193_2455"
+                      x1="104.208"
+                      y1="7.79164"
+                      x2="8.32434"
+                      y2="103.676"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.150245" stop-color="#313641" />
+                      <stop offset="1" stop-color="#12151C" />
+                    </linearGradient>
+                    <clipPath id="clip0_193_2455">
+                      <rect
+                        width="112"
+                        height="112"
+                        fill="white"
+                        transform="translate(112 112) rotate(-180)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <p class="number">10 лет</p>
+                <p class="value">Комплексный опыт</p>
+              </div>
+            </div>
+            <div class="num">
+              <div class="log">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_193_2461)">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M111.684 112L7.79164 112C5.72517 112 3.74333 111.179 2.28212 109.718C0.820902 108.257 0 106.275 0 104.208L0 0.315636L15.5833 0.315636L15.5833 85.3974L100.981 0L112 11.0218L26.6025 96.4142L111.684 96.4142V112Z"
+                      fill="url(#paint0_linear_193_2461)"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_193_2461"
+                      x1="7.79163"
+                      y1="104.208"
+                      x2="103.676"
+                      y2="8.32429"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0.150245" stop-color="#145146" />
+                      <stop offset="1" stop-color="#12151C" />
+                    </linearGradient>
+                    <clipPath id="clip0_193_2461">
+                      <rect width="112" height="112" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <p class="number">+24 Фирмы</p>
+                <p class="value">Комплексный опыт</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="@/assets/img/about.png" class="image" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="second">
+      <div class="container small separator">
+        <div class="left">
+          <h4 class="paragraph">Связаться с нами</h4>
+        </div>
+        <div class="right">
+          <h4 class="title">
+            Развитие, применение новейших технологий и решений
+          </h4>
+
+          <form>
+            <div class="grid">
+              <input type="text" placeholder="Ваше имя" />
+              <input type="text" placeholder="Эл. почта" />
+              <input type="text" placeholder="Номер телефона" />
+              <input type="file" placeholder="Загрузить файл" />
+            </div>
+            <div class="footer">
+              <div class="checker">
+                <input id="check" type="checkbox" />
+                <label for="check">
+                  By sending this form I confirm that i haveread and accept
+                  <span class="green">Privacy Policy</span>
+                </label>
+              </div>
+              <button type="submit">
+                Отправить
+                <p class="stick"></p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="third">
+      <div class="container small separator">
+        <div class="left">
+          <h4 class="paragraph">Наша команда</h4>
+        </div>
+        <div class="right">
+          <h4 class="title">
+            Руководят всеми направлениями компании искренне вовлеченные
+            специалисты
+          </h4>
+          <div class="persons">
+            <div class="person">
+              <div class="img">
+                <img src="@/assets/img/person.jpg" alt="" />
+              </div>
+              <div class="content">
+                <p class="name">Федоров Георгий</p>
+                <p class="status">Генеральный директор</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="img">
+                <img src="@/assets/img/person.jpg" alt="" />
+              </div>
+              <div class="content">
+                <p class="name">Федоров Георгий</p>
+                <p class="status">Генеральный директор</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="img">
+                <img src="@/assets/img/person.jpg" alt="" />
+              </div>
+              <div class="content">
+                <p class="name">Федоров Георгий</p>
+                <p class="status">Генеральный директор</p>
+              </div>
+            </div>
+            <div class="person">
+              <div class="img">
+                <img src="@/assets/img/person.jpg" alt="" />
+              </div>
+              <div class="content">
+                <p class="name">Федоров Георгий</p>
+                <p class="status">Генеральный директор</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <HomePartners class="partners" />
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped>
+.separator {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+.paragraph {
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  transform: translateY(8px);
+}
+.first .title {
+  margin-bottom: 24px;
+  color: var(--White, #fff);
+  font-family: var(--decor);
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 67.2px */
+}
+.first .sub {
+  color: var(--Sertver-title, #b6bfd3);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  margin-bottom: 64px;
+}
+.nums {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  margin-bottom: 80px;
+}
+.num {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.number {
+  color: var(--White, #fff);
+  font-family: var(--decor-sm);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 38.4px */
+  margin-bottom: 8px;
+}
+.value {
+  color: var(--White, #fff);
+  font-family: var(--medium);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 30px */
+}
+.content {
+  max-width: 800px;
+}
+.image {
+  width: 100%;
+  height: 596px;
+  object-fit: contain;
+}
+
+.second form {
+  border-radius: 16px;
+  background: var(--Dark-service, #12151c);
+  padding: 32px;
+  max-width: 772px;
+}
+.second .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 28px;
+  row-gap: 40px;
+}
+.second input {
+  border-bottom: 1px solid var(--Dark-Border-server, #313641);
+  padding: 12px 0;
+  color: var(--Sertver-title, #b6bfd3);
+  font-family: var(--medium);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+}
+.second label {
+  color: var(--grey-64, #5d5d5f);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+}
+.second .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 64px;
+}
+.second .checker {
+  max-width: 277px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.second form button {
+  border-radius: 8px;
+  border: 1px solid var(--green);
+  background: #12151c;
+  padding: 12px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--Server-green, #1ab99d);
+  font-family: var(--medium);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+}
+.second .stick {
+  width: 1px;
+  height: 16px;
+  background: var(--green);
+}
+.second .title,
+.third .title {
+  color: var(--White, #fff);
+  font-family: var(--decor-sm);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 57.6px */
+  margin-bottom: 64px;
+}
+.second {
+  margin: 120px 0;
+}
+.third {
+  padding-bottom: 120px;
+}
+.persons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.person {
+  border-radius: 16px;
+  border: 1px solid var(--Dark-Border-server, #313641);
+  overflow: hidden;
+}
+.img img {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  object-fit: cover;
+}
+.third .content {
+  padding: 24px;
+}
+.third .name {
+  color: var(--White, #fff);
+  font-family: var(--decor);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 24px */
+  margin-bottom: 8px;
+}
+.status {
+  color: var(--Sertver-title, #b6bfd3);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+.partners {
+  padding-bottom: 120px;
+}
+.partners :deep(.title) {
+  display: none;
+}
+</style>

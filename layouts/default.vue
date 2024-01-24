@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="site">
     <DesktopNavbar />
     <main class="main">
       <nuxt />
     </main>
+    <HomeFeedback />
     <DesktopFooter />
   </div>
 </template>
@@ -12,4 +13,14 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped>
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+</style>

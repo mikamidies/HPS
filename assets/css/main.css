@@ -53,7 +53,7 @@ html {
 body {
   font-family: var(--regular);
   color: white;
-  background: var(--black);
+  background: #080b12;
 }
 
 *:where(
@@ -121,6 +121,11 @@ meter {
 }
 .container {
   max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+.container.medium {
+  max-width: 1465px;
   margin: 0 auto;
   padding: 0 4px;
 }

@@ -48,4 +48,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
