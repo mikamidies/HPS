@@ -1054,4 +1054,66 @@ export default {
   z-index: 2;
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .content {
+    max-width: 100%;
+    margin: 0;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .sub {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  .wrap {
+    height: initial;
+    padding-bottom: 40px;
+  }
+  .bottom {
+    position: static;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .top {
+    padding: 120px 0 40px 0;
+  }
+  .pic {
+    display: none;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .bordered svg,
+  .bordered .stick {
+    display: none;
+  }
+  .bordered,
+  .unbordered {
+    display: flex;
+    justify-content: center;
+  }
+  .cardo {
+    padding: 12px 10px;
+    border-radius: 12px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .desc {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .link {
+    font-size: 14px;
+  }
+  .top_vector,
+  .bottom_vector {
+    display: none;
+  }
+}
 </style>

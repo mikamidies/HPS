@@ -456,4 +456,85 @@ export default {};
   right: 0;
   object-fit: contain;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 40px 0;
+  }
+  .first {
+    padding: 20px;
+    border-radius: 16px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .first .title,
+  .second .title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .first .sub {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .nums {
+    gap: 16px;
+  }
+  .content {
+    margin-bottom: 24px;
+  }
+  .num {
+    gap: 12px;
+  }
+  .nums svg {
+    width: 32px;
+    height: 32px;
+  }
+  .number {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .value {
+    font-size: 12px;
+  }
+  .image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .second {
+    padding: 20px;
+  }
+  .second .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .arrow {
+    display: none;
+  }
+  .sup {
+    font-size: 14px;
+  }
+  .second .sub {
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .partners {
+    max-width: 100%;
+    gap: 8px;
+    row-gap: 16px;
+  }
+  .part:nth-child(4),
+  .part:nth-child(5),
+  .part:nth-child(6) {
+    padding: 0;
+  }
+  .part img {
+    width: 100%;
+    height: 48px;
+    object-fit: contain;
+  }
+  .second {
+    margin-bottom: 24px;
+  }
+}
 </style>

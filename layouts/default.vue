@@ -23,4 +23,12 @@ export default {};
 .main {
   flex: 1;
 }
+.dark {
+  display: block;
+}
+@media screen and (max-width: 1024px) {
+  .dark {
+    display: none;
+  }
+}
 </style>

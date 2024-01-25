@@ -322,4 +322,54 @@ export default {};
 .cardo:hover .sub {
   color: white;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .cardo {
+    border-radius: 12px;
+    padding: 12px;
+    height: auto;
+  }
+  .sub {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 12px;
+    height: auto;
+    font-size: 14px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .img img {
+    height: 160px;
+  }
+  .cardo button {
+    justify-content: center;
+    position: static;
+    margin-top: 12px;
+    padding: 8px 12px;
+  }
+  .cardo button .stick,
+  .cardo button svg {
+    display: none;
+  }
+  .cardo:hover .img img {
+    transform: translateY(0);
+  }
+  .more {
+    margin-top: 24px;
+  }
+}
 </style>

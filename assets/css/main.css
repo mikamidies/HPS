@@ -155,3 +155,10 @@ img,
 svg {
   pointer-events: none;
 }
+@media screen and (max-width: 1024px) {
+  .container,
+  .container.medium,
+  .container.small {
+    padding: 0 16px;
+  }
+}
