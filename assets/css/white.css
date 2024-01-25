@@ -1,0 +1,49 @@
+#navbar.white .top {
+  background: #f3f5f7;
+}
+#navbar.white .bottom {
+  background: white;
+  border: 1px solid #ebebeb;
+}
+#navbar.white .basic {
+  display: none;
+}
+#navbar.white .black {
+  display: block;
+}
+#navbar.dark .basic {
+  display: block;
+}
+#navbar.dark .black {
+  display: none;
+}
+#navbar.white .num,
+#navbar.white .current,
+#navbar.white .links a {
+  color: var(--black);
+}
+#navbar.white .stick {
+  background: var(--black);
+}
+#navbar.white .search svg path {
+  stroke: var(--black);
+}
+#navbar.white .current svg path {
+  fill: var(--black);
+}
+.site.white {
+  background: white;
+}
+.site.white .site_top .cardo {
+  background: #f3f5f7;
+}
+.site.white .site_top .title {
+  color: var(--black);
+}
+.site.white .site_top .crumbs,
+.site.white .site_top .crumbs a {
+  color: var(--grey-64, #5d5d5f);
+}
+.site.white .site_top {
+  padding: 208px 0 40px 0;
+}

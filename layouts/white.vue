@@ -1,6 +1,6 @@
 <template>
-  <div class="site">
-    <DesktopNavbar class="dark" />
+  <div class="site white">
+    <DesktopNavbar class="white" />
     <main class="main">
       <nuxt />
     </main>
