@@ -285,7 +285,7 @@
           </div>
         </div>
         <div class="pagination">
-          <a-pagination v-model="current" :total="50" show-less-items />
+          <a-pagination :total="50" show-less-items />
         </div>
       </div>
     </div>
@@ -298,9 +298,7 @@ export default {
 
   methods: {
     data() {
-      return {
-        current: 1,
-      };
+      return {};
     },
 
     handleChange(value) {
