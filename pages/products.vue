@@ -69,7 +69,7 @@
         <div class="items">
           <div class="cardo">
             <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
+            <NuxtLink to="/product">
               <div class="content">
                 <h2 class="name">HPE ProLiant ML350</h2>
                 <p class="sub">
@@ -105,7 +105,7 @@
           </div>
           <div class="cardo">
             <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
+            <NuxtLink to="/product">
               <div class="content">
                 <h2 class="name">HPE ProLiant ML350</h2>
                 <p class="sub">
@@ -141,7 +141,7 @@
           </div>
           <div class="cardo">
             <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
+            <NuxtLink to="/product">
               <div class="content">
                 <h2 class="name">HPE ProLiant ML350</h2>
                 <p class="sub">
@@ -177,7 +177,7 @@
           </div>
           <div class="cardo">
             <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
+            <NuxtLink to="/product">
               <div class="content">
                 <h2 class="name">HPE ProLiant ML350</h2>
                 <p class="sub">

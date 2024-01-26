@@ -47,6 +47,23 @@
 .site.white .site_top {
   padding: 208px 0 40px 0;
 }
+.site.white .burger .pick,
+.site.white .burger .pick::after,
+.site.white .burger .pick::before {
+  background: var(--dark);
+}
+.site.white #navbar .right {
+  background: white;
+}
+.site.white #navbar .searcher p {
+  color: var(--dark);
+}
+.site.white #navbar .searcher svg path {
+  stroke: var(--dark);
+}
+.site.white #navbar .langer a {
+  color: var(--dark);
+}
 @media screen and (max-width: 1024px) {
   .site.white .site_top {
     padding: 100px 0 24px 0;
