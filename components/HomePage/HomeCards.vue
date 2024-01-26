@@ -467,7 +467,8 @@ export default {};
     gap: 24px;
   }
   .first .title,
-  .second .title {
+  .second .title,
+  .third .par {
     font-size: 24px;
     margin-bottom: 16px;
   }
@@ -513,7 +514,8 @@ export default {};
   .sup {
     font-size: 14px;
   }
-  .second .sub {
+  .second .sub,
+  .third .txt {
     max-width: 100%;
     font-size: 14px;
     margin-bottom: 16px;
@@ -535,6 +537,24 @@ export default {};
   }
   .second {
     margin-bottom: 24px;
+  }
+  .third {
+    padding: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    height: 532px;
+  }
+  .third .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .third a .stick,
+  .third a svg {
+    display: none;
+  }
+  .third a {
+    display: flex;
+    justify-content: center;
   }
 }
 </style>

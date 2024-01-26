@@ -123,4 +123,30 @@ input {
   height: 16px;
   background: var(--green);
 }
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .img {
+    display: none;
+  }
+  .container {
+    padding: 24px 16px 32px 16px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 14px;
+  }
+  form {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+  }
+  .inputs {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+}
 </style>

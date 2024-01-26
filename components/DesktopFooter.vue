@@ -273,4 +273,54 @@ export default {};
   font-weight: 400;
   line-height: 24px; /* 150% */
 }
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .right {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardo:nth-child(3) {
+    grid-column: initial;
+  }
+  .links {
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 16px;
+    justify-content: center;
+  }
+  .wrap {
+    padding: 40px 0;
+  }
+  .brand {
+    display: flex;
+    justify-content: center;
+  }
+  .socs {
+    justify-content: center;
+  }
+  .txt {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .links a {
+    font-size: 16px;
+  }
+  .cardo {
+    text-align: center;
+    gap: 16px;
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .value {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  .bottom {
+    flex-direction: column;
+    padding-top: 24px;
+    gap: 16px;
+  }
+}
 </style>

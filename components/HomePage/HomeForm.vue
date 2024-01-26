@@ -142,4 +142,43 @@ label {
   height: auto;
   object-fit: cover;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 40px 0;
+  }
+  .cardo {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
+  .footer {
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 24px;
+  }
+  .cardo button {
+    width: 100%;
+    justify-content: center;
+  }
+  form {
+    padding: 24px;
+  }
+  .grid input:first-child {
+    padding-top: 0;
+  }
+  .cardo {
+    gap: 24px;
+  }
+  .pic {
+    height: 260px;
+    border-radius: 12px;
+  }
+}
 </style>

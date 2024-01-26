@@ -259,4 +259,37 @@ export default {};
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardo:nth-child(1) {
+    grid-column: initial;
+  }
+  .cardo:nth-child(1) a {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .cardo:nth-child(1) .left {
+    padding: 20px;
+  }
+  .sup {
+    font-size: 14px;
+  }
+  .name {
+    font-size: 24px;
+  }
+  .sub {
+    font-size: 14px;
+  }
+  .cardo {
+    padding: 20px;
+  }
+}
 </style>

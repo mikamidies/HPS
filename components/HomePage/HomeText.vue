@@ -69,4 +69,16 @@ export default {};
   line-height: 150%; /* 27px */
   margin-bottom: 48px;
 }
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 23px;
+  }
+  .cont {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .wrap {
+    padding-bottom: 40px;
+  }
+}
 </style>

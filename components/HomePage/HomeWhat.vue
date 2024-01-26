@@ -93,4 +93,16 @@ export default {};
   height: 100%;
   object-fit: cover;
 }
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .left {
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
 </style>

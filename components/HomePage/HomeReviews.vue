@@ -160,10 +160,16 @@ import "swiper/swiper-bundle.min.css";
 export default {
   mounted() {
     new Swiper(this.$refs.reviewsSwiper, {
-      slidesPerView: 3,
-      spaceBetween: 16,
+      slidesPerView: 1.2,
+      spaceBetween: 8,
       navigation: {
         nextEl: ".next",
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
       },
     });
   },
@@ -257,5 +263,37 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .bordered {
+    padding: 20px;
+  }
+  .cardo {
+    padding: 12px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .content p {
+    font-size: 14px;
+  }
+  .next {
+    right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+  .bordered::after {
+    width: 30%;
+  }
+  .header {
+    margin-bottom: 16px;
+  }
+  .wrap {
+    padding-bottom: 40px;
+  }
 }
 </style>
