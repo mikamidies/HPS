@@ -28,7 +28,7 @@ export default {};
 }
 @media screen and (max-width: 1024px) {
   .dark {
-    display: none;
+    /* display: none; */
   }
 }
 </style>

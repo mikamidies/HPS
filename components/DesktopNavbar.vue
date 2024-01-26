@@ -214,25 +214,32 @@
             </svg>
           </NuxtLink>
         </div>
-        <div class="right">
+        <button
+          class="burger"
+          @click="menuHandle = !menuHandle"
+          :class="{ x: menuHandle == true }"
+        >
+          <div class="pick"></div>
+        </button>
+        <div class="right" :class="{ active: menuHandle == true }">
           <ul class="links">
             <li>
               <NuxtLink to="/" class="active"> Главная </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/"> О нас </NuxtLink>
+              <NuxtLink to="/about"> О нас </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/"> Доставка </NuxtLink>
+              <NuxtLink to="/delivery"> Доставка </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/"> Товары </NuxtLink>
+              <NuxtLink to="/products"> Товары </NuxtLink>
             </li>
-            <li>
+            <!-- <li>
               <NuxtLink to="/"> Конфигуратор </NuxtLink>
-            </li>
+            </li> -->
             <li>
-              <NuxtLink to="/"> Контакты </NuxtLink>
+              <NuxtLink to="/contacts"> Контакты </NuxtLink>
             </li>
           </ul>
           <p class="stick"></p>
@@ -255,6 +262,32 @@
               </svg>
             </button>
           </div>
+          <div class="mobile">
+            <div class="searcher">
+              <button>
+                <p>Поиск</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <path
+                    d="M22 22.5L20 20.5M2 12C2 6.75329 6.25329 2.5 11.5 2.5C16.7467 2.5 21 6.75329 21 12C21 17.2467 16.7467 21.5 11.5 21.5C6.25329 21.5 2 17.2467 2 12Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="langer">
+              <NuxtLink class="active" to="/">Русский</NuxtLink>
+              <NuxtLink to="/">English</NuxtLink>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -263,16 +296,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      menuHandle: false,
+    };
+  },
+
   mounted() {
-    function scrollHeader() {
-      const navbar = document.getElementById("navbar");
-      if (this.scrollY >= 50) {
-        navbar.classList.add("scroll");
-      } else {
-        navbar.classList.remove("scroll");
+    if (window.innerWidth > 1024) {
+      function scrollHeader() {
+        const navbar = document.getElementById("navbar");
+        if (this.scrollY >= 50) {
+          navbar.classList.add("scroll");
+        } else {
+          navbar.classList.remove("scroll");
+        }
       }
+      window.addEventListener("scroll", scrollHeader);
     }
-    window.addEventListener("scroll", scrollHeader);
+  },
+  watch: {
+    $route() {
+      this.menuHandle = false;
+    },
   },
 };
 </script>
@@ -364,5 +410,121 @@ export default {
   padding: 16px 0;
   background: var(--dark);
   border-bottom: 1px solid #ebebeb17;
+}
+.burger,
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .burger,
+  .mobile {
+    display: flex;
+  }
+  .wrap {
+    background: var(--dark);
+  }
+  .basic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrap.scroll {
+    transform: translateY(0);
+  }
+  .top {
+    display: none;
+  }
+  .bottom .left svg {
+    width: 64px;
+    height: 40px;
+  }
+  .links {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .right {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark);
+    height: 100%;
+    padding: 24px;
+    transition: 0.4s;
+    transform: translateX(-100%);
+    align-items: flex-start !important;
+  }
+  .right.active {
+    transform: translateX(0);
+  }
+  .right .stick {
+    display: none;
+  }
+  .search {
+    display: none;
+  }
+  .bottom {
+    padding: 16px 0;
+  }
+  .burger {
+    position: relative;
+    z-index: 999;
+  }
+  .burger .pick {
+    width: 30px;
+    height: 1px;
+    background: white;
+    position: relative;
+  }
+  .burger .pick::after {
+    width: 30px;
+    height: 1px;
+    background: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "";
+  }
+  .burger .pick::before {
+    width: 30px;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    content: "";
+  }
+  .mobile {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .searcher button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--White, #fff);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
+  .langer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .langer a {
+    color: var(--White, #fff);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+  }
+  .langer a.active {
+    color: var(--green);
+  }
 }
 </style>
