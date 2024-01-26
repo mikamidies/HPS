@@ -339,16 +339,7 @@ export default {};
     padding: 12px;
     height: auto;
   }
-  .sub {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 12px;
-    height: auto;
-    font-size: 14px;
-  }
+
   .name {
     font-size: 16px;
   }

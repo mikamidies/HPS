@@ -41,8 +41,14 @@ import "swiper/swiper-bundle.min.css";
 export default {
   mounted() {
     new Swiper(this.$refs.partnersSwiper, {
-      slidesPerView: 6,
+      slidesPerView: 3,
       spaceBetween: 16,
+      breakpoints: {
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 16,
+        },
+      },
     });
   },
 };
@@ -58,5 +64,30 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.title {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: var(--decor-sm);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 57.6px */
+  margin-bottom: 40px;
+}
+.wrap {
+  padding-bottom: 120px;
+}
+@media screen and (max-width: 1024px) {
+  img {
+    height: 64px;
+  }
+  .wrap {
+    padding-bottom: 40px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 </style>

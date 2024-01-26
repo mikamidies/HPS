@@ -58,6 +58,7 @@ export default {};
   display: flex;
   align-items: center;
   gap: 12px;
+  margin: 0;
 }
 .crumbs a {
   color: var(--Sertver-title, #b6bfd3);
@@ -65,5 +66,27 @@ export default {};
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 27px */
+}
+@media screen and (max-width: 1024px) {
+  .cardo {
+    border-radius: 12px;
+  }
+  .content {
+    padding: 24px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .crumbs a {
+    font-size: 14px;
+  }
+  .vector {
+    height: 100%;
+    object-fit: cover;
+    width: 40%;
+  }
+  .wrap {
+    padding: 100px 0 24px 0;
+  }
 }
 </style>

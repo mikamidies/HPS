@@ -409,4 +409,110 @@ export default {};
 .partners :deep(.title) {
   display: none;
 }
+@media screen and (max-width: 1024px) {
+  .separator {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .first {
+    padding: 0 0 20px 0;
+    border-radius: 16px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .first .title,
+  .second .title,
+  .third .par {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .first .sub {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .nums {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .first .content {
+    margin-bottom: 24px;
+  }
+  .num {
+    gap: 12px;
+  }
+  .nums svg {
+    width: 32px;
+    height: 32px;
+  }
+  .number {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .value {
+    font-size: 12px;
+  }
+  .image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .paragraph {
+    transform: none;
+  }
+  .second {
+    margin: 40px 0;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .second .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
+  .second .footer {
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 24px;
+  }
+  form button {
+    width: 100%;
+    justify-content: center;
+  }
+  .second form {
+    padding: 24px;
+  }
+  .grid input:first-child {
+    padding-top: 0;
+  }
+  .third .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .persons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .img {
+    height: 200px;
+  }
+  .third .content {
+    padding: 12px;
+  }
+  .person {
+    border-radius: 12px;
+  }
+  .third .name {
+    font-size: 15px;
+  }
+  .status {
+    font-size: 14px;
+  }
+  .third {
+    padding-bottom: 40px;
+  }
+  .partners {
+    padding-bottom: 40px;
+  }
+}
 </style>

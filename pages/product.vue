@@ -203,7 +203,13 @@ export default {
     const swiper = new Swiper(".smallSwiper", {
       slidesPerView: 4,
       direction: "vertical",
-      spaceBetween: 16,
+      spaceBetween: 8,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+      },
     });
 
     new Swiper(".bigSwiper", {
@@ -429,5 +435,76 @@ export default {
   font-weight: 600;
   line-height: 120%; /* 57.6px */
   margin-bottom: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .smallSwiper,
+  .bigSwiper {
+    height: 320px;
+  }
+  .content p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .face {
+    margin-bottom: 40px;
+  }
+  .similar .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .cardo {
+    border-radius: 12px;
+    padding: 12px;
+    height: auto;
+  }
+  .sub {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 12px;
+    height: auto;
+    font-size: 14px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .img img {
+    height: 160px;
+  }
+  .cardo button {
+    justify-content: center;
+    position: static;
+    margin-top: 12px;
+    padding: 8px 12px;
+  }
+  .cardo button .stick,
+  .cardo button svg {
+    display: none;
+  }
+  .cardo:hover .img img {
+    transform: translateY(0);
+  }
+  .similar {
+    margin-bottom: 40px;
+  }
+  .sub {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-bottom: 12px !important;
+    height: auto !important;
+    font-size: 14px !important;
+  }
 }
 </style>

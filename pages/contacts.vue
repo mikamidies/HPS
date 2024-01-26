@@ -77,4 +77,26 @@ export default {};
   border-radius: 24px;
   filter: invert(90%);
 }
+@media screen and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+  .map {
+    grid-column: initial;
+  }
+  .cardo {
+    padding: 16px;
+    border-radius: 12px;
+    min-height: unset;
+    gap: 12px;
+  }
+  .value {
+    font-size: 20px;
+  }
+  .map iframe {
+    height: 260px;
+    border-radius: 12px;
+  }
+}
 </style>

@@ -196,4 +196,26 @@ export default {};
   border-radius: 16px;
   object-fit: cover;
 }
+@media screen and (max-width: 1024px) {
+  .separator {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .right p {
+    font-size: 14px;
+  }
+  .section {
+    margin-bottom: 40px;
+  }
+  .cardo {
+    padding: 20px;
+  }
+  .map img {
+    height: 260px;
+  }
+}
 </style>

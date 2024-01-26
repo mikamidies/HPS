@@ -47,3 +47,11 @@
 .site.white .site_top {
   padding: 208px 0 40px 0;
 }
+@media screen and (max-width: 1024px) {
+  #navbar.white {
+    display: none;
+  }
+  .site.white .site_top {
+    padding: 100px 0 24px 0;
+  }
+}
