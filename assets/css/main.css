@@ -160,6 +160,12 @@ button {
   background: unset;
   border: none;
 }
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
 @media screen and (max-width: 1024px) {
   .container,
   .container.medium,
