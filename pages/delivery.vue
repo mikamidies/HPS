@@ -1,6 +1,6 @@
 <template>
   <div class="master">
-    <SiteTop />
+    <SiteTop :title="title" />
 
     <div class="first section">
       <div class="container small separator">
@@ -124,13 +124,8 @@
           <div class="map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -139,7 +134,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      title: 'Доставка'
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -147,14 +148,17 @@ export default {};
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
 }
+
 .paragraph {
   color: var(--White, #fff);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
   transform: translateY(8px);
 }
+
 .title {
   margin-bottom: 24px;
   color: var(--White, #fff);
@@ -162,66 +166,82 @@ export default {};
   font-size: 55px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 67.2px */
+  line-height: 120%;
+  /* 67.2px */
 }
+
 .right p {
   color: var(--Sertver-title, #b6bfd3);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
   margin-bottom: 16px;
   display: flex;
 }
+
 .right p:last-child {
   margin: 0;
 }
+
 .section {
   margin-bottom: 120px;
 }
+
 .cardo {
   border-radius: 16px;
   background: var(--Dark-service, #12151c);
   padding: 48px;
   margin-top: 48px;
 }
+
 .cardo p {
   color: var(--White, #fff);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
   margin-bottom: 24px;
   display: flex;
   gap: 16px;
 }
+
 .map {
   margin-top: 40px;
 }
+
 .map iframe {
   width: 100%;
   height: 460px;
   border-radius: 24px;
   filter: invert(90%);
 }
+
 @media screen and (max-width: 1024px) {
   .separator {
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
   }
+
   .title {
     font-size: 24px;
     margin-bottom: 16px;
   }
+
   .right p {
     font-size: 14px;
   }
+
   .section {
     margin-bottom: 40px;
   }
+
   .cardo {
     padding: 20px;
   }
+
   .map iframe {
     height: 260px;
     border-radius: 12px;

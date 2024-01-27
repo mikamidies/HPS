@@ -4,9 +4,7 @@ export default {
       let res;
 
       if (axios) {
-        res = await axios.get("/translations", {
-          //   ...params,
-        });
+        res = await axios.get("/translations");
         return res;
       }
       return res.data;

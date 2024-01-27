@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import translationsApi from "@/api/translations.js";
+import translationsApi from "@/api/translations";
 
 export default {
   data() {
@@ -20,11 +20,7 @@ export default {
   },
 
   async fetch() {
-    const translations = await translationsApi.getTranslations(this.$axios, {
-      // headers: {
-      //   Language: this.$i18n.locale,
-      // },
-    });
+    const translations = await translationsApi.getTranslations(this.$axios);
 
     await this.$store.commit("getTranslations", translations.data);
   },
@@ -36,18 +32,12 @@ export default {
   },
 
   watch: {
-    async currentLang(val) {
-      const translations = await translationsApi.getTranslations(this.$axios, {
-        // headers: {
-        //   Language: this.$i18n.locale,
-        // },
-      });
+    async currentLang() {
+      const translations = await translationsApi.getTranslations(this.$axios);
 
       await this.$store.commit("getTranslations", translations.data);
     },
   },
-
-  async mounted() {},
 };
 </script>
 
@@ -65,8 +55,5 @@ export default {
   display: block;
 }
 @media screen and (max-width: 1024px) {
-  .dark {
-    /* display: none; */
-  }
 }
 </style>
