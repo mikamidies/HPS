@@ -24,20 +24,20 @@
           <div class="rigth">
             <h1 class="name">{{ product.title }}</h1>
             <div class="content" v-html="product.desc"></div>
-            <button class="order">
+            <!-- <button class="order">
               Заказать товар
               <p class="stick"></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
     </div>
 
-    <div class="similar">
+    <div class="similar" v-show="product.other_products.length > 0">
       <div class="container">
         <h4 class="title">Похожие товары</h4>
         <div class="items">

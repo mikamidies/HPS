@@ -89,16 +89,17 @@
             Развитие, применение новейших технологий и решений
           </h4>
 
-          <form>
+          <form @submit.prevent="onSubmit">
             <div class="grid">
-              <input type="text" placeholder="Ваше имя" />
-              <input type="text" placeholder="Эл. почта" />
-              <input type="text" placeholder="Номер телефона" />
-              <input type="file" placeholder="Загрузить файл" />
+              <input v-model="full_name" type="text" placeholder="Ваше имя" required />
+              <input v-model="number" type="text" placeholder="Номер телефона" required />
+              <input v-model="email" type="text" placeholder="Эл. почта" />
+              <input id="filer" type="file" placeholder="Загрузить файл" />
+              <label for="filer" class="file_label">Загрузить ТЗ</label>
             </div>
             <div class="footer">
               <div class="checker">
-                <input id="check" type="checkbox" />
+                <input required id="check" type="checkbox" />
                 <label for="check">
                   By sending this form I confirm that i haveread and accept
                   <span class="green">Privacy Policy</span>
@@ -175,16 +176,51 @@
 </template>
 
 <script>
+import formApi from '@/api/form.js'
+
 export default {
   data() {
     return {
-      title: 'О компании'
+      title: 'О компании',
+      full_name: '',
+      number: '',
+      email: '',
     };
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        full_name: this.full_name,
+        number: this.number,
+        email: this.email,
+      }
+
+      const res = await formApi.sendApplication(formData)
+
+      if (res && res.status === 201) {
+        this.$notification['success']({
+          message: 'Успешно отправлено',
+        });
+      } else {
+        this.$notification['error']({
+          message: 'Ошибка',
+        });
+      }
+
+      this.full_name = ''
+      this.number = ''
+      this.email = ''
+    },
   },
 };
 </script>
 
 <style scoped>
+#filer {
+  display: none;
+}
+
 .separator {
   display: grid;
   grid-template-columns: 2fr 8fr;
@@ -279,15 +315,16 @@ export default {
   row-gap: 40px;
 }
 
-.second input {
+.second input,
+.file_label {
   border-bottom: 1px solid var(--Dark-Border-server, #313641);
-  padding: 12px 0;
-  color: var(--Sertver-title, #b6bfd3);
-  font-family: var(--medium);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%;
+  padding: 12px 0 !important;
+  color: var(--Sertver-title, #b6bfd3) !important;
+  font-family: var(--medium) !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 150% !important;
   /* 24px */
 }
 

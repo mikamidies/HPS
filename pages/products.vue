@@ -5,46 +5,14 @@
     <div class="filter">
       <div class="container">
         <div class="item">
-          <a-select default-value="Category" @change="handleChange">
-            <a-select-option value="Category" disabled>
-              Category
+          <a-select placeholder="Category" @change="sortCategory">
+            <a-select-option v-for="value in categories" :key="value.id" :value="value.id"> {{ value.title }}
             </a-select-option>
-            <a-select-option value="Server"> Server </a-select-option>
-            <a-select-option value="Hosting"> Hosting </a-select-option>
           </a-select>
         </div>
-        <!-- <div class="mid">
-          <div class="item">
-            <a-select default-value="Filter" @change="handleChange">
-              <a-select-option value="Filter" disabled>
-                Filter
-              </a-select-option>
-              <a-select-option value="Server"> Server </a-select-option>
-              <a-select-option value="Hosting"> Hosting </a-select-option>
-            </a-select>
-          </div>
-          <div class="item">
-            <a-select default-value="Filter" @change="handleChange">
-              <a-select-option value="Filter" disabled>
-                Filter
-              </a-select-option>
-              <a-select-option value="Server"> Server </a-select-option>
-              <a-select-option value="Hosting"> Hosting </a-select-option>
-            </a-select>
-          </div>
-          <div class="item">
-            <a-select default-value="Filter" @change="handleChange">
-              <a-select-option value="Filter" disabled>
-                Filter
-              </a-select-option>
-              <a-select-option value="Server"> Server </a-select-option>
-              <a-select-option value="Hosting"> Hosting </a-select-option>
-            </a-select>
-          </div>
-        </div> -->
         <div class="item">
           <div class="searcher">
-            <input type="text" placeholder="Поиск" />
+            <input type="text" placeholder="Поиск" v-model="search" />
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M10.5 19.25C15.3325 19.25 19.25 15.3325 19.25 10.5C19.25 5.66751 15.3325 1.75 10.5 1.75C5.66751 1.75 1.75 5.66751 1.75 10.5C1.75 15.3325 5.66751 19.25 10.5 19.25ZM20.75 10.5C20.75 16.1609 16.1609 20.75 10.5 20.75C4.83908 20.75 0.250001 16.1609 0.25 10.5C0.25 4.83908 4.83908 0.25 10.5 0.25C16.1609 0.249999 20.75 4.83908 20.75 10.5ZM18.4697 19.5303C18.1768 19.2374 18.1768 18.7626 18.4697 18.4697C18.7626 18.1768 19.2374 18.1768 19.5303 18.4697L21.5303 20.4696C21.8232 20.7625 21.8232 21.2374 21.5303 21.5303C21.2374 21.8232 20.7625 21.8232 20.4696 21.5303L18.4697 19.5303Z"
@@ -89,27 +57,68 @@
 
 <script>
 import productsApi from "@/api/products.js";
+import products from '@/api/products.js';
 
 export default {
   layout: "white",
 
   data() {
     return {
-      title: 'Наши товары'
+      title: 'Наши товары',
+      search: "",
     };
   },
 
   async asyncData({ $axios }) {
-    const products = await productsApi.getProducts($axios);
+    const products = await productsApi.getProducts($axios, {});
+    const categories = await productsApi.getCategories($axios)
 
     return {
       products,
+      categories
     };
   },
 
   methods: {
-    handleChange(value) {
-      console.log(`selected ${value}`);
+    async sortCategory(value) {
+      let query = { ...this.$route.query }
+      query.category = value
+      if (!Object.keys(this.$route.query).includes(`${value}`)) {
+        await this.$router.replace(
+          this.localePath({
+            path: this.$route.path,
+            query: query,
+          })
+        )
+      }
+
+      this.changeProducts()
+    },
+
+    async changeProducts() {
+      const productsData = await productsApi.getProducts(this.$axios, {
+        params: this.$route.query,
+      })
+
+      this.products = productsData
+    },
+  },
+
+  watch: {
+    async search(val) {
+      if (val.length > 2) {
+        const data = await productsApi.getProducts(this.$axios, {
+          params: { search: val },
+        });
+
+        this.products = data;
+      }
+      if (val.length == 0) {
+        const data = await productsApi.getProducts(this.$axios, {});
+
+        this.products = data;
+      }
+
     },
   },
 };
@@ -381,6 +390,24 @@ export default {
 
   .more {
     margin-top: 24px;
+  }
+
+  .filter .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filter :deep(.ant-select) {
+    width: 100%;
+  }
+
+  .item:last-child {
+    justify-content: flex-start;
+  }
+
+  .searcher {
+    width: 100%;
+    height: 47px;
   }
 }
 </style>

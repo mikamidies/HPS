@@ -9,28 +9,17 @@
           <h4 class="title">Связаться с нами</h4>
           <p class="sub">Новейших технологий и инновационных решений</p>
         </div>
-        <form>
+        <form @submit.prevent="onSubmit">
           <div class="inputs">
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Number" />
+            <input v-model="full_name" required type="text" placeholder="Name" />
+            <input v-model="number" required type="text" placeholder="Number" />
           </div>
           <button type="submit">
             Отправить
             <p class="stick"></p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                stroke="#1AB99D"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
             </svg>
           </button>
         </form>
@@ -40,19 +29,54 @@
 </template>
 
 <script>
-export default {};
+import formApi from '@/api/form.js'
+
+export default {
+  data() {
+    return {
+      full_name: '',
+      number: '',
+    }
+  },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        full_name: this.full_name,
+        number: this.number,
+      }
+
+      const res = await formApi.sendApplication(formData)
+
+      if (res && res.status === 201) {
+        this.$notification['success']({
+          message: 'Успешно отправлено',
+        });
+      } else {
+        this.$notification['error']({
+          message: 'Ошибка',
+        });
+      }
+
+      this.full_name = ''
+      this.number = ''
+    },
+  },
+}
 </script>
 
 <style scoped>
 .wrap {
   background: #12151c;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 3fr 6fr;
   align-items: center;
   gap: 16px;
 }
+
 form {
   align-items: center;
   display: grid;
@@ -60,11 +84,13 @@ form {
   gap: 24px;
   margin-right: 32px;
 }
+
 .cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .title {
   color: var(--White, #fff);
   font-family: var(--decor);
@@ -72,25 +98,31 @@ form {
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
-  line-height: 120%; /* 38.4px */
+  line-height: 120%;
+  /* 38.4px */
 }
+
 .sub {
   color: var(--Sertver-title, #b6bfd3);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 27px */
+  line-height: 150%;
+  /* 27px */
 }
+
 img {
   width: 100%;
   height: 190px;
   object-fit: contain;
 }
+
 .inputs {
   display: grid;
   grid-template-columns: 5fr 5fr;
   gap: 24px;
 }
+
 input {
   width: 100%;
   border-bottom: 1px solid var(--Dark-Border-server, #313641);
@@ -100,8 +132,10 @@ input {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 24px */
+  line-height: 150%;
+  /* 24px */
 }
+
 .grid button {
   border-radius: 8px;
   border: 1px solid var(--green);
@@ -115,35 +149,44 @@ input {
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 24px */
+  line-height: 150%;
+  /* 24px */
   justify-content: center;
 }
+
 .stick {
   width: 1px;
   height: 16px;
   background: var(--green);
 }
+
 @media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .img {
     display: none;
   }
+
   .container {
     padding: 24px 16px 32px 16px;
   }
+
   .title {
     font-size: 24px;
     margin-bottom: 16px;
   }
+
   .sub {
     font-size: 14px;
   }
+
   form {
     grid-template-columns: repeat(1, 1fr);
     margin: 0;
   }
+
   .inputs {
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;

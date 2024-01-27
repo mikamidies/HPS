@@ -56,12 +56,12 @@ body {
   background: #080b12;
 }
 
-*:where(
+/* *:where(
     :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
   ) {
   all: unset;
   display: revert;
-}
+} */
 *,
 *::before,
 *::after {
@@ -172,4 +172,7 @@ li {
   .container.small {
     padding: 0 16px;
   }
+}
+input:focus {
+  outline: none;
 }
