@@ -52,9 +52,6 @@
 .site.white .burger .pick::before {
   background: var(--dark);
 }
-.site.white #navbar .right {
-  background: white;
-}
 .site.white #navbar .searcher p {
   color: var(--dark);
 }
@@ -67,5 +64,8 @@
 @media screen and (max-width: 1024px) {
   .site.white .site_top {
     padding: 100px 0 24px 0;
+  }
+  .site.white #navbar .right {
+    background: white;
   }
 }

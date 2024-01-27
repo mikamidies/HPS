@@ -25,7 +25,7 @@ export default {
   modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
 
   axios: {
-    baseURL: "/",
+    baseURL: process.env.BASE_URL,
   },
 
   pwa: {

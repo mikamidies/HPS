@@ -8,45 +8,38 @@
           <div class="left">
             <div class="swiper smallSwiper" thumbsSlider="">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="@/assets/img/prod-1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/prod-1.png" alt="" />
+                <div
+                  v-for="thumb in product.images"
+                  :key="thumb.id"
+                  class="swiper-slide"
+                >
+                  <img
+                    :src="thumb.image"
+                    :title="product.title"
+                    :alt="product.title"
+                  />
                 </div>
               </div>
             </div>
             <div class="swiper bigSwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="@/assets/img/prod-1.png" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="@/assets/img/prod-1.png" alt="" />
+                <div
+                  v-for="image in product.images"
+                  :key="image.id"
+                  class="swiper-slide"
+                >
+                  <img
+                    :src="image.image"
+                    :title="product.title"
+                    :alt="product.title"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div class="rigth">
-            <h1 class="name">HPE ProLiant ML350</h1>
-            <div class="content">
-              <p>HPE ProLiant ML350 Gen10 Tower 4U Rack</p>
-              <p>
-                Processor HPE Intel Xeon-S 4210 10 core (2.2 GHz,-3.2/ DDR 32GB
-                (2x16Gb) Registered DIMMs, 2666MHz) DDR4
-              </p>
-              <p>HPE 2х480GB SSD SFF 6G READ INTENSIVE</p>
-              <p>HPE 2×2.4TB SAS 10K 12G SFF HDD Hot Plug, Form Factor</p>
-              <p>
-                Smart Array P408i-a SR 2GB 12G+Smart Storage Battery 96W 145mm
-                Cable Kit
-              </p>
-              <p>Integrated Lights-Out 5 (iLO 5)</p>
-              <p>HP Embedded 1Gb Ethernet 4- port 369i Adapter</p>
-              <p>
-                HPE 2x800W Flex Slot Platinum Hot Plug Low Halogen Power Supply
-              </p>
-            </div>
+            <h1 class="name">{{ product.title }}</h1>
+            <div class="content" v-html="product.desc"></div>
             <button class="order">
               Заказать товар
               <p class="stick"></p>
@@ -75,94 +68,22 @@
       <div class="container">
         <h4 class="title">Похожие товары</h4>
         <div class="items">
-          <div class="cardo">
-            <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
+          <div
+            v-for="item in product.other_products"
+            :key="item.id"
+            class="cardo"
+          >
+            <img src="@/assets/img/logo/vector.png" class="vector" />
+            <NuxtLink :to="`/product/${item.slug}`">
               <div class="content">
-                <h2 class="name">HPE ProLiant ML350</h2>
-                <p class="sub">
-                  HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                  Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack Processor
-                  HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack
-                  Processor HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower
-                  4U Rack Processor HPE Intel Xeon-S 4210
-                </p>
+                <h2 class="name">{{ item.title }}</h2>
+                <p class="sub">{{ item.subtitle }}</p>
                 <div class="img">
-                  <img src="@/assets/img/prod-1.png" alt="" />
-                </div>
-              </div>
-              <button>
-                Узнать больше
-                <p class="stick"></p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                    stroke="#1AB99D"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <img
+                    :src="item.image"
+                    :alt="item.title"
+                    :title="item.title"
                   />
-                </svg>
-              </button>
-            </NuxtLink>
-          </div>
-          <div class="cardo">
-            <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
-              <div class="content">
-                <h2 class="name">HPE ProLiant ML350</h2>
-                <p class="sub">
-                  HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                  Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack Processor
-                  HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack
-                  Processor HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower
-                  4U Rack Processor HPE Intel Xeon-S 4210
-                </p>
-                <div class="img">
-                  <img src="@/assets/img/prod-1.png" alt="" />
-                </div>
-              </div>
-              <button>
-                Узнать больше
-                <p class="stick"></p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                    stroke="#1AB99D"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </NuxtLink>
-          </div>
-          <div class="cardo">
-            <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-            <NuxtLink to="/">
-              <div class="content">
-                <h2 class="name">HPE ProLiant ML350</h2>
-                <p class="sub">
-                  HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                  Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack Processor
-                  HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack
-                  Processor HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower
-                  4U Rack Processor HPE Intel Xeon-S 4210
-                </p>
-                <div class="img">
-                  <img src="@/assets/img/prod-1.png" alt="" />
                 </div>
               </div>
               <button>
@@ -193,11 +114,23 @@
 </template>
 
 <script>
+import productsApi from "@/api/products.js";
+
 import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
   layout: "white",
+
+  async asyncData({ params, $axios }) {
+    const product = await productsApi.getProduct(params.slug, $axios);
+
+    console.log(product);
+
+    return {
+      product,
+    };
+  },
 
   mounted() {
     const swiper = new Swiper(".smallSwiper", {
@@ -270,7 +203,7 @@ export default {
   font-weight: 500;
   line-height: 120%; /* 38.4px */
 }
-.content p {
+.content::v-deep p {
   color: var(--grey-64, #5d5d5f);
   font-size: 18px;
   font-style: normal;

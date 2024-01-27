@@ -1,7 +1,7 @@
 <template>
   <div class="master">
     <HomeHero />
-    <HomePopular />
+    <HomePopular :products="products" />
     <HomeCards />
     <HomeServices />
     <HomeWhat />
@@ -13,7 +13,19 @@
 </template>
 
 <script>
-export default {};
+import productsApi from "@/api/products.js";
+
+export default {
+  async asyncData({ $axios }) {
+    const products = await productsApi.getProducts($axios);
+
+    console.log(products);
+
+    return {
+      products,
+    };
+  },
+};
 </script>
 
 <style></style>

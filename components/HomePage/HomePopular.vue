@@ -3,122 +3,19 @@
     <div class="container">
       <h4 class="title">Популярные товары</h4>
       <div class="items">
-        <div class="cardo">
-          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-          <NuxtLink to="/">
+        <div
+          v-for="item in products"
+          :key="item.id"
+          v-show="item.top == true"
+          class="cardo"
+        >
+          <img src="@/assets/img/logo/vector.png" class="vector" />
+          <NuxtLink :to="`/product/${item.slug}`">
             <div class="content">
-              <h2 class="name">HPE ProLiant ML350</h2>
-              <p class="sub">
-                HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE
-                Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower 4U Rack
-                Processor HPE Intel Xeon-S 4210 HPE ProLiant ML350 Gen10 Tower
-                4U Rack Processor HPE Intel Xeon-S 4210
-              </p>
+              <h2 class="name">{{ item.title }}</h2>
+              <p class="sub">{{ item.subtitle }}</p>
               <div class="img">
-                <img src="@/assets/img/prod-1.png" alt="" />
-              </div>
-            </div>
-            <button>
-              Узнать больше
-              <p class="stick"></p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                  stroke="#1AB99D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-          <NuxtLink to="/">
-            <div class="content">
-              <h2 class="name">HPE ProLiant ML350</h2>
-              <p class="sub">
-                HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                Xeon-S 4210 ...
-              </p>
-              <div class="img">
-                <img src="@/assets/img/prod-2.png" alt="" />
-              </div>
-            </div>
-            <button>
-              Узнать больше
-              <p class="stick"></p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                  stroke="#1AB99D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-          <NuxtLink to="/">
-            <div class="content">
-              <h2 class="name">HPE ProLiant ML350</h2>
-              <p class="sub">
-                HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                Xeon-S 4210 ...
-              </p>
-              <div class="img">
-                <img src="@/assets/img/prod-1.png" alt="" />
-              </div>
-            </div>
-            <button>
-              Узнать больше
-              <p class="stick"></p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                  stroke="#1AB99D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </NuxtLink>
-        </div>
-        <div class="cardo">
-          <img src="@/assets/img/logo/vector.png" alt="" class="vector" />
-          <NuxtLink to="/">
-            <div class="content">
-              <h2 class="name">HPE ProLiant ML350</h2>
-              <p class="sub">
-                HPE ProLiant ML350 Gen10 Tower 4U Rack Processor HPE Intel
-                Xeon-S 4210 ...
-              </p>
-              <div class="img">
-                <img src="@/assets/img/prod-4.png" alt="" />
+                <img :src="item.image" :alt="item.title" :title="item.title" />
               </div>
             </div>
             <button>
@@ -144,7 +41,7 @@
         </div>
       </div>
       <div class="more">
-        <NuxtLink to="/">
+        <NuxtLink to="/products">
           Посмотреть все
           <p class="stick"></p>
           <svg
@@ -169,7 +66,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["products"],
+};
 </script>
 
 <style scoped>
