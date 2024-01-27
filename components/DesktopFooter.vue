@@ -5,23 +5,23 @@
         <div class="left">
           <ul class="links">
             <li>
-              <NuxtLink to="/"> Главная </NuxtLink>
+              <NuxtLink :to="localePath('/')"> Главная </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/"> Партнеры </NuxtLink>
+              <NuxtLink :to="localePath('/about')"> О компании </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/"> Товары </NuxtLink>
+              <NuxtLink :to="localePath('/products')"> Товары </NuxtLink>
             </li>
+            <!-- <li>
+              <NuxtLink :to="localePath('/')"> Конфигуратор </NuxtLink>
+            </li> -->
             <li>
-              <NuxtLink to="/"> Конфигуратор </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/"> Контакты </NuxtLink>
+              <NuxtLink :to="localePath('/contacts')"> Контакты </NuxtLink>
             </li>
           </ul>
           <div class="brand">
-            <NuxtLink to="/">
+            <NuxtLink :to="localePath('/')">
               <svg
                 width="124"
                 height="56"

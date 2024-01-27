@@ -15,7 +15,7 @@
               клиентами и умной аналитики, которые помогают всегда оставаться на
               высоте.
             </p>
-            <NuxtLink to="/">
+            <NuxtLink :to="localePath('/about')">
               Узнать больше
               <div class="stick"></div>
               <div class="logo">
@@ -181,7 +181,7 @@
               Идеальный и максимально удобный инструмент для сборки сервера в
               ручную
             </p>
-            <NuxtLink to="/">
+            <NuxtLink :to="localePath('/about')">
               Узнать больше
               <div class="stick"></div>
               <div class="logo">
@@ -241,7 +241,7 @@
           </p>
 
           <div class="buttons">
-            <NuxtLink to="/">
+            <button class="button">
               Консультация
               <p class="stick"></p>
               <svg
@@ -259,8 +259,8 @@
                   stroke-linejoin="round"
                 />
               </svg>
-            </NuxtLink>
-            <NuxtLink to="/">Наш товары</NuxtLink>
+            </button>
+            <NuxtLink :to="localePath('/products')">Наши товары</NuxtLink>
           </div>
         </div>
         <div class="picture">
@@ -310,7 +310,8 @@ export default {};
 }
 .first a,
 .second a,
-.third a {
+.third a,
+.button {
   border-radius: 8px;
   border: 1px solid var(--Dark-Border-server, #313641);
   background: var(--Dark-service, #12151c);

@@ -10,7 +10,7 @@
           class="cardo"
         >
           <img src="@/assets/img/logo/vector.png" class="vector" />
-          <NuxtLink :to="`/product/${item.slug}`">
+          <NuxtLink :to="localePath(`/product/${item.slug}`)">
             <div class="content">
               <h2 class="name">{{ item.title }}</h2>
               <p class="sub">{{ item.subtitle }}</p>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="more">
-        <NuxtLink to="/products">
+        <NuxtLink :to="localePath('/products')">
           Посмотреть все
           <p class="stick"></p>
           <svg

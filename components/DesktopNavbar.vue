@@ -25,6 +25,11 @@
                 />
               </svg>
             </p>
+
+            <div class="drop">
+              <NuxtLink :to="switchLocalePath('ru')">Рус</NuxtLink>
+              <NuxtLink :to="switchLocalePath('en')">Eng</NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +37,7 @@
     <div class="bottom">
       <div class="container">
         <div class="left">
-          <NuxtLink class="basic" to="/">
+          <NuxtLink class="basic" :to="localePath('/')">
             <svg
               width="124"
               height="57"
@@ -123,7 +128,7 @@
             </svg>
           </NuxtLink>
 
-          <NuxtLink class="black" to="/">
+          <NuxtLink class="black" :to="localePath('/')">
             <svg
               width="124"
               height="57"
@@ -224,22 +229,24 @@
         <div class="right" :class="{ active: menuHandle == true }">
           <ul class="links">
             <li>
-              <NuxtLink to="/" class="active"> Главная </NuxtLink>
+              <NuxtLink :to="localePath('/')" class="active">
+                Главная
+              </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/about"> О нас </NuxtLink>
+              <NuxtLink :to="localePath('/about')"> О нас </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/delivery"> Доставка </NuxtLink>
+              <NuxtLink :to="localePath('/delivery')"> Доставка </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/products"> Товары </NuxtLink>
+              <NuxtLink :to="localePath('/products')"> Товары </NuxtLink>
             </li>
             <!-- <li>
               <NuxtLink to="/"> Конфигуратор </NuxtLink>
             </li> -->
             <li>
-              <NuxtLink to="/contacts"> Контакты </NuxtLink>
+              <NuxtLink :to="localePath('/contacts')"> Контакты </NuxtLink>
             </li>
           </ul>
           <p class="stick"></p>
@@ -284,8 +291,8 @@
               </button>
             </div>
             <div class="langer">
-              <NuxtLink class="active" to="/">Русский</NuxtLink>
-              <NuxtLink to="/">English</NuxtLink>
+              <NuxtLink :to="switchLocalePath('ru')">Рус</NuxtLink>
+              <NuxtLink :to="switchLocalePath('en')">Eng</NuxtLink>
             </div>
           </div>
         </div>
@@ -414,6 +421,36 @@ export default {
 .burger,
 .mobile {
   display: none;
+}
+.lang {
+  position: relative;
+}
+.drop {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: 0.4s;
+}
+.lang:hover .drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.drop a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: var(--dark);
 }
 @media screen and (max-width: 1024px) {
   .burger,

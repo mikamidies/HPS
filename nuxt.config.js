@@ -22,7 +22,7 @@ export default {
 
   buildModules: [],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/axios", "@nuxtjs/pwa"],
 
   axios: {
     baseURL: process.env.BASE_URL,
@@ -45,6 +45,14 @@ export default {
           encoding: "encoding",
         },
       ];
+    },
+  },
+
+  i18n: {
+    locales: ["ru", "en"],
+    defaultLocale: "ru",
+    vueI18n: {
+      fallbackLocale: "ru",
     },
   },
 };

@@ -8,11 +8,11 @@
           <div class="crumbs">
             <ol>
               <li>
-                <NuxtLink to="/"> Главная </NuxtLink>
+                <NuxtLink :to="localePath('/')"> Главная </NuxtLink>
               </li>
               <li>/</li>
               <li>
-                <NuxtLink to="/"> О нас </NuxtLink>
+                <p>О нас</p>
               </li>
             </ol>
           </div>
