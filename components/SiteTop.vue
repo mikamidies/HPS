@@ -60,7 +60,8 @@ export default {};
   gap: 12px;
   margin: 0;
 }
-.crumbs a {
+.crumbs a,
+.crumbs p {
   color: var(--Sertver-title, #b6bfd3);
   font-size: 18px;
   font-style: normal;

@@ -122,7 +122,15 @@
             ord@ittelo.ru
           </p>
           <div class="map">
-            <img src="@/assets/img/map.png" alt="" />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -190,11 +198,11 @@ export default {};
 .map {
   margin-top: 40px;
 }
-.map img {
+.map iframe {
   width: 100%;
   height: 460px;
-  border-radius: 16px;
-  object-fit: cover;
+  border-radius: 24px;
+  filter: invert(90%);
 }
 @media screen and (max-width: 1024px) {
   .separator {
@@ -214,8 +222,9 @@ export default {};
   .cardo {
     padding: 20px;
   }
-  .map img {
+  .map iframe {
     height: 260px;
+    border-radius: 12px;
   }
 }
 </style>

@@ -250,7 +250,7 @@
             </li>
           </ul>
           <p class="stick"></p>
-          <div class="search">
+          <div class="search" @click="searchHandle = !searchHandle">
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +271,7 @@
           </div>
           <div class="mobile">
             <div class="searcher">
-              <button>
+              <button @click="searchHandle = !searchHandle">
                 <p>Поиск</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -298,6 +298,39 @@
         </div>
       </div>
     </div>
+
+    <div class="dropdown" :class="{ active: searchHandle == true }">
+      <button class="x" @click="searchHandle = false">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="88"
+          height="88"
+          viewBox="0 0 88 88"
+          fill="none"
+        >
+          <path
+            d="M59.5565 28.4437L28.4438 59.5564M59.5565 59.5562L28.4438 28.4435"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div class="container small">
+        <div class="input">
+          <input type="text" placeholder="Поиск" />
+        </div>
+        <div class="products">
+          <div class="product">
+            <NuxtLink :to="localePath('/')"> Product 1 </NuxtLink>
+          </div>
+          <div class="product">
+            <NuxtLink :to="localePath('/')"> Product 2 </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -306,6 +339,7 @@ export default {
   data() {
     return {
       menuHandle: false,
+      searchHandle: false,
     };
   },
 
@@ -325,12 +359,79 @@ export default {
   watch: {
     $route() {
       this.menuHandle = false;
+      this.searchHandle = false;
     },
   },
 };
 </script>
 
 <style scoped>
+.dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  background: var(--Server-BG, #080b12);
+  border-bottom: 1px solid #ebebeb17;
+  transition: 0.3s;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.dropdown.active {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.x {
+  position: absolute;
+  top: 40px;
+  right: 160px;
+}
+.wrap.scroll .dropdown {
+  transform: translateY(44px);
+}
+.dropdown .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.input input {
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 150%; /* 48px */
+  padding-bottom: 24px;
+  border-bottom: 1px solid #313641;
+  width: 100%;
+}
+.input input::placeholder {
+  color: var(--Sertver-title, #b6bfd3);
+  font-style: italic;
+}
+.input {
+  margin-bottom: 40px;
+}
+.product a {
+  color: var(--White, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+  padding: 12px 16px;
+  border-radius: 800px;
+  border: 1px solid var(--Dark-Border-server, #313641);
+  display: flex;
+}
+.products {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 .wrap {
   position: fixed;
   top: 0;
