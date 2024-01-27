@@ -125,8 +125,6 @@ export default {
   async asyncData({ params, $axios }) {
     const product = await productsApi.getProduct(params.slug, $axios);
 
-    console.log(product);
-
     return {
       product,
     };

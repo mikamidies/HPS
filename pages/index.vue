@@ -19,8 +19,6 @@ export default {
   async asyncData({ $axios }) {
     const products = await productsApi.getProducts($axios);
 
-    console.log(products);
-
     return {
       products,
     };
