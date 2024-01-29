@@ -11,8 +11,8 @@
         </div>
         <form @submit.prevent="onSubmit">
           <div class="inputs">
-            <input v-model="full_name" required type="text" placeholder="Name" />
-            <input v-model="number" required type="text" placeholder="Number" />
+            <input v-model="full_name" required type="text" :placeholder="$store.state.translations['place.name']" />
+            <input v-model="number" required type="text" :placeholder="$store.state.translations['place.number']" />
           </div>
           <button type="submit">
             {{ $store.state.translations['about.14_key14'] }}

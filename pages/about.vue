@@ -5,17 +5,17 @@
     <div class="first">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">{{$store.state.translations['about.0_key0']}}</h4>
+          <h4 class="paragraph">{{ $store.state.translations['about.0_key0'] }}</h4>
         </div>
         <div class="right">
           <div class="content">
             <h4 class="title">
-              {{$store.state.translations['about.1_key1']}}
-              <span class="green"> {{$store.state.translations['about.2_key2']}} </span>
+              {{ $store.state.translations['about.1_key1'] }}
+              <span class="green"> {{ $store.state.translations['about.2_key2'] }} </span>
             </h4>
             <p class="sub">
-              {{$store.state.translations['about.3_key3']}}
-              {{$store.state.translations['about.4_key4']}}
+              {{ $store.state.translations['about.3_key3'] }}
+              {{ $store.state.translations['about.4_key4'] }}
             </p>
           </div>
 
@@ -41,8 +41,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">{{$store.state.translations['about.5_key5']}}</p>
-                <p class="value">{{$store.state.translations['about.6_key6']}}</p>
+                <p class="number">{{ $store.state.translations['about.5_key5'] }}</p>
+                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
               </div>
             </div>
             <div class="num">
@@ -66,8 +66,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">{{$store.state.translations['about.7_key7']}}</p>
-                <p class="value">{{$store.state.translations['about.6_key6']}}</p>
+                <p class="number">{{ $store.state.translations['about.7_key7'] }}</p>
+                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
               </div>
             </div>
           </div>
@@ -82,31 +82,31 @@
     <div class="second">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">{{$store.state.translations['about.9_key9']}}</h4>
+          <h4 class="paragraph">{{ $store.state.translations['about.9_key9'] }}</h4>
         </div>
         <div class="right">
           <h4 class="title">
-            {{$store.state.translations['about.10_key10']}}
+            {{ $store.state.translations['about.10_key10'] }}
           </h4>
 
           <form @submit.prevent="onSubmit">
             <div class="grid">
-              <input v-model="full_name" type="text" placeholder="Ваше имя" required />
-              <input v-model="number" type="text" placeholder="Номер телефона" required />
-              <input v-model="email" type="text" placeholder="Эл. почта" />
-              <input id="filer" type="file" placeholder="Загрузить файл" />
-              <label for="filer" class="file_label">{{$store.state.translations['about.11_key11']}}</label>
+              <input v-model="full_name" type="text" :placeholder="$store.state.translations['place.name']" required />
+              <input v-model="number" type="text" :placeholder="$store.state.translations['place.number']" required />
+              <input v-model="email" type="text" :placeholder="$store.state.translations['place.email']" />
+              <input id="filer" type="file" :placeholder="$store.state.translations['place.tz']" />
+              <label for="filer" class="file_label">{{ $store.state.translations['about.11_key11'] }}</label>
             </div>
             <div class="footer">
               <div class="checker">
                 <input required id="check" type="checkbox" />
                 <label for="check">
-                  {{$store.state.translations['about.12_key12']}}
-                  <span class="green">Privacy Policy</span>
+                  {{ $store.state.translations['about.12_key12'] }}
+                  <span class="green">{{ $store.state.translations['place.privacy'] }}</span>
                 </label>
               </div>
               <button type="submit">
-                {{$store.state.translations['about.14_key14']}}
+                {{ $store.state.translations['about.14_key14'] }}
                 <p class="stick"></p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
@@ -122,12 +122,12 @@
     <div class="third">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">{{$store.state.translations['about.15_key15']}}</h4>
+          <h4 class="paragraph">{{ $store.state.translations['about.15_key15'] }}</h4>
         </div>
         <div class="right">
           <h4 class="title">
-            {{$store.state.translations['about.16_key16']}}
-            {{$store.state.translations['about.17_key17']}}
+            {{ $store.state.translations['about.16_key16'] }}
+            {{ $store.state.translations['about.17_key17'] }}
           </h4>
           <div class="persons">
             <div class="person">
@@ -135,8 +135,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
-                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
+                <p class="name">{{ $store.state.translations['about.18_key18'] }}</p>
+                <p class="status">{{ $store.state.translations['about.19_key19'] }}</p>
               </div>
             </div>
             <div class="person">
@@ -144,8 +144,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
-                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
+                <p class="name">{{ $store.state.translations['about.18_key18'] }}</p>
+                <p class="status">{{ $store.state.translations['about.19_key19'] }}</p>
               </div>
             </div>
             <div class="person">
@@ -153,8 +153,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
-                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
+                <p class="name">{{ $store.state.translations['about.18_key18'] }}</p>
+                <p class="status">{{ $store.state.translations['about.19_key19'] }}</p>
               </div>
             </div>
             <div class="person">
@@ -162,8 +162,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
-                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
+                <p class="name">{{ $store.state.translations['about.18_key18'] }}</p>
+                <p class="status">{{ $store.state.translations['about.19_key19'] }}</p>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ import formApi from '@/api/form.js'
 export default {
   data() {
     return {
-      title: 'О компании',
+      title: this.$store.state.translations['site.about'],
       full_name: '',
       number: '',
       email: '',

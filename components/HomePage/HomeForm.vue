@@ -4,26 +4,26 @@
       <div class="cardo">
         <div class="left">
           <h4 class="title">
-            {{$store.state.translations['HomeForm.0_key0']}}
+            {{ $store.state.translations['HomeForm.0_key0'] }}
           </h4>
           <form @submit.prevent="onSubmit">
             <div class="grid">
-              <input v-model="full_name" type="text" placeholder="Ваше имя" required />
-              <input v-model="number" type="text" placeholder="Номер телефона" required />
-              <input v-model="email" type="text" placeholder="Эл. почта" />
-              <input id="filer" type="file" placeholder="Загрузить файл" />
-              <label for="filer" class="file_label">{{$store.state.translations['about.11_key11']}}</label>
+              <input v-model="full_name" type="text" :placeholder="$store.state.translations['place.name']" required />
+              <input v-model="number" type="text" :placeholder="$store.state.translations['place.number']" required />
+              <input v-model="email" type="text" :placeholder="$store.state.translations['place.email']" />
+              <input id="filer" type="file" :placeholder="$store.state.translations['place.tz']" />
+              <label for="filer" class="file_label">{{ $store.state.translations['about.11_key11'] }}</label>
             </div>
             <div class="footer">
               <div class="checker">
                 <input required id="check" type="checkbox" />
                 <label for="check">
-                  {{$store.state.translations['about.12_key12']}}
-                  <span class="green">Privacy Policy</span>
+                  {{ $store.state.translations['about.12_key12'] }}
+                  <span class="green">{{ $store.state.translations['place.privacy'] }}</span>
                 </label>
               </div>
               <button type="submit">
-                {{$store.state.translations['about.14_key14']}}
+                {{ $store.state.translations['about.14_key14'] }}
                 <p class="stick"></p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"

@@ -137,7 +137,7 @@
 export default {
   data() {
     return {
-      title: 'Доставка'
+      title: this.$store.state.translations['site.delivery']
     };
   },
 };

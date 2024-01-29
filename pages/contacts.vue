@@ -5,12 +5,12 @@
     <div class="container">
       <div class="cards">
         <div class="cardo">
-          <p class="sup">{{$store.state.translations['about.9_key9']}}</p>
+          <p class="sup">{{ $store.state.translations['about.9_key9'] }}</p>
 
           <a href="#" class="value"> {{ info.nbm }} </a>
         </div>
         <div class="cardo">
-          <p class="sup">{{$store.state.translations['contacts.1_key1']}}</p>
+          <p class="sup">{{ $store.state.translations['contacts.1_key1'] }}</p>
           <a href="#" class="value"> info@hpsuz.com </a>
         </div>
         <div class="map">
@@ -32,7 +32,7 @@ import infoApi from "@/api/info.js"
 export default {
   data() {
     return {
-      title: 'Контакты',
+      title: this.$store.state.translations['site.contacts'],
       info: {},
     };
   },

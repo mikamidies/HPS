@@ -64,7 +64,7 @@ export default {
 
   data() {
     return {
-      title: 'Наши товары',
+      title: this.$store.state.translations['site.products'],
       search: "",
       current: 1,
       pageSize: 20,
