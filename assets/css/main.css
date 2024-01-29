@@ -176,3 +176,6 @@ li {
 input:focus {
   outline: none;
 }
+.nuxt-link-exact-active {
+  color: var(--green) !important;
+}

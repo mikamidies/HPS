@@ -8,7 +8,12 @@
         <div class="right">
           <div class="lang">
             <p class="current">
-              {{ $store.state.translations['DesktopNavbar.0_key0'] }}
+              <span v-if="$i18n.locale == 'ru'">
+                Ру
+              </span>
+              <span v-if="$i18n.locale == 'en'">
+                En
+              </span>
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M0.345232 0.942921C0.560863 0.673382 0.954171 0.629681 1.22371 0.845312L4.99994 3.8663L8.77617 0.845312C9.04571 0.629681 9.43902 0.673382 9.65465 0.942921C9.87028 1.21246 9.82658 1.60577 9.55704 1.8214L5.39038 5.15473C5.16211 5.33734 4.83777 5.33734 4.60951 5.15473L0.442841 1.8214C0.173302 1.60577 0.129601 1.21246 0.345232 0.942921Z"
@@ -17,8 +22,8 @@
             </p>
 
             <div class="drop">
-              <NuxtLink :to="switchLocalePath('ru')">{{ $store.state.translations['DesktopNavbar.0_key0'] }} Ru</NuxtLink>
-              <NuxtLink :to="switchLocalePath('en')">{{ $store.state.translations['DesktopNavbar.2_key2'] }} Eng
+              <NuxtLink :to="switchLocalePath('ru')">{{ $store.state.translations['DesktopNavbar.0_key0'] }} </NuxtLink>
+              <NuxtLink :to="switchLocalePath('en')">{{ $store.state.translations['DesktopNavbar.2_key2'] }}
               </NuxtLink>
             </div>
           </div>
@@ -164,7 +169,7 @@
         <div class="right" :class="{ active: menuHandle == true }">
           <ul class="links">
             <li>
-              <NuxtLink :to="localePath('/')" class="active">
+              <NuxtLink :to="localePath('/')">
                 {{ $store.state.translations['DesktopFooter.0_key0'] }}
               </NuxtLink>
             </li>
@@ -224,7 +229,7 @@
       </button>
       <div class="container small">
         <div class="input">
-          <input type="text" :placeholder="$store.state.translations['DesktopNavbar.10_key10']" v-model="search" />
+          <input type="text" :placeholder="$store.state.translations['place.search']" v-model="search" />
         </div>
         <div class="products" v-show="products.length > 0">
           <div v-for="item in products" :key="item.id" class="product">
@@ -279,6 +284,9 @@ export default {
       if (val.length > 2) {
         const data = await productsApi.getProducts(this.$axios, {
           params: { search: val },
+          headers: {
+            language: this.$i18n.locale,
+          },
         });
 
         this.products = data;

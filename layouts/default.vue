@@ -46,6 +46,10 @@ export default {
       await this.$store.commit("getTranslations", translations.data);
     },
   },
+
+  mounted() {
+    console.log(this.translations);
+  }
 };
 </script>
 

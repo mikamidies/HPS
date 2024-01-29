@@ -1,5 +1,5 @@
 export default {
-  async getTranslations(axios) {
+  async getTranslations(axios, params) {
     try {
       let res;
 
@@ -9,7 +9,7 @@ export default {
         });
         return res;
       }
-      return res.data;
+      return res;
     } catch (e) {
       console.log(e);
     }
