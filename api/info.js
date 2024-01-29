@@ -6,12 +6,9 @@ export default {
       if (axios) {
         res = await axios.get("/static_infos");
 
-        console.log(res);
-
         return res;
       }
-
-      return res.data;
+      return res;
     } catch (e) {
       console.log(e);
     }

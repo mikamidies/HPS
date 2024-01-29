@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
+          <div class="  swiper-slide">
             <img src="@/assets/img/hero-3.jpg" alt="" class="pic" />
             <div class="container">
               <div class="content">

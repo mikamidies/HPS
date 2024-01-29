@@ -7,8 +7,7 @@
         <div class="cardo">
           <p class="sup">Связаться с нами</p>
 
-          <a href="#" class="value"> +998 99 999 99 99 </a>
-          <a href="#" class="value"> +998 99 999 99 99 </a>
+          <a href="#" class="value"> {{ info.nbm }} </a>
         </div>
         <div class="cardo">
           <p class="sup">Электронная почта</p>
@@ -28,12 +27,21 @@
 </template>
 
 <script>
+import infoApi from "@/api/info.js"
+
 export default {
   data() {
     return {
-      title: 'Контакты'
+      title: 'Контакты',
+      info: {},
     };
   },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
+  }
 };
 </script>
 

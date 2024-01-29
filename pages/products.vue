@@ -5,7 +5,7 @@
     <div class="filter">
       <div class="container">
         <div class="item">
-          <a-select placeholder="Category" @change="sortCategory">
+          <a-select placeholder="Категория" @change="sortCategory">
             <a-select-option v-for="value in categories" :key="value.id" :value="value.id"> {{ value.title }}
             </a-select-option>
           </a-select>

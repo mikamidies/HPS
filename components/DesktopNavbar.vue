@@ -3,8 +3,7 @@
     <div class="top">
       <div class="container">
         <div class="left">
-          <a href="#" class="num"> +998 99 999 99 99 </a>
-          <a href="#" class="num"> +998 99 999 99 99 </a>
+          <a href="#" class="num"> {{ info.nbm }} </a>
         </div>
         <div class="right">
           <div class="lang">
@@ -237,6 +236,7 @@
 
 <script>
 import productsApi from "@/api/products.js";
+import infoApi from "@/api/info.js"
 
 export default {
   data() {
@@ -245,10 +245,15 @@ export default {
       searchHandle: false,
       products: "",
       search: "",
+      info: {},
     };
   },
 
-  mounted() {
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
+
     if (window.innerWidth > 1024) {
       function scrollHeader() {
         const navbar = document.getElementById("navbar");
