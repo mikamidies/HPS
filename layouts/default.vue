@@ -20,7 +20,11 @@ export default {
   },
 
   async fetch() {
-    const translations = await translationsApi.getTranslations(this.$axios);
+    const translations = await translationsApi.getTranslations(this.$axios, {
+      headers: {
+        Language: this.$i18n.locale,
+      },
+    });
 
     await this.$store.commit("getTranslations", translations.data);
   },
@@ -33,7 +37,11 @@ export default {
 
   watch: {
     async currentLang() {
-      const translations = await translationsApi.getTranslations(this.$axios);
+      const translations = await translationsApi.getTranslations(this.$axios, {
+        headers: {
+          Language: this.$i18n.locale,
+        },
+      });
 
       await this.$store.commit("getTranslations", translations.data);
     },
@@ -51,9 +59,10 @@ export default {
 .main {
   flex: 1;
 }
+
 .dark {
   display: block;
 }
-@media screen and (max-width: 1024px) {
-}
+
+@media screen and (max-width: 1024px) {}
 </style>
