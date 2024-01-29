@@ -5,17 +5,17 @@
     <div class="first">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">О нас</h4>
+          <h4 class="paragraph">{{$store.state.translations['about.0_key0']}}</h4>
         </div>
         <div class="right">
           <div class="content">
             <h4 class="title">
-              Ваши надежные серверы с технологией
-              <span class="green"> последнего поколения </span>
+              {{$store.state.translations['about.1_key1']}}
+              <span class="green"> {{$store.state.translations['about.2_key2']}} </span>
             </h4>
             <p class="sub">
-              Ваши надежные серверы, оснащенные передовыми технологиями последнегопоколения, обеспечивают высокую степень
-              надежности.
+              {{$store.state.translations['about.3_key3']}}
+              {{$store.state.translations['about.4_key4']}}
             </p>
           </div>
 
@@ -41,8 +41,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">10 лет</p>
-                <p class="value">Комплексный опыт</p>
+                <p class="number">{{$store.state.translations['about.5_key5']}}</p>
+                <p class="value">{{$store.state.translations['about.6_key6']}}</p>
               </div>
             </div>
             <div class="num">
@@ -66,8 +66,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">+24 Фирмы</p>
-                <p class="value">Комплексный опыт</p>
+                <p class="number">{{$store.state.translations['about.7_key7']}}</p>
+                <p class="value">{{$store.state.translations['about.6_key6']}}</p>
               </div>
             </div>
           </div>
@@ -82,11 +82,11 @@
     <div class="second">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">Связаться с нами</h4>
+          <h4 class="paragraph">{{$store.state.translations['about.9_key9']}}</h4>
         </div>
         <div class="right">
           <h4 class="title">
-            Развитие, применение новейших технологий и решений
+            {{$store.state.translations['about.10_key10']}}
           </h4>
 
           <form @submit.prevent="onSubmit">
@@ -95,18 +95,18 @@
               <input v-model="number" type="text" placeholder="Номер телефона" required />
               <input v-model="email" type="text" placeholder="Эл. почта" />
               <input id="filer" type="file" placeholder="Загрузить файл" />
-              <label for="filer" class="file_label">Загрузить ТЗ</label>
+              <label for="filer" class="file_label">{{$store.state.translations['about.11_key11']}}</label>
             </div>
             <div class="footer">
               <div class="checker">
                 <input required id="check" type="checkbox" />
                 <label for="check">
-                  By sending this form I confirm that i haveread and accept
+                  {{$store.state.translations['about.12_key12']}}
                   <span class="green">Privacy Policy</span>
                 </label>
               </div>
               <button type="submit">
-                Отправить
+                {{$store.state.translations['about.14_key14']}}
                 <p class="stick"></p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
@@ -122,12 +122,12 @@
     <div class="third">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">Наша команда</h4>
+          <h4 class="paragraph">{{$store.state.translations['about.15_key15']}}</h4>
         </div>
         <div class="right">
           <h4 class="title">
-            Руководят всеми направлениями компании искренне вовлеченные
-            специалисты
+            {{$store.state.translations['about.16_key16']}}
+            {{$store.state.translations['about.17_key17']}}
           </h4>
           <div class="persons">
             <div class="person">
@@ -135,8 +135,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">Федоров Георгий</p>
-                <p class="status">Генеральный директор</p>
+                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
+                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
               </div>
             </div>
             <div class="person">
@@ -144,8 +144,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">Федоров Георгий</p>
-                <p class="status">Генеральный директор</p>
+                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
+                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
               </div>
             </div>
             <div class="person">
@@ -153,8 +153,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">Федоров Георгий</p>
-                <p class="status">Генеральный директор</p>
+                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
+                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
               </div>
             </div>
             <div class="person">
@@ -162,8 +162,8 @@
                 <img src="@/assets/img/person.jpg" alt="" />
               </div>
               <div class="content">
-                <p class="name">Федоров Георгий</p>
-                <p class="status">Генеральный директор</p>
+                <p class="name">{{$store.state.translations['about.18_key18']}}</p>
+                <p class="status">{{$store.state.translations['about.19_key19']}}</p>
               </div>
             </div>
           </div>

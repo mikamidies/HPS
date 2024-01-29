@@ -12,7 +12,7 @@
         </div>
         <div class="item">
           <div class="searcher">
-            <input type="text" placeholder="Поиск" v-model="search" />
+            <input type="text" :placeholder="$store.state.translations['DesktopNavbar.10_key10']" v-model="search" />
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M10.5 19.25C15.3325 19.25 19.25 15.3325 19.25 10.5C19.25 5.66751 15.3325 1.75 10.5 1.75C5.66751 1.75 1.75 5.66751 1.75 10.5C1.75 15.3325 5.66751 19.25 10.5 19.25ZM20.75 10.5C20.75 16.1609 16.1609 20.75 10.5 20.75C4.83908 20.75 0.250001 16.1609 0.25 10.5C0.25 4.83908 4.83908 0.25 10.5 0.25C16.1609 0.249999 20.75 4.83908 20.75 10.5ZM18.4697 19.5303C18.1768 19.2374 18.1768 18.7626 18.4697 18.4697C18.7626 18.1768 19.2374 18.1768 19.5303 18.4697L21.5303 20.4696C21.8232 20.7625 21.8232 21.2374 21.5303 21.5303C21.2374 21.8232 20.7625 21.8232 20.4696 21.5303L18.4697 19.5303Z"
@@ -37,7 +37,7 @@
                 </div>
               </div>
               <button>
-                Узнать больше
+                {{ $store.state.translations['_slug.4_key4'] }}
                 <p class="stick"></p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
@@ -66,12 +66,25 @@ export default {
     return {
       title: 'Наши товары',
       search: "",
+      current: 1,
+      pageSize: 20,
     };
   },
 
-  async asyncData({ $axios }) {
-    const products = await productsApi.getProducts($axios, {});
-    const categories = await productsApi.getCategories($axios)
+  async asyncData({ $axios, query, i18n }) {
+    const products = await productsApi.getProducts($axios, {
+      params: query,
+      page_size: 20,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+    const categories = await productsApi.getCategories($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    })
 
     return {
       products,
@@ -98,6 +111,9 @@ export default {
     async changeProducts() {
       const productsData = await productsApi.getProducts(this.$axios, {
         params: this.$route.query,
+        headers: {
+          language: this.$i18n.locale,
+        },
       })
 
       this.products = productsData

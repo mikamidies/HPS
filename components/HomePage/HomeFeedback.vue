@@ -6,8 +6,8 @@
           <img src="@/assets/img/cloud.png" alt="" />
         </div>
         <div class="cont">
-          <h4 class="title">Связаться с нами</h4>
-          <p class="sub">Новейших технологий и инновационных решений</p>
+          <h4 class="title">{{ $store.state.translations['about.9_key9'] }}</h4>
+          <p class="sub">{{ $store.state.translations['HomeFeedback.1_key1'] }}</p>
         </div>
         <form @submit.prevent="onSubmit">
           <div class="inputs">
@@ -15,7 +15,7 @@
             <input v-model="number" required type="text" placeholder="Number" />
           </div>
           <button type="submit">
-            Отправить
+            {{ $store.state.translations['about.14_key14'] }}
             <p class="stick"></p>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"

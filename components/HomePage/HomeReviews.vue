@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">Отзывы</h4>
+      <h4 class="title">{{$store.state.translations['HomeReviews.0_key0']}}</h4>
       <div class="bordered">
         <div class="next">
           <svg
@@ -25,7 +25,7 @@
             <div class="swiper-slide">
               <div class="cardo">
                 <div class="header">
-                  <p class="name">Максим Андреев</p>
+                  <p class="name">{{$store.state.translations['HomeReviews.1_key1']}}</p>
 
                   <p class="stars">
                     5
@@ -45,11 +45,11 @@
                 </div>
                 <div class="content">
                   <p>
-                    IP-телефония — это технология связи, при которой голос от
-                    абонента к абоненту передаеIP-телефония — это технология
-                    связи, при которой голос от абонента к абоненту передается
-                    не по телефонным проводам или с помощью радиоволн, как в
-                    аналоговой телефонии, а через интернет.
+                    {{$store.state.translations['HomeReviews.3_key3']}}
+                    {{$store.state.translations['HomeReviews.4_key4']}}
+                    {{$store.state.translations['HomeReviews.5_key5']}}
+                    {{$store.state.translations['HomeReviews.6_key6']}}
+                    {{$store.state.translations['HomeReviews.7_key7']}}
                   </p>
                 </div>
               </div>
@@ -57,7 +57,7 @@
             <div class="swiper-slide">
               <div class="cardo">
                 <div class="header">
-                  <p class="name">Максим Андреев</p>
+                  <p class="name">{{$store.state.translations['HomeReviews.1_key1']}}</p>
 
                   <p class="stars">
                     5
@@ -77,11 +77,11 @@
                 </div>
                 <div class="content">
                   <p>
-                    IP-телефония — это технология связи, при которой голос от
-                    абонента к абоненту передаеIP-телефония — это технология
-                    связи, при которой голос от абонента к абоненту передается
-                    не по телефонным проводам или с помощью радиоволн, как в
-                    аналоговой телефонии, а через интернет.
+                    {{$store.state.translations['HomeReviews.3_key3']}}
+                    {{$store.state.translations['HomeReviews.4_key4']}}
+                    {{$store.state.translations['HomeReviews.5_key5']}}
+                    {{$store.state.translations['HomeReviews.6_key6']}}
+                    {{$store.state.translations['HomeReviews.7_key7']}}
                   </p>
                 </div>
               </div>
@@ -89,7 +89,7 @@
             <div class="swiper-slide">
               <div class="cardo">
                 <div class="header">
-                  <p class="name">Максим Андреев</p>
+                  <p class="name">{{$store.state.translations['HomeReviews.1_key1']}}</p>
 
                   <p class="stars">
                     5
@@ -109,9 +109,9 @@
                 </div>
                 <div class="content">
                   <p>
-                    IP-телефония — это технология связи, при которой голос от
-                    абонента к абоненту передаеIP-телефония — это технология
-                    связи, при которой голос от абонента
+                    {{$store.state.translations['HomeReviews.3_key3']}}
+                    {{$store.state.translations['HomeReviews.4_key4']}}
+                    {{$store.state.translations['HomeReviews.19_key19']}}
                   </p>
                 </div>
               </div>
@@ -119,7 +119,7 @@
             <div class="swiper-slide">
               <div class="cardo">
                 <div class="header">
-                  <p class="name">Максим Андреев</p>
+                  <p class="name">{{$store.state.translations['HomeReviews.1_key1']}}</p>
 
                   <p class="stars">
                     5
@@ -139,9 +139,9 @@
                 </div>
                 <div class="content">
                   <p>
-                    IP-телефония — это технология связи, при которой голос от
-                    абонента к абоненту передаеIP-телефония — это технология
-                    связи
+                    {{$store.state.translations['HomeReviews.3_key3']}}
+                    {{$store.state.translations['HomeReviews.4_key4']}}
+                    {{$store.state.translations['HomeReviews.24_key24']}}
                   </p>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">Наши партнеры</h4>
+      <h4 class="title">{{$store.state.translations['HomePartners.0_key0']}}</h4>
       <div class="swiper" ref="partnersSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">

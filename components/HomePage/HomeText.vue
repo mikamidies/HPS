@@ -3,40 +3,40 @@
     <div class="container small">
       <div class="cont">
         <h4 class="title">
-          Ittelo – продажа серверов и серверного оборудования
+          {{$store.state.translations['HomeText.0_key0']}}
         </h4>
         <p>
-          Компания Ittelo занимается продажей корпоративного
+          {{$store.state.translations['HomeText.1_key1']}}
           <span class="green"
             >сетевого оборудования и серверных комплектующих</span
           >. Инженеры Ittelo предлагают различные ИТ-решения на основе масштаба
-          предприятия, его динамики развития и внутренней организационной
-          структуры: серверы для 1С, файловые серверы для удаленного доступа к
-          корпоративному программному обеспечению и общим документам, а также
-          резервное хранение данных.
+          {{$store.state.translations['HomeText.3_key3']}}
+          {{$store.state.translations['HomeText.4_key4']}}
+          {{$store.state.translations['HomeText.5_key5']}}
+          {{$store.state.translations['HomeText.6_key6']}}
         </p>
       </div>
       <div class="cont" style="margin: 0">
-        <h4 class="title">Полезные сервисы</h4>
+        <h4 class="title">{{$store.state.translations['HomeText.7_key7']}}</h4>
         <p>
-          Сотрудничество с Ittelo – это оперативная работа с ИТ-задачами. Причем
-          нужное серверное оборудование сконфигурировать или получить готовые
-          решения от наших экспертов. Одновременно мы даем гарантию на 5 лет.
+          {{$store.state.translations['HomeText.8_key8']}}
+          {{$store.state.translations['HomeText.9_key9']}}
+          {{$store.state.translations['HomeText.10_key10']}}
         </p>
-        <p>Кроме того, Ittelo обеспечивает:</p>
+        <p>{{$store.state.translations['HomeText.11_key11']}}</p>
         <p>
-          поставку серверного оборудования и комплектующих от ведущих вендоров;
+          {{$store.state.translations['HomeText.12_key12']}}
         </p>
         <br />
         <ul>
-          <li>5 лет гарантии на оборудование и работу ИТ-инженеров;</li>
-          <li>бесплатную доставку по России со страховкой груза;</li>
-          <li>удаленную помощь инженеров или замену оборудования.</li>
+          <li>{{$store.state.translations['HomeText.13_key13']}}</li>
+          <li>{{$store.state.translations['HomeText.14_key14']}}</li>
+          <li>{{$store.state.translations['HomeText.15_key15']}}</li>
         </ul>
         <br />
         <p>
-          Компания Ittelo упрощает работу с серверными системами и обеспечивает
-          удобство и безопасность IT-решений для бизнеса.
+          {{$store.state.translations['HomeText.16_key16']}}
+          {{$store.state.translations['HomeText.17_key17']}}
         </p>
       </div>
     </div>

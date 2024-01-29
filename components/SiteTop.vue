@@ -8,7 +8,7 @@
           <div class="crumbs">
             <ol>
               <li>
-                <NuxtLink :to="localePath('/')"> Главная </NuxtLink>
+                <NuxtLink :to="localePath('/')"> {{$store.state.translations['DesktopFooter.0_key0']}} </NuxtLink>
               </li>
               <li>/</li>
               <li>

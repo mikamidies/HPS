@@ -16,8 +16,17 @@
 import productsApi from "@/api/products.js";
 
 export default {
-  async asyncData({ $axios }) {
-    const products = await productsApi.getProducts($axios);
+  data() {
+    return {}
+  },
+
+  async asyncData({ $axios, query, i18n }) {
+    const products = await productsApi.getProducts($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
 
     return {
       products,

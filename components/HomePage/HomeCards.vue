@@ -5,18 +5,18 @@
         <div class="left">
           <div class="content">
             <h4 class="title">
-              Мы делаем больше, чем просто программы для автоматизации
-              бизнес-процессов
+              {{ $store.state.translations['HomeCards.0_key0'] }}
+              {{ $store.state.translations['HomeCards.1_key1'] }}
             </h4>
             <p class="sub">
-              Мы помогаем бизнесу выйти на максимальную эффективность, экономя
-              массу времени и денег, при помощи технологий для упрощения
-              ежедневных процессов, а также инструментов для управления
-              клиентами и умной аналитики, которые помогают всегда оставаться на
-              высоте.
+              {{ $store.state.translations['HomeCards.2_key2'] }}
+              {{ $store.state.translations['HomeCards.3_key3'] }}
+              {{ $store.state.translations['HomeCards.4_key4'] }}
+              {{ $store.state.translations['HomeCards.5_key5'] }}
+              {{ $store.state.translations['HomeCards.6_key6'] }}
             </p>
             <NuxtLink :to="localePath('/about')">
-              Узнать больше
+              {{ $store.state.translations['_slug.4_key4'] }}
               <div class="stick"></div>
               <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -49,8 +49,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">10 лет</p>
-                <p class="value">Комплексный опыт</p>
+                <p class="number">{{ $store.state.translations['about.5_key5'] }}</p>
+                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
               </div>
             </div>
             <div class="num">
@@ -74,8 +74,8 @@
                 </svg>
               </div>
               <div>
-                <p class="number">+24 Фирмы</p>
-                <p class="value">Комплексный опыт</p>
+                <p class="number">{{ $store.state.translations['about.7_key7'] }}</p>
+                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
 
       <div class="second">
         <div class="header">
-          <p class="sup">телеграм бот</p>
+          <p class="sup">{{ $store.state.translations['HomeCards.12_key12'] }}</p>
           <div class="arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
               <g clip-path="url(#clip0_218_1882)">
@@ -110,13 +110,13 @@
         </div>
         <div class="grid">
           <div class="left">
-            <h4 class="title">Hyper Power Service телеграм бот</h4>
+            <h4 class="title">{{ $store.state.translations['HomeCards.13_key13'] }}</h4>
             <p class="sub">
-              Идеальный и максимально удобный инструмент для сборки сервера в
-              ручную
+              {{ $store.state.translations['HomeCards.14_key14'] }}
+              {{ $store.state.translations['HomeCards.15_key15'] }}
             </p>
             <NuxtLink :to="localePath('/about')">
-              Узнать больше
+              {{ $store.state.translations['_slug.4_key4'] }}
               <div class="stick"></div>
               <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -154,25 +154,25 @@
       <div class="third">
         <div class="words">
           <h4 class="par">
-            Предлагаем разобраться, как работает
-            <span class="green"> IP-телефония </span>
+            {{ $store.state.translations['HomeCards.17_key17'] }}
+            <span class="green"> {{ $store.state.translations['HomeCards.18_key18'] }} </span>
           </h4>
           <p class="txt">
-            IP-телефония — это технология связи, при которой голос от абонента к
-            абоненту передается не по телефонным проводам или с помощью
-            радиоволн, как в аналоговой телефонии, а через интернет.
+            {{ $store.state.translations['HomeCards.19_key19'] }}
+            {{ $store.state.translations['HomeCards.20_key20'] }}
+            {{ $store.state.translations['HomeCards.21_key21'] }}
           </p>
 
           <div class="buttons">
             <button @click="scrollElement('contacts')" class="button">
-              Консультация
+              {{ $store.state.translations['HomeCards.22_key22'] }}
               <p class="stick"></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round" />
               </svg>
             </button>
-            <NuxtLink :to="localePath('/products')">Наши товары</NuxtLink>
+            <NuxtLink :to="localePath('/products')">{{ $store.state.translations['HomeCards.23_key23'] }}</NuxtLink>
           </div>
         </div>
         <div class="picture">

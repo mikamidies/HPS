@@ -1,18 +1,18 @@
 <template>
   <div class="wrap">
     <div class="container small">
-      <h4 class="title">Наши сервисы</h4>
+      <h4 class="title">{{$store.state.translations['HomeServices.0_key0']}}</h4>
       <div class="cards">
         <div class="cardo">
           <div class="left">
-            <p class="sup">телеграм бот</p>
-            <h2 class="name">Hyper Power Service телеграм бот</h2>
+            <p class="sup">{{$store.state.translations['HomeCards.12_key12']}}</p>
+            <h2 class="name">{{$store.state.translations['HomeCards.13_key13']}}</h2>
             <p class="sub">
-              Идеальный и максимально удобный инструмент для сборки сервера в
-              ручную
+              {{$store.state.translations['HomeCards.14_key14']}}
+              {{$store.state.translations['HomeCards.15_key15']}}
             </p>
             <button>
-              Перейти бот
+              {{$store.state.translations['HomeServices.5_key5']}}
               <p class="stick"></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
@@ -25,15 +25,15 @@
           </div>
         </div>
         <div class="cardo">
-          <p class="sup">телеграм бот</p>
-          <h2 class="name">Hyper Power Service телеграм бот</h2>
+          <p class="sup">{{$store.state.translations['HomeCards.12_key12']}}</p>
+          <h2 class="name">{{$store.state.translations['HomeCards.13_key13']}}</h2>
           <p class="sub">
-            Идеальный и максимально удобный инструмент для сборки сервера в
-            ручную
+            {{$store.state.translations['HomeCards.14_key14']}}
+            {{$store.state.translations['HomeCards.15_key15']}}
           </p>
           <div class="footer">
             <button>
-              Перейти бот
+              {{$store.state.translations['HomeServices.5_key5']}}
               <p class="stick"></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
@@ -58,15 +58,15 @@
           </div>
         </div>
         <div class="cardo">
-          <p class="sup">телеграм бот</p>
-          <h2 class="name">Hyper Power Service телеграм бот</h2>
+          <p class="sup">{{$store.state.translations['HomeCards.12_key12']}}</p>
+          <h2 class="name">{{$store.state.translations['HomeCards.13_key13']}}</h2>
           <p class="sub">
-            Идеальный и максимально удобный инструмент для сборки сервера в
-            ручную
+            {{$store.state.translations['HomeCards.14_key14']}}
+            {{$store.state.translations['HomeCards.15_key15']}}
           </p>
           <div class="footer">
             <button>
-              Перейти бот
+              {{$store.state.translations['HomeServices.5_key5']}}
               <p class="stick"></p>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"

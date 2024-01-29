@@ -4,7 +4,7 @@
       <div class="cardo">
         <div class="left">
           <h4 class="title">
-            Развитие, применение новейших технологий и инновационных решений
+            {{$store.state.translations['HomeForm.0_key0']}}
           </h4>
           <form @submit.prevent="onSubmit">
             <div class="grid">
@@ -12,18 +12,18 @@
               <input v-model="number" type="text" placeholder="Номер телефона" required />
               <input v-model="email" type="text" placeholder="Эл. почта" />
               <input id="filer" type="file" placeholder="Загрузить файл" />
-              <label for="filer" class="file_label">Загрузить ТЗ</label>
+              <label for="filer" class="file_label">{{$store.state.translations['about.11_key11']}}</label>
             </div>
             <div class="footer">
               <div class="checker">
                 <input required id="check" type="checkbox" />
                 <label for="check">
-                  By sending this form I confirm that i haveread and accept
+                  {{$store.state.translations['about.12_key12']}}
                   <span class="green">Privacy Policy</span>
                 </label>
               </div>
               <button type="submit">
-                Отправить
+                {{$store.state.translations['about.14_key14']}}
                 <p class="stick"></p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"

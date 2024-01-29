@@ -8,23 +8,23 @@
             <div class="container">
               <div class="content">
                 <h2 class="title">
-                  Ваши надежные серверы с технологией
-                  <span class="green"> последнего поколения </span>
+                  {{$store.state.translations['about.1_key1']}}
+                  <span class="green"> {{$store.state.translations['about.2_key2']}} </span>
                 </h2>
                 <p class="sub">
-                  Ваши надежные серверы, оснащенные передовыми технологиями
-                  последнего поколения, обеспечивают высокую степень надежности.
+                  {{$store.state.translations['delivery.4_key4']}}
+                  {{$store.state.translations['HomeHero.3_key3']}}
                 </p>
                 <div class="buttons">
                   <button @click="scrollElement('contacts')" class="bordered">
-                    Отправить ТЗ
+                    {{$store.state.translations['HomeHero.4_key4']}}
                     <p class="stick"></p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
-                  <NuxtLink :to="localePath('/about')" class="unbordered">О компании</NuxtLink>
+                  <NuxtLink :to="localePath('/about')" class="unbordered">{{$store.state.translations['DesktopFooter.1_key1']}}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -34,23 +34,23 @@
             <div class="container">
               <div class="content">
                 <h2 class="title">
-                  Ваши надежные серверы с технологией
-                  <span class="green"> последнего поколения </span>
+                  {{$store.state.translations['about.1_key1']}}
+                  <span class="green"> {{$store.state.translations['about.2_key2']}} </span>
                 </h2>
                 <p class="sub">
-                  Ваши надежные серверы, оснащенные передовыми технологиями
-                  последнего поколения, обеспечивают высокую степень надежности.
+                  {{$store.state.translations['delivery.4_key4']}}
+                  {{$store.state.translations['HomeHero.3_key3']}}
                 </p>
                 <div class="buttons">
                   <button @click="scrollElement('contacts')" class="bordered">
-                    Отправить ТЗ
+                    {{$store.state.translations['HomeHero.4_key4']}}
                     <p class="stick"></p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
-                  <NuxtLink :to="localePath('/about')" class="unbordered">О компании</NuxtLink>
+                  <NuxtLink :to="localePath('/about')" class="unbordered">{{$store.state.translations['DesktopFooter.1_key1']}}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -60,23 +60,23 @@
             <div class="container">
               <div class="content">
                 <h2 class="title">
-                  Ваши надежные серверы с технологией
-                  <span class="green"> последнего поколения </span>
+                  {{$store.state.translations['about.1_key1']}}
+                  <span class="green"> {{$store.state.translations['about.2_key2']}} </span>
                 </h2>
                 <p class="sub">
-                  Ваши надежные серверы, оснащенные передовыми технологиями
-                  последнего поколения, обеспечивают высокую степень надежности.
+                  {{$store.state.translations['delivery.4_key4']}}
+                  {{$store.state.translations['HomeHero.3_key3']}}
                 </p>
                 <div class="buttons">
                   <button @click="scrollElement('contacts')" class="bordered">
-                    Отправить ТЗ
+                    {{$store.state.translations['HomeHero.4_key4']}}
                     <p class="stick"></p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </button>
-                  <NuxtLink :to="localePath('/about')" class="unbordered">О компании</NuxtLink>
+                  <NuxtLink :to="localePath('/about')" class="unbordered">{{$store.state.translations['DesktopFooter.1_key1']}}</NuxtLink>
                 </div>
               </div>
             </div>
@@ -118,12 +118,12 @@
                     fill="#1AB99D" />
                 </svg>
               </div>
-              <h2 class="name">Сервер</h2>
+              <h2 class="name">{{$store.state.translations['HomeHero.18_key18']}}</h2>
               <p class="desc">
-                Мы подберем Вам оптимальную конфигурацию согласно Вашим
-                требованиям
+                {{$store.state.translations['HomeHero.19_key19']}}
+                {{$store.state.translations['HomeHero.20_key20']}}
               </p>
-              <p class="link">Узнать больше</p>
+              <p class="link">{{$store.state.translations['_slug.4_key4']}}</p>
               <div class="bottom_vector">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
                   <g opacity="0.05">
@@ -170,12 +170,12 @@
                     fill="#F3F5F7" />
                 </svg>
               </div>
-              <h2 class="name">Сетевой коммутатор </h2>
+              <h2 class="name">{{$store.state.translations['HomeHero.22_key22']}} </h2>
               <p class="desc">
-                Мы подберем Вам оптимальную конфигурацию согласно Вашим
-                требованиям
+                {{$store.state.translations['HomeHero.19_key19']}}
+                {{$store.state.translations['HomeHero.20_key20']}}
               </p>
-              <p class="link">Узнать больше</p>
+              <p class="link">{{$store.state.translations['_slug.4_key4']}}</p>
               <div class="bottom_vector">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
                   <g opacity="0.05">
@@ -222,12 +222,12 @@
                     fill="#1AB99D" />
                 </svg>
               </div>
-              <h2 class="name">IP-телефония</h2>
+              <h2 class="name">{{$store.state.translations['HomeCards.18_key18']}}</h2>
               <p class="desc">
-                Мы подберем Вам оптимальную конфигурацию согласно Вашим
-                требованиям
+                {{$store.state.translations['HomeHero.19_key19']}}
+                {{$store.state.translations['HomeHero.20_key20']}}
               </p>
-              <p class="link">Узнать больше</p>
+              <p class="link">{{$store.state.translations['_slug.4_key4']}}</p>
               <div class="bottom_vector">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
                   <g opacity="0.05">
@@ -280,12 +280,12 @@
                     fill="#1AB99D" />
                 </svg>
               </div>
-              <h2 class="name">Моноблок</h2>
+              <h2 class="name">{{$store.state.translations['HomeHero.30_key30']}}</h2>
               <p class="desc">
-                Мы подберем Вам оптимальную конфигурацию согласно Вашим
-                требованиям
+                {{$store.state.translations['HomeHero.19_key19']}}
+                {{$store.state.translations['HomeHero.20_key20']}}
               </p>
-              <p class="link">Узнать больше</p>
+              <p class="link">{{$store.state.translations['_slug.4_key4']}}</p>
               <div class="bottom_vector">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
                   <g opacity="0.05">
@@ -327,12 +327,12 @@
                     fill="#1AB99D" />
                 </svg>
               </div>
-              <h2 class="name">Сервис</h2>
+              <h2 class="name">{{$store.state.translations['HomeHero.34_key34']}}</h2>
               <p class="desc">
-                Мы подберем Вам оптимальную конфигурацию согласно Вашим
-                требованиям
+                {{$store.state.translations['HomeHero.19_key19']}}
+                {{$store.state.translations['HomeHero.20_key20']}}
               </p>
-              <p class="link">Узнать больше</p>
+              <p class="link">{{$store.state.translations['_slug.4_key4']}}</p>
               <div class="bottom_vector">
                 <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
                   <g opacity="0.05">

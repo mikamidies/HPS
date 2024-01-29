@@ -5,19 +5,19 @@
         <div class="left">
           <ul class="links">
             <li>
-              <NuxtLink :to="localePath('/')"> Главная </NuxtLink>
+              <NuxtLink :to="localePath('/')"> {{$store.state.translations['DesktopFooter.0_key0']}} </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/about')"> О компании </NuxtLink>
+              <NuxtLink :to="localePath('/about')"> {{$store.state.translations['DesktopFooter.1_key1']}} </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/products')"> Товары </NuxtLink>
+              <NuxtLink :to="localePath('/products')"> {{$store.state.translations['DesktopFooter.2_key2']}} </NuxtLink>
             </li>
             <!-- <li>
-              <NuxtLink :to="localePath('/')"> Конфигуратор </NuxtLink>
+              <NuxtLink :to="localePath('/')"> {{$store.state.translations['DesktopFooter.3_key3']}} </NuxtLink>
             </li> -->
             <li>
-              <NuxtLink :to="localePath('/contacts')"> Контакты </NuxtLink>
+              <NuxtLink :to="localePath('/contacts')"> {{$store.state.translations['DesktopFooter.5_key5']}} </NuxtLink>
             </li>
           </ul>
           <div class="brand">
@@ -103,29 +103,29 @@
             </a>
           </div>
           <p class="txt">
-            Ваши надежные серверы, оснащенные передовыми технологиями последнего
-            поколения, обеспечивают высокую степень надежности.
+            {{$store.state.translations['DesktopFooter.6_key6']}}
+            {{$store.state.translations['DesktopFooter.7_key7']}}
           </p>
         </div>
         <div class="right">
           <div class="cardo">
-            <p class="sup">Электронная почта</p>
+            <p class="sup">{{$store.state.translations['contacts.1_key1']}}</p>
             <a href="#" class="value"> info@hpsuz.com </a>
           </div>
           <div class="cardo">
-            <p class="sup">Связаться с нами</p>
+            <p class="sup">{{$store.state.translations['about.9_key9']}}</p>
             <a href="#" class="value"> {{ info.nbm }} </a>
           </div>
           <div class="cardo">
-            <p class="sup">Адрес</p>
-            <a href="#" class="value"> Улица Лабзак 30 Ташкент, Узбекистан </a>
+            <p class="sup">{{$store.state.translations['DesktopFooter.11_key11']}}</p>
+            <a href="#" class="value"> {{$store.state.translations['DesktopFooter.12_key12']}} </a>
           </div>
         </div>
       </div>
       <div class="bottom">
-        <p>Авторское право © 2024. Все права защищены.</p>
+        <p>{{$store.state.translations['DesktopFooter.13_key13']}}</p>
         <p>
-          Developed by
+          {{$store.state.translations['DesktopFooter.14_key14']}}
           <a target="_blank" href="https://ndc.uz/" class="green">NDC</a>
         </p>
       </div>

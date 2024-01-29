@@ -5,25 +5,25 @@
     <div class="first section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">Доставка</p>
+          <p class="paragraph">{{ $store.state.translations['delivery.0_key0'] }}</p>
         </div>
         <div class="right">
           <h4 class="title">
-            Доставка серверови оборудования
-            <span class="green"> Привозимв срок, в дверь, бесплатно </span>
+            {{ $store.state.translations['delivery.1_key1'] }}
+            <span class="green"> {{ $store.state.translations['delivery.2_key2'] }} </span>
           </h4>
-          <p>Свой отдел ВЭД и логистики, превосходим ожидание по срокам</p>
+          <p>{{ $store.state.translations['delivery.3_key3'] }}</p>
           <p>
-            Ваши надежные серверы, оснащенные передовыми технологиями
-            последнегопоколения, обеспечивают высокую степень нКаждый сервер мы
-            оборачиваем пузырьковой пленкой и укладываем в фирменный коробки.
-            Дополнительно защищаем ложементами из вспененного полиэтилена,
-            формованным под наши сервера. Он обладает амортизирующими свойствами
-            необходимыми для обеспечения сохранности сервера.
+            {{ $store.state.translations['delivery.4_key4'] }}
+            {{ $store.state.translations['delivery.5_key5'] }}
+            {{ $store.state.translations['delivery.6_key6'] }}
+            {{ $store.state.translations['delivery.7_key7'] }}
+            {{ $store.state.translations['delivery.8_key8'] }}
+            {{ $store.state.translations['delivery.9_key9'] }}
           </p>
           <p>
-            Максимально защищаем оборудование, чтобы оно приехало к вам целым
-            целым и готовым к работе.адежности.
+            {{ $store.state.translations['delivery.10_key10'] }}
+            {{ $store.state.translations['delivery.11_key11'] }}
           </p>
         </div>
       </div>
@@ -32,42 +32,42 @@
     <div class="second section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">Логистика</p>
+          <p class="paragraph">{{ $store.state.translations['delivery.12_key12'] }}</p>
         </div>
         <div class="right">
           <h4 class="title">
-            Свой отдел
-            <span class="green"> логистики </span>
+            {{ $store.state.translations['delivery.13_key13'] }}
+            <span class="green"> {{ $store.state.translations['delivery.14_key14'] }} </span>
           </h4>
           <p>
-            Наш логист всегда на связи, знает где ваш заказ, что с ним, когда
-            приедет. Потеряли трек-номер? Он есть у нашего логиста. В ТК
-            перепутали заказы — логист знает что делать.
+            {{ $store.state.translations['delivery.15_key15'] }}
+            {{ $store.state.translations['delivery.16_key16'] }}
+            {{ $store.state.translations['delivery.17_key17'] }}
           </p>
           <p>
-            Если груз потерялся или был разбит — это наша ответственности. Мы
-            страхуем каждую отправку. Работа логистической службы не
-            заканчивается, когда мы передали заказ в ТК. Она заканчивается,
-            когда сервер вами получен.
+            {{ $store.state.translations['delivery.18_key18'] }}
+            {{ $store.state.translations['delivery.19_key19'] }}
+            {{ $store.state.translations['delivery.20_key20'] }}
+            {{ $store.state.translations['delivery.21_key21'] }}
           </p>
           <p>
-            Вся ответственность за груз на нас, пока вы его не получите в
-            целости. Поэтому вы можете быть совершенно спокойны, даже если во
-            время транспортировки что-то случится — мы все решим.
+            {{ $store.state.translations['delivery.22_key22'] }}
+            {{ $store.state.translations['delivery.23_key23'] }}
+            {{ $store.state.translations['delivery.24_key24'] }}
           </p>
 
           <div class="cardo">
             <p>
               <span class="green">1</span> Бесплатная доставка до двери по РФ
-              при заказе от 20 000 рублей
+              {{ $store.state.translations['delivery.26_key26'] }}
             </p>
             <p>
               <span class="green">2</span> Быстрое отправление — протестируем и
-              отправляем в течении3 дней после оплаты
+              {{ $store.state.translations['delivery.28_key28'] }}
             </p>
             <p>
               <span class="green">3</span> В любой населенный пункт. Доставляем
-              даже в удаленные точки РФ Калининград, Сахалин, Приморский край
+              {{ $store.state.translations['delivery.30_key30'] }}
             </p>
           </div>
         </div>
@@ -77,23 +77,23 @@
     <div class="third section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">Хранение</p>
+          <p class="paragraph">{{ $store.state.translations['delivery.31_key31'] }}</p>
         </div>
         <div class="right">
           <h4 class="title">
-            Бережное
-            <span class="green"> хранение </span>
+            {{ $store.state.translations['delivery.32_key32'] }}
+            <span class="green"> {{ $store.state.translations['delivery.33_key33'] }} </span>
           </h4>
           <p>
-            Мы не пользуемся адресным хранением, у нас свой склад в 500кв.
-            Использование собственных площадей позволяет нам контролировать
-            климатические условия хранения оборудования
+            {{ $store.state.translations['delivery.34_key34'] }}
+            {{ $store.state.translations['delivery.35_key35'] }}
+            {{ $store.state.translations['delivery.36_key36'] }}
           </p>
           <p>
-            Чистое стандартизированное электричество, правильный температурный
-            режим, отсутствие пыли и влаги. Все оборудование хранится в
-            надлежащих условиях, что напрямую влияет на его будущую
-            работоспособность.
+            {{ $store.state.translations['delivery.37_key37'] }}
+            {{ $store.state.translations['delivery.38_key38'] }}
+            {{ $store.state.translations['delivery.39_key39'] }}
+            {{ $store.state.translations['delivery.40_key40'] }}
           </p>
         </div>
       </div>
@@ -102,23 +102,23 @@
     <div class="third section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">Доставка</p>
+          <p class="paragraph">{{ $store.state.translations['delivery.0_key0'] }}</p>
         </div>
         <div class="right">
           <h4 class="title">
-            Умеем доставлять в
-            <span class="green"> СНГ </span>
+            {{ $store.state.translations['delivery.42_key42'] }}
+            <span class="green"> {{ $store.state.translations['delivery.43_key43'] }} </span>
           </h4>
           <p>
-            Бесплатная доставка в Беларусь, Армению, Казахстан,Кыргызстан при
-            покупке от 300 т.р
+            {{ $store.state.translations['delivery.44_key44'] }}
+            {{ $store.state.translations['delivery.45_key45'] }}
           </p>
           <p>
-            Отправление и доставку полностью контролирует наш логист. Мы
-            разработали памятку для вас. В ней подробно расписаны ответы на
-            самые горящие вопросы — как получить оборудование, как действовать в
-            случае замены или возврата? Подробно расскажем как правильно
-            оформить его на таможне.По любым вопросам — мы всегда на связи
+            {{ $store.state.translations['delivery.46_key46'] }}
+            {{ $store.state.translations['delivery.47_key47'] }}
+            {{ $store.state.translations['delivery.48_key48'] }}
+            {{ $store.state.translations['delivery.49_key49'] }}
+            {{ $store.state.translations['delivery.50_key50'] }}
             ord@ittelo.ru
           </p>
           <div class="map">

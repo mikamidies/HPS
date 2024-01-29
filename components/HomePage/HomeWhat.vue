@@ -2,14 +2,14 @@
   <div class="wrap">
     <div class="container small">
       <div class="left">
-        <h2 class="title">Что значит HPS</h2>
+        <h2 class="title">{{$store.state.translations['HomeWhat.0_key0']}}</h2>
         <p class="sub">
-          IP-телефония — это технология связи, при которой голос от абонента к
-          абоненту передается не по телефонным проводам или с помощью радиоволн,
-          как в аналоговой телефонии, а через интернет.
+          {{$store.state.translations['HomeCards.19_key19']}}
+          {{$store.state.translations['HomeWhat.2_key2']}}
+          {{$store.state.translations['HomeWhat.3_key3']}}
         </p>
         <NuxtLink :to="localePath('/about')">
-          О компании
+          {{$store.state.translations['DesktopFooter.1_key1']}}
           <p class="stick"></p>
           <svg
             xmlns="http://www.w3.org/2000/svg"

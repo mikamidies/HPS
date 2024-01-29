@@ -14,15 +14,13 @@ export default {
     }
   },
 
-  async getProduct(slug, axios) {
+  async getProduct(slug, axios, params) {
     try {
       let res;
 
       if (axios) {
         res = await axios.get(`/products/${slug}`, {
-          // headers: {
-          //   Language: params,
-          // },
+          ...params,
         });
       }
       return res.data;
