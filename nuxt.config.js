@@ -25,7 +25,7 @@ export default {
   modules: ["@nuxtjs/i18n", "@nuxtjs/axios", "@nuxtjs/pwa"],
 
   axios: {
-    baseURL: process.env.BASE_URL,
+    baseURL: "https://apihps.pythonanywhere.com/api",
   },
 
   pwa: {
