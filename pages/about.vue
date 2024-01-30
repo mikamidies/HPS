@@ -119,7 +119,7 @@
       </div>
     </div>
 
-    <div class="third">
+    <!-- <div class="third">
       <div class="container small separator">
         <div class="left">
           <h4 class="paragraph">{{ $store.state.translations['about.15_key15'] }}</h4>
@@ -169,7 +169,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <HomePartners class="partners" />
   </div>
