@@ -263,10 +263,12 @@ import formApi from "@/api/form.js";
 export default {
   data() {
     return {
-      title: this.$store.state.translations["site.about"],
       full_name: "",
       number: "",
       email: "",
+
+      token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
+      chatId: "-1002084026037",
     };
   },
 
@@ -290,9 +292,21 @@ export default {
         });
       }
 
-      this.full_name = "";
-      this.number = "";
-      this.email = "";
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+
+      this.$axios
+        .post(
+          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+        )
+        .then((response) => {
+          console.log("Successfully", response);
+          this.full_name = "";
+          this.number = "";
+          this.email = "";
+        }),
+        (error) => {
+          console.log(error);
+        };
     },
   },
 };

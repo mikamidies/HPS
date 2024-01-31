@@ -59,6 +59,9 @@ export default {
     return {
       full_name: "",
       number: "",
+
+      token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
+      chatId: "-1002084026037",
     };
   },
 
@@ -81,8 +84,20 @@ export default {
         });
       }
 
-      this.full_name = "";
-      this.number = "";
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+
+      this.$axios
+        .post(
+          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+        )
+        .then((response) => {
+          console.log("Successfully", response);
+          this.full_name = "";
+          this.number = "";
+        }),
+        (error) => {
+          console.log(error);
+        };
     },
   },
 };
@@ -181,6 +196,12 @@ input {
   width: 1px;
   height: 16px;
   background: var(--green);
+}
+
+@media screen and (max-width: 1600px) {
+  .grid {
+    gap: 54px;
+  }
 }
 
 @media screen and (max-width: 1024px) {

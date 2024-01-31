@@ -1,6 +1,9 @@
 #navbar.white .top {
   background: #f3f5f7;
 }
+#navbar.white .top .left a {
+  color: var(--dark);
+}
 #navbar.white .bottom {
   background: white;
   border: 1px solid #ebebeb;

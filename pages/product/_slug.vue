@@ -40,14 +40,25 @@
           <div class="rigth">
             <h1 class="name">{{ product.title }}</h1>
             <div class="content" v-html="product.desc"></div>
-            <!-- <button class="order">
-              {{$store.state.translations['_slug.0_key0']}}
+            <button class="order" @click="modalHandle = !modalHandle">
+              {{ $store.state.translations["_slug.0_key0"] }}
               <p class="stick"></p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                  stroke="#1AB99D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
-            </button> -->
+            </button>
           </div>
         </div>
       </div>
@@ -99,10 +110,98 @@
         </div>
       </div>
     </div>
+
+    <div class="modaller" :class="{ active: modalHandle == true }">
+      <div class="space" @click="modalHandle = false"></div>
+      <div class="body">
+        <img src="@/assets/img/logo/modal.png" alt="" class="left_vector" />
+
+        <button class="x" @click="modalHandle = false">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M16.2426 7.75738L7.75732 16.2427M16.2426 16.2426L7.75732 7.75732"
+              stroke="#28303F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <h4 class="title">Свяжитесь с нами и получите информацию</h4>
+        <form @submit.prevent="onSubmit">
+          <div class="grid">
+            <input
+              v-model="full_name"
+              type="text"
+              :placeholder="$store.state.translations['place.name']"
+              required
+            />
+            <input
+              v-model="number"
+              type="text"
+              :placeholder="$store.state.translations['place.number']"
+              required
+            />
+            <input
+              v-model="email"
+              type="text"
+              :placeholder="$store.state.translations['place.email']"
+            />
+            <input
+              id="filer"
+              type="file"
+              :placeholder="$store.state.translations['place.tz']"
+            />
+            <label for="filer" class="file_label">{{
+              $store.state.translations["about.11_key11"]
+            }}</label>
+          </div>
+          <div class="footer">
+            <div class="checker">
+              <input required id="check" type="checkbox" />
+              <label for="check">
+                {{ $store.state.translations["about.12_key12"] }}
+                <span class="green">{{
+                  $store.state.translations["place.privacy"]
+                }}</span>
+              </label>
+            </div>
+            <button type="submit">
+              {{ $store.state.translations["about.14_key14"] }}
+              <p class="stick"></p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                  stroke="#1AB99D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <img src="@/assets/img/logo/modal.png" alt="" class="right_vector" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import formApi from "@/api/form.js";
 import productsApi from "@/api/products.js";
 
 import Swiper from "swiper/swiper-bundle.js";
@@ -114,6 +213,14 @@ export default {
   data() {
     return {
       title: this.$store.state.translations["site.products"],
+      modalHandle: false,
+
+      full_name: "",
+      number: "",
+      email: "",
+
+      token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
+      chatId: "-1002084026037",
     };
   },
 
@@ -150,10 +257,197 @@ export default {
       },
     });
   },
+
+  methods: {
+    async onSubmit() {
+      const formData = {
+        full_name: this.full_name,
+        number: this.number,
+        email: this.email,
+      };
+
+      const res = await formApi.sendApplication(formData);
+
+      if (res && res.status === 201) {
+        this.$notification["success"]({
+          message: "Успешно отправлено",
+        });
+      } else {
+        this.$notification["error"]({
+          message: "Ошибка",
+        });
+      }
+
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+
+      this.$axios
+        .post(
+          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+        )
+        .then((response) => {
+          console.log("Successfully", response);
+          this.full_name = "";
+          this.number = "";
+          this.email = "";
+        }),
+        (error) => {
+          console.log(error);
+        };
+    },
+  },
 };
 </script>
 
 <style scoped>
+.modaller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.left_vector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: rotate(180deg);
+}
+.right_vector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+.modaller.active {
+  display: flex;
+}
+.modaller .title {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: var(--decor);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 38.4px */
+  width: 514px;
+  margin: 0 auto 40px auto;
+}
+.modaller .body {
+  border-radius: 40px;
+  border: 1px solid var(--Dark-service, #12151c);
+  background: var(--Server-BG, #080b12);
+  width: 1332px;
+  margin: 0 auto;
+  padding: 64px 0;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.x {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  border-radius: 40px;
+  background: var(--Sertver-title, #b6bfd3);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  border-radius: 16px;
+  background: var(--Dark-service, #12151c);
+  padding: 32px;
+  max-width: 772px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 28px;
+  row-gap: 40px;
+}
+
+input,
+.file_label {
+  border-bottom: 1px solid var(--Dark-Border-server, #313641);
+  padding: 12px 0;
+  color: var(--Sertver-title, #b6bfd3);
+  font-family: var(--medium);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+}
+
+label {
+  color: var(--grey-64, #5d5d5f);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 19.6px */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 64px;
+}
+
+.checker {
+  max-width: 277px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+form button {
+  border-radius: 8px;
+  border: 1px solid var(--green);
+  background: #12151c;
+  padding: 12px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--Server-green, #1ab99d);
+  font-family: var(--medium);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 24px */
+}
+
+.stick {
+  width: 1px;
+  height: 16px;
+  background: var(--green);
+}
+
+#filer {
+  display: none;
+}
+
 .smallSwiper {
   height: 500px;
   width: 100%;
@@ -495,6 +789,35 @@ export default {
     margin-bottom: 12px !important;
     height: auto !important;
     font-size: 14px !important;
+  }
+  .right_vector,
+  .left_vector {
+    display: none;
+  }
+  .modaller .body {
+    margin: 0 16px;
+    border-radius: 16px;
+  }
+  .modaller .title {
+    font-size: 24px;
+    width: initial;
+    margin-bottom: 16px;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    align-items: flex-start;
+  }
+  .x {
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+  }
+  form {
+    max-width: 90%;
+    padding: 16px;
   }
 }
 </style>

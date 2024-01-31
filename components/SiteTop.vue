@@ -51,6 +51,9 @@ export default {
   top: 0;
   right: 0;
   position: absolute;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
 }
 
 .title {
