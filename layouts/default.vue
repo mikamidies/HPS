@@ -49,7 +49,7 @@ export default {
 
   mounted() {
     console.log(this.translations);
-  }
+  },
 };
 </script>
 
@@ -68,5 +68,6 @@ export default {
   display: block;
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+}
 </style>

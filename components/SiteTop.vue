@@ -8,7 +8,9 @@
           <div class="crumbs">
             <ol>
               <li>
-                <NuxtLink :to="localePath('/')"> {{$store.state.translations['DesktopFooter.0_key0']}} </NuxtLink>
+                <NuxtLink :to="localePath('/')">
+                  {{ $store.state.translations["DesktopFooter.0_key0"] }}
+                </NuxtLink>
               </li>
               <li>/</li>
               <li>
@@ -25,7 +27,7 @@
 
 <script>
 export default {
-  props: ['title']
+  props: ["title"],
 };
 </script>
 
@@ -59,6 +61,7 @@ export default {
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+  max-width: 70%;
   /* 67.2px */
 }
 

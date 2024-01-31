@@ -5,25 +5,29 @@
     <div class="first section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">{{ $store.state.translations['delivery.0_key0'] }}</p>
+          <p class="paragraph">
+            {{ $store.state.translations["delivery.0_key0"] }}
+          </p>
         </div>
         <div class="right">
           <h4 class="title">
-            {{ $store.state.translations['delivery.1_key1'] }}
-            <span class="green"> {{ $store.state.translations['delivery.2_key2'] }} </span>
+            {{ $store.state.translations["delivery.1_key1"] }}
+            <span class="green">
+              {{ $store.state.translations["delivery.2_key2"] }}
+            </span>
           </h4>
-          <p>{{ $store.state.translations['delivery.3_key3'] }}</p>
+          <p>{{ $store.state.translations["delivery.3_key3"] }}</p>
           <p>
-            {{ $store.state.translations['delivery.4_key4'] }}
-            {{ $store.state.translations['delivery.5_key5'] }}
-            {{ $store.state.translations['delivery.6_key6'] }}
-            {{ $store.state.translations['delivery.7_key7'] }}
-            {{ $store.state.translations['delivery.8_key8'] }}
-            {{ $store.state.translations['delivery.9_key9'] }}
+            {{ $store.state.translations["delivery.4_key4"] }}
+            {{ $store.state.translations["delivery.5_key5"] }}
+            {{ $store.state.translations["delivery.6_key6"] }}
+            {{ $store.state.translations["delivery.7_key7"] }}
+            {{ $store.state.translations["delivery.8_key8"] }}
+            {{ $store.state.translations["delivery.9_key9"] }}
           </p>
           <p>
-            {{ $store.state.translations['delivery.10_key10'] }}
-            {{ $store.state.translations['delivery.11_key11'] }}
+            {{ $store.state.translations["delivery.10_key10"] }}
+            {{ $store.state.translations["delivery.11_key11"] }}
           </p>
         </div>
       </div>
@@ -32,42 +36,46 @@
     <div class="second section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">{{ $store.state.translations['delivery.12_key12'] }}</p>
+          <p class="paragraph">
+            {{ $store.state.translations["delivery.12_key12"] }}
+          </p>
         </div>
         <div class="right">
           <h4 class="title">
-            {{ $store.state.translations['delivery.13_key13'] }}
-            <span class="green"> {{ $store.state.translations['delivery.14_key14'] }} </span>
+            {{ $store.state.translations["delivery.13_key13"] }}
+            <span class="green">
+              {{ $store.state.translations["delivery.14_key14"] }}
+            </span>
           </h4>
           <p>
-            {{ $store.state.translations['delivery.15_key15'] }}
-            {{ $store.state.translations['delivery.16_key16'] }}
-            {{ $store.state.translations['delivery.17_key17'] }}
+            {{ $store.state.translations["delivery.15_key15"] }}
+            {{ $store.state.translations["delivery.16_key16"] }}
+            {{ $store.state.translations["delivery.17_key17"] }}
           </p>
           <p>
-            {{ $store.state.translations['delivery.18_key18'] }}
-            {{ $store.state.translations['delivery.19_key19'] }}
-            {{ $store.state.translations['delivery.20_key20'] }}
-            {{ $store.state.translations['delivery.21_key21'] }}
+            {{ $store.state.translations["delivery.18_key18"] }}
+            {{ $store.state.translations["delivery.19_key19"] }}
+            {{ $store.state.translations["delivery.20_key20"] }}
+            {{ $store.state.translations["delivery.21_key21"] }}
           </p>
           <p>
-            {{ $store.state.translations['delivery.22_key22'] }}
-            {{ $store.state.translations['delivery.23_key23'] }}
-            {{ $store.state.translations['delivery.24_key24'] }}
+            {{ $store.state.translations["delivery.22_key22"] }}
+            {{ $store.state.translations["delivery.23_key23"] }}
+            {{ $store.state.translations["delivery.24_key24"] }}
           </p>
 
           <div class="cardo">
             <p>
               <span class="green">1</span> Бесплатная доставка до двери по РФ
-              {{ $store.state.translations['delivery.26_key26'] }}
+              {{ $store.state.translations["delivery.26_key26"] }}
             </p>
             <p>
               <span class="green">2</span> Быстрое отправление — протестируем и
-              {{ $store.state.translations['delivery.28_key28'] }}
+              {{ $store.state.translations["delivery.28_key28"] }}
             </p>
             <p>
               <span class="green">3</span> В любой населенный пункт. Доставляем
-              {{ $store.state.translations['delivery.30_key30'] }}
+              {{ $store.state.translations["delivery.30_key30"] }}
             </p>
           </div>
         </div>
@@ -77,23 +85,27 @@
     <div class="third section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">{{ $store.state.translations['delivery.31_key31'] }}</p>
+          <p class="paragraph">
+            {{ $store.state.translations["delivery.31_key31"] }}
+          </p>
         </div>
         <div class="right">
           <h4 class="title">
-            {{ $store.state.translations['delivery.32_key32'] }}
-            <span class="green"> {{ $store.state.translations['delivery.33_key33'] }} </span>
+            {{ $store.state.translations["delivery.32_key32"] }}
+            <span class="green">
+              {{ $store.state.translations["delivery.33_key33"] }}
+            </span>
           </h4>
           <p>
-            {{ $store.state.translations['delivery.34_key34'] }}
-            {{ $store.state.translations['delivery.35_key35'] }}
-            {{ $store.state.translations['delivery.36_key36'] }}
+            {{ $store.state.translations["delivery.34_key34"] }}
+            {{ $store.state.translations["delivery.35_key35"] }}
+            {{ $store.state.translations["delivery.36_key36"] }}
           </p>
           <p>
-            {{ $store.state.translations['delivery.37_key37'] }}
-            {{ $store.state.translations['delivery.38_key38'] }}
-            {{ $store.state.translations['delivery.39_key39'] }}
-            {{ $store.state.translations['delivery.40_key40'] }}
+            {{ $store.state.translations["delivery.37_key37"] }}
+            {{ $store.state.translations["delivery.38_key38"] }}
+            {{ $store.state.translations["delivery.39_key39"] }}
+            {{ $store.state.translations["delivery.40_key40"] }}
           </p>
         </div>
       </div>
@@ -102,30 +114,39 @@
     <div class="third section">
       <div class="container small separator">
         <div class="left">
-          <p class="paragraph">{{ $store.state.translations['delivery.0_key0'] }}</p>
+          <p class="paragraph">
+            {{ $store.state.translations["delivery.0_key0"] }}
+          </p>
         </div>
         <div class="right">
           <h4 class="title">
-            {{ $store.state.translations['delivery.42_key42'] }}
-            <span class="green"> {{ $store.state.translations['delivery.43_key43'] }} </span>
+            {{ $store.state.translations["delivery.42_key42"] }}
+            <span class="green">
+              {{ $store.state.translations["delivery.43_key43"] }}
+            </span>
           </h4>
           <p>
-            {{ $store.state.translations['delivery.44_key44'] }}
-            {{ $store.state.translations['delivery.45_key45'] }}
+            {{ $store.state.translations["delivery.44_key44"] }}
+            {{ $store.state.translations["delivery.45_key45"] }}
           </p>
           <p>
-            {{ $store.state.translations['delivery.46_key46'] }}
-            {{ $store.state.translations['delivery.47_key47'] }}
-            {{ $store.state.translations['delivery.48_key48'] }}
-            {{ $store.state.translations['delivery.49_key49'] }}
-            {{ $store.state.translations['delivery.50_key50'] }}
+            {{ $store.state.translations["delivery.46_key46"] }}
+            {{ $store.state.translations["delivery.47_key47"] }}
+            {{ $store.state.translations["delivery.48_key48"] }}
+            {{ $store.state.translations["delivery.49_key49"] }}
+            {{ $store.state.translations["delivery.50_key50"] }}
             ord@ittelo.ru
           </p>
           <div class="map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
-              width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -137,7 +158,7 @@
 export default {
   data() {
     return {
-      title: this.$store.state.translations['site.delivery']
+      title: this.$store.state.translations["site.delivery"],
     };
   },
 };

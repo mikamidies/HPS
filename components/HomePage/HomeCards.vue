@@ -5,23 +5,34 @@
         <div class="left">
           <div class="content">
             <h4 class="title">
-              {{ $store.state.translations['HomeCards.0_key0'] }}
-              {{ $store.state.translations['HomeCards.1_key1'] }}
+              {{ $store.state.translations["HomeCards.0_key0"] }}
+              {{ $store.state.translations["HomeCards.1_key1"] }}
             </h4>
             <p class="sub">
-              {{ $store.state.translations['HomeCards.2_key2'] }}
-              {{ $store.state.translations['HomeCards.3_key3'] }}
-              {{ $store.state.translations['HomeCards.4_key4'] }}
-              {{ $store.state.translations['HomeCards.5_key5'] }}
-              {{ $store.state.translations['HomeCards.6_key6'] }}
+              {{ $store.state.translations["HomeCards.2_key2"] }}
+              {{ $store.state.translations["HomeCards.3_key3"] }}
+              {{ $store.state.translations["HomeCards.4_key4"] }}
+              {{ $store.state.translations["HomeCards.5_key5"] }}
+              {{ $store.state.translations["HomeCards.6_key6"] }}
             </p>
             <NuxtLink :to="localePath('/about')">
-              {{ $store.state.translations['_slug.4_key4'] }}
+              {{ $store.state.translations["_slug.4_key4"] }}
               <div class="stick"></div>
               <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </NuxtLink>
@@ -30,40 +41,79 @@
           <div class="nums">
             <div class="num">
               <div class="log">
-                <svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
                   <g clip-path="url(#clip0_193_2455)">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M0.315638 5.49503e-06L104.208 1.45776e-05C106.275 1.47583e-05 108.257 0.820915 109.718 2.28213C111.179 3.74334 112 5.72518 112 7.79165L112 111.684L96.4167 111.684L96.4167 26.6026L11.0193 112L-6.66584e-06 100.978L85.3975 15.5858L0.315636 15.5858L0.315638 5.49503e-06Z"
-                      fill="url(#paint0_linear_193_2455)" />
+                      fill="url(#paint0_linear_193_2455)"
+                    />
                   </g>
                   <defs>
-                    <linearGradient id="paint0_linear_193_2455" x1="104.208" y1="7.79164" x2="8.32434" y2="103.676"
-                      gradientUnits="userSpaceOnUse">
+                    <linearGradient
+                      id="paint0_linear_193_2455"
+                      x1="104.208"
+                      y1="7.79164"
+                      x2="8.32434"
+                      y2="103.676"
+                      gradientUnits="userSpaceOnUse"
+                    >
                       <stop offset="0.150245" stop-color="#313641" />
                       <stop offset="1" stop-color="#12151C" />
                     </linearGradient>
                     <clipPath id="clip0_193_2455">
-                      <rect width="112" height="112" fill="white" transform="translate(112 112) rotate(-180)" />
+                      <rect
+                        width="112"
+                        height="112"
+                        fill="white"
+                        transform="translate(112 112) rotate(-180)"
+                      />
                     </clipPath>
                   </defs>
                 </svg>
               </div>
               <div>
-                <p class="number">{{ $store.state.translations['about.5_key5'] }}</p>
-                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
+                <p class="number">
+                  {{ $store.state.translations["about.5_key5"] }}
+                </p>
+                <p class="value">
+                  {{ $store.state.translations["about.6_key6"] }}
+                </p>
               </div>
             </div>
             <div class="num">
               <div class="log">
-                <svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
                   <g clip-path="url(#clip0_193_2461)">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M111.684 112L7.79164 112C5.72517 112 3.74333 111.179 2.28212 109.718C0.820902 108.257 0 106.275 0 104.208L0 0.315636L15.5833 0.315636L15.5833 85.3974L100.981 0L112 11.0218L26.6025 96.4142L111.684 96.4142V112Z"
-                      fill="url(#paint0_linear_193_2461)" />
+                      fill="url(#paint0_linear_193_2461)"
+                    />
                   </g>
                   <defs>
-                    <linearGradient id="paint0_linear_193_2461" x1="7.79163" y1="104.208" x2="103.676" y2="8.32429"
-                      gradientUnits="userSpaceOnUse">
+                    <linearGradient
+                      id="paint0_linear_193_2461"
+                      x1="7.79163"
+                      y1="104.208"
+                      x2="103.676"
+                      y2="8.32429"
+                      gradientUnits="userSpaceOnUse"
+                    >
                       <stop offset="0.150245" stop-color="#145146" />
                       <stop offset="1" stop-color="#12151C" />
                     </linearGradient>
@@ -74,8 +124,12 @@
                 </svg>
               </div>
               <div>
-                <p class="number">{{ $store.state.translations['about.7_key7'] }}</p>
-                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
+                <p class="number">
+                  {{ $store.state.translations["about.7_key7"] }}
+                </p>
+                <p class="value">
+                  {{ $store.state.translations["about.6_key6"] }}
+                </p>
               </div>
             </div>
           </div>
@@ -87,22 +141,44 @@
 
       <div class="second">
         <div class="header">
-          <p class="sup">{{ $store.state.translations['HomeCards.12_key12'] }}</p>
+          <p class="sup">
+            {{ $store.state.translations["HomeCards.12_key12"] }}
+          </p>
           <div class="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 64 64"
+              fill="none"
+            >
               <g clip-path="url(#clip0_218_1882)">
-                <path fill-rule="evenodd" clip-rule="evenodd"
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
                   d="M0.180368 -5.57929e-06L59.5476 -3.89238e-07C60.7285 -2.86006e-07 61.861 0.469086 62.6959 1.30407C63.5309 2.13905 64 3.27152 64 4.45236L64 63.8196L55.0953 63.8196L55.0953 15.2015L6.29672 64L5.50605e-07 57.7018L48.7985 8.90618L0.180368 8.90618L0.180368 -5.57929e-06Z"
-                  fill="url(#paint0_linear_218_1882)" />
+                  fill="url(#paint0_linear_218_1882)"
+                />
               </g>
               <defs>
-                <linearGradient id="paint0_linear_218_1882" x1="59.5476" y1="4.45236" x2="0.180361" y2="63.8196"
-                  gradientUnits="userSpaceOnUse">
+                <linearGradient
+                  id="paint0_linear_218_1882"
+                  x1="59.5476"
+                  y1="4.45236"
+                  x2="0.180361"
+                  y2="63.8196"
+                  gradientUnits="userSpaceOnUse"
+                >
                   <stop offset="0.521" stop-color="#30333A" />
                   <stop offset="1" stop-color="#12151C" />
                 </linearGradient>
                 <clipPath id="clip0_218_1882">
-                  <rect width="64" height="64" fill="white" transform="translate(64 64) rotate(-180)" />
+                  <rect
+                    width="64"
+                    height="64"
+                    fill="white"
+                    transform="translate(64 64) rotate(-180)"
+                  />
                 </clipPath>
               </defs>
             </svg>
@@ -110,18 +186,31 @@
         </div>
         <div class="grid">
           <div class="left">
-            <h4 class="title">{{ $store.state.translations['HomeCards.13_key13'] }}</h4>
+            <h4 class="title">
+              {{ $store.state.translations["HomeCards.13_key13"] }}
+            </h4>
             <p class="sub">
-              {{ $store.state.translations['HomeCards.14_key14'] }}
-              {{ $store.state.translations['HomeCards.15_key15'] }}
+              {{ $store.state.translations["HomeCards.14_key14"] }}
+              {{ $store.state.translations["HomeCards.15_key15"] }}
             </p>
             <NuxtLink :to="localePath('/about')">
-              {{ $store.state.translations['_slug.4_key4'] }}
+              {{ $store.state.translations["_slug.4_key4"] }}
               <div class="stick"></div>
               <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </NuxtLink>
@@ -154,25 +243,40 @@
       <div class="third">
         <div class="words">
           <h4 class="par">
-            {{ $store.state.translations['HomeCards.17_key17'] }}
-            <span class="green"> {{ $store.state.translations['HomeCards.18_key18'] }} </span>
+            {{ $store.state.translations["HomeCards.17_key17"] }}
+            <span class="green">
+              {{ $store.state.translations["HomeCards.18_key18"] }}
+            </span>
           </h4>
           <p class="txt">
-            {{ $store.state.translations['HomeCards.19_key19'] }}
-            {{ $store.state.translations['HomeCards.20_key20'] }}
-            {{ $store.state.translations['HomeCards.21_key21'] }}
+            {{ $store.state.translations["HomeCards.19_key19"] }}
+            {{ $store.state.translations["HomeCards.20_key20"] }}
+            {{ $store.state.translations["HomeCards.21_key21"] }}
           </p>
 
           <div class="buttons">
             <button @click="scrollElement('contacts')" class="button">
-              {{ $store.state.translations['HomeCards.22_key22'] }}
+              {{ $store.state.translations["HomeCards.22_key22"] }}
               <p class="stick"></p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                  stroke="#1AB99D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
-            <NuxtLink :to="localePath('/products')">{{ $store.state.translations['HomeCards.23_key23'] }}</NuxtLink>
+            <NuxtLink :to="localePath('/products')">{{
+              $store.state.translations["HomeCards.23_key23"]
+            }}</NuxtLink>
           </div>
         </div>
         <div class="picture">
@@ -398,7 +502,8 @@ export default {
   gap: 16px;
 }
 
-.picture {}
+.picture {
+}
 
 .picture img {
   width: 800px;

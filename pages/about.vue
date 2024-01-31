@@ -5,57 +5,100 @@
     <div class="first">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">{{ $store.state.translations['about.0_key0'] }}</h4>
+          <h4 class="paragraph">
+            {{ $store.state.translations["about.0_key0"] }}
+          </h4>
         </div>
         <div class="right">
           <div class="content">
             <h4 class="title">
-              {{ $store.state.translations['about.1_key1'] }}
-              <span class="green"> {{ $store.state.translations['about.2_key2'] }} </span>
+              {{ $store.state.translations["about.1_key1"] }}
+              <span class="green">
+                {{ $store.state.translations["about.2_key2"] }}
+              </span>
             </h4>
             <p class="sub">
-              {{ $store.state.translations['about.3_key3'] }}
-              {{ $store.state.translations['about.4_key4'] }}
+              {{ $store.state.translations["about.3_key3"] }}
+              {{ $store.state.translations["about.4_key4"] }}
             </p>
           </div>
 
           <div class="nums">
             <div class="num">
               <div class="log">
-                <svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
                   <g clip-path="url(#clip0_193_2455)">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M0.315638 5.49503e-06L104.208 1.45776e-05C106.275 1.47583e-05 108.257 0.820915 109.718 2.28213C111.179 3.74334 112 5.72518 112 7.79165L112 111.684L96.4167 111.684L96.4167 26.6026L11.0193 112L-6.66584e-06 100.978L85.3975 15.5858L0.315636 15.5858L0.315638 5.49503e-06Z"
-                      fill="url(#paint0_linear_193_2455)" />
+                      fill="url(#paint0_linear_193_2455)"
+                    />
                   </g>
                   <defs>
-                    <linearGradient id="paint0_linear_193_2455" x1="104.208" y1="7.79164" x2="8.32434" y2="103.676"
-                      gradientUnits="userSpaceOnUse">
+                    <linearGradient
+                      id="paint0_linear_193_2455"
+                      x1="104.208"
+                      y1="7.79164"
+                      x2="8.32434"
+                      y2="103.676"
+                      gradientUnits="userSpaceOnUse"
+                    >
                       <stop offset="0.150245" stop-color="#313641" />
                       <stop offset="1" stop-color="#12151C" />
                     </linearGradient>
                     <clipPath id="clip0_193_2455">
-                      <rect width="112" height="112" fill="white" transform="translate(112 112) rotate(-180)" />
+                      <rect
+                        width="112"
+                        height="112"
+                        fill="white"
+                        transform="translate(112 112) rotate(-180)"
+                      />
                     </clipPath>
                   </defs>
                 </svg>
               </div>
               <div>
-                <p class="number">{{ $store.state.translations['about.5_key5'] }}</p>
-                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
+                <p class="number">
+                  {{ $store.state.translations["about.5_key5"] }}
+                </p>
+                <p class="value">
+                  {{ $store.state.translations["about.6_key6"] }}
+                </p>
               </div>
             </div>
             <div class="num">
               <div class="log">
-                <svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" fill="none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="112"
+                  height="112"
+                  viewBox="0 0 112 112"
+                  fill="none"
+                >
                   <g clip-path="url(#clip0_193_2461)">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
                       d="M111.684 112L7.79164 112C5.72517 112 3.74333 111.179 2.28212 109.718C0.820902 108.257 0 106.275 0 104.208L0 0.315636L15.5833 0.315636L15.5833 85.3974L100.981 0L112 11.0218L26.6025 96.4142L111.684 96.4142V112Z"
-                      fill="url(#paint0_linear_193_2461)" />
+                      fill="url(#paint0_linear_193_2461)"
+                    />
                   </g>
                   <defs>
-                    <linearGradient id="paint0_linear_193_2461" x1="7.79163" y1="104.208" x2="103.676" y2="8.32429"
-                      gradientUnits="userSpaceOnUse">
+                    <linearGradient
+                      id="paint0_linear_193_2461"
+                      x1="7.79163"
+                      y1="104.208"
+                      x2="103.676"
+                      y2="8.32429"
+                      gradientUnits="userSpaceOnUse"
+                    >
                       <stop offset="0.150245" stop-color="#145146" />
                       <stop offset="1" stop-color="#12151C" />
                     </linearGradient>
@@ -66,8 +109,12 @@
                 </svg>
               </div>
               <div>
-                <p class="number">{{ $store.state.translations['about.7_key7'] }}</p>
-                <p class="value">{{ $store.state.translations['about.6_key6'] }}</p>
+                <p class="number">
+                  {{ $store.state.translations["about.7_key7"] }}
+                </p>
+                <p class="value">
+                  {{ $store.state.translations["about.6_key6"] }}
+                </p>
               </div>
             </div>
           </div>
@@ -82,35 +129,70 @@
     <div class="second">
       <div class="container small separator">
         <div class="left">
-          <h4 class="paragraph">{{ $store.state.translations['about.9_key9'] }}</h4>
+          <h4 class="paragraph">
+            {{ $store.state.translations["about.9_key9"] }}
+          </h4>
         </div>
         <div class="right">
           <h4 class="title">
-            {{ $store.state.translations['about.10_key10'] }}
+            {{ $store.state.translations["about.10_key10"] }}
           </h4>
 
           <form @submit.prevent="onSubmit">
             <div class="grid">
-              <input v-model="full_name" type="text" :placeholder="$store.state.translations['place.name']" required />
-              <input v-model="number" type="text" :placeholder="$store.state.translations['place.number']" required />
-              <input v-model="email" type="text" :placeholder="$store.state.translations['place.email']" />
-              <input id="filer" type="file" :placeholder="$store.state.translations['place.tz']" />
-              <label for="filer" class="file_label">{{ $store.state.translations['about.11_key11'] }}</label>
+              <input
+                v-model="full_name"
+                type="text"
+                :placeholder="$store.state.translations['place.name']"
+                required
+              />
+              <input
+                v-model="number"
+                type="text"
+                :placeholder="$store.state.translations['place.number']"
+                required
+              />
+              <input
+                v-model="email"
+                type="text"
+                :placeholder="$store.state.translations['place.email']"
+              />
+              <input
+                id="filer"
+                type="file"
+                :placeholder="$store.state.translations['place.tz']"
+              />
+              <label for="filer" class="file_label">{{
+                $store.state.translations["about.11_key11"]
+              }}</label>
             </div>
             <div class="footer">
               <div class="checker">
                 <input required id="check" type="checkbox" />
                 <label for="check">
-                  {{ $store.state.translations['about.12_key12'] }}
-                  <span class="green">{{ $store.state.translations['place.privacy'] }}</span>
+                  {{ $store.state.translations["about.12_key12"] }}
+                  <span class="green">{{
+                    $store.state.translations["place.privacy"]
+                  }}</span>
                 </label>
               </div>
               <button type="submit">
-                {{ $store.state.translations['about.14_key14'] }}
+                {{ $store.state.translations["about.14_key14"] }}
                 <p class="stick"></p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </button>
             </div>
@@ -176,15 +258,15 @@
 </template>
 
 <script>
-import formApi from '@/api/form.js'
+import formApi from "@/api/form.js";
 
 export default {
   data() {
     return {
-      title: this.$store.state.translations['site.about'],
-      full_name: '',
-      number: '',
-      email: '',
+      title: this.$store.state.translations["site.about"],
+      full_name: "",
+      number: "",
+      email: "",
     };
   },
 
@@ -194,23 +276,23 @@ export default {
         full_name: this.full_name,
         number: this.number,
         email: this.email,
-      }
+      };
 
-      const res = await formApi.sendApplication(formData)
+      const res = await formApi.sendApplication(formData);
 
       if (res && res.status === 201) {
-        this.$notification['success']({
-          message: 'Успешно отправлено',
+        this.$notification["success"]({
+          message: "Успешно отправлено",
         });
       } else {
-        this.$notification['error']({
-          message: 'Ошибка',
+        this.$notification["error"]({
+          message: "Ошибка",
         });
       }
 
-      this.full_name = ''
-      this.number = ''
-      this.email = ''
+      this.full_name = "";
+      this.number = "";
+      this.email = "";
     },
   },
 };

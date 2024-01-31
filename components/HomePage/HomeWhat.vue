@@ -2,14 +2,16 @@
   <div class="wrap">
     <div class="container small">
       <div class="left">
-        <h2 class="title">{{$store.state.translations['HomeWhat.0_key0']}}</h2>
+        <h2 class="title">
+          {{ $store.state.translations["HomeWhat.0_key0"] }}
+        </h2>
         <p class="sub">
-          {{$store.state.translations['HomeCards.19_key19']}}
-          {{$store.state.translations['HomeWhat.2_key2']}}
-          {{$store.state.translations['HomeWhat.3_key3']}}
+          {{ $store.state.translations["HomeCards.19_key19"] }}
+          {{ $store.state.translations["HomeWhat.2_key2"] }}
+          {{ $store.state.translations["HomeWhat.3_key3"] }}
         </p>
         <NuxtLink :to="localePath('/about')">
-          {{$store.state.translations['DesktopFooter.1_key1']}}
+          {{ $store.state.translations["DesktopFooter.1_key1"] }}
           <p class="stick"></p>
           <svg
             xmlns="http://www.w3.org/2000/svg"

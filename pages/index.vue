@@ -17,7 +17,7 @@ import productsApi from "@/api/products.js";
 
 export default {
   data() {
-    return {}
+    return {};
   },
 
   async asyncData({ $axios, query, i18n }) {

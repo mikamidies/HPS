@@ -1,6 +1,6 @@
 <template>
   <div class="master">
-    <SiteTop class="site_top" :title="title" />
+    <SiteTop class="site_top" :title="product.title" />
 
     <div class="face">
       <div class="container">
@@ -8,15 +8,31 @@
           <div class="left">
             <div class="swiper smallSwiper" thumbsSlider="">
               <div class="swiper-wrapper">
-                <div v-for="thumb in product.images" :key="thumb.id" class="swiper-slide">
-                  <img :src="thumb.image" :title="product.title" :alt="product.title" />
+                <div
+                  v-for="thumb in product.images"
+                  :key="thumb.id"
+                  class="swiper-slide"
+                >
+                  <img
+                    :src="thumb.image"
+                    :title="product.title"
+                    :alt="product.title"
+                  />
                 </div>
               </div>
             </div>
             <div class="swiper bigSwiper">
               <div class="swiper-wrapper">
-                <div v-for="image in product.images" :key="image.id" class="swiper-slide">
-                  <img :src="image.image" :title="product.title" :alt="product.title" />
+                <div
+                  v-for="image in product.images"
+                  :key="image.id"
+                  class="swiper-slide"
+                >
+                  <img
+                    :src="image.image"
+                    :title="product.title"
+                    :alt="product.title"
+                  />
                 </div>
               </div>
             </div>
@@ -39,24 +55,43 @@
 
     <div class="similar" v-show="product.other_products.length > 0">
       <div class="container">
-        <h4 class="title">{{ $store.state.translations['_slug.3_key3'] }}</h4>
+        <h4 class="title">{{ $store.state.translations["_slug.3_key3"] }}</h4>
         <div class="items">
-          <div v-for="item in product.other_products" :key="item.id" class="cardo">
+          <div
+            v-for="item in product.other_products"
+            :key="item.id"
+            class="cardo"
+          >
             <img src="@/assets/img/logo/vector.png" class="vector" />
             <NuxtLink :to="localePath(`/product/${item.slug}`)">
               <div class="content">
                 <h2 class="name">{{ item.title }}</h2>
                 <p class="sub">{{ item.subtitle }}</p>
                 <div class="img">
-                  <img :src="item.image" :alt="item.title" :title="item.title" />
+                  <img
+                    :src="item.image"
+                    :alt="item.title"
+                    :title="item.title"
+                  />
                 </div>
               </div>
               <button>
-                {{ $store.state.translations['_slug.4_key4'] }}
+                {{ $store.state.translations["_slug.4_key4"] }}
                 <p class="stick"></p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </button>
             </NuxtLink>
@@ -78,7 +113,7 @@ export default {
 
   data() {
     return {
-      title: this.$store.state.translations['site.products']
+      title: this.$store.state.translations["site.products"],
     };
   },
 
@@ -297,6 +332,12 @@ export default {
   overflow: hidden;
   transition: 0.3s;
   margin-bottom: 52px;
+
+  display: -webkit-box !important;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .img img {

@@ -5,19 +5,40 @@
     <div class="filter">
       <div class="container">
         <div class="item">
-          <a-select :placeholder="$store.state.translations['site.cats']" @change="sortCategory">
-            <a-select-option :disabled="$route.query.category == value.id" v-for="value in categories" :key="value.id"
-              :value="value.id"> {{ value.title }}
+          <a-select
+            :placeholder="$store.state.translations['site.cats']"
+            @change="sortCategory"
+          >
+            <a-select-option
+              :disabled="$route.query.category == value.id"
+              v-for="value in categories"
+              :key="value.id"
+              :value="value.id"
+            >
+              {{ value.title }}
             </a-select-option>
           </a-select>
         </div>
         <div class="item">
           <div class="searcher">
-            <input type="text" :placeholder="$store.state.translations['place.search']" v-model="search" />
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd"
+            <input
+              type="text"
+              :placeholder="$store.state.translations['place.search']"
+              v-model="search"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
                 d="M10.5 19.25C15.3325 19.25 19.25 15.3325 19.25 10.5C19.25 5.66751 15.3325 1.75 10.5 1.75C5.66751 1.75 1.75 5.66751 1.75 10.5C1.75 15.3325 5.66751 19.25 10.5 19.25ZM20.75 10.5C20.75 16.1609 16.1609 20.75 10.5 20.75C4.83908 20.75 0.250001 16.1609 0.25 10.5C0.25 4.83908 4.83908 0.25 10.5 0.25C16.1609 0.249999 20.75 4.83908 20.75 10.5ZM18.4697 19.5303C18.1768 19.2374 18.1768 18.7626 18.4697 18.4697C18.7626 18.1768 19.2374 18.1768 19.5303 18.4697L21.5303 20.4696C21.8232 20.7625 21.8232 21.2374 21.5303 21.5303C21.2374 21.8232 20.7625 21.8232 20.4696 21.5303L18.4697 19.5303Z"
-                fill="#28303F" />
+                fill="#28303F"
+              />
             </svg>
           </div>
         </div>
@@ -34,15 +55,30 @@
                 <h2 class="name">{{ item.title }}</h2>
                 <p class="sub">{{ item.subtitle }}</p>
                 <div class="img">
-                  <img :src="item.image" :alt="item.title" :title="item.title" />
+                  <img
+                    :src="item.image"
+                    :alt="item.title"
+                    :title="item.title"
+                  />
                 </div>
               </div>
               <button>
-                {{ $store.state.translations['_slug.4_key4'] }}
+                {{ $store.state.translations["_slug.4_key4"] }}
                 <p class="stick"></p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                    stroke="#1AB99D"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </button>
             </NuxtLink>
@@ -64,7 +100,7 @@ export default {
 
   data() {
     return {
-      title: this.$store.state.translations['site.products'],
+      title: this.$store.state.translations["site.products"],
       search: "",
       current: 1,
       pageSize: 20,
@@ -84,7 +120,7 @@ export default {
       headers: {
         language: i18n.locale,
       },
-    })
+    });
 
     return {
       products,
@@ -94,18 +130,18 @@ export default {
 
   methods: {
     async sortCategory(value) {
-      let query = { ...this.$route.query }
-      query.category = value
+      let query = { ...this.$route.query };
+      query.category = value;
       if (!Object.keys(this.$route.query).includes(`${value}`)) {
         await this.$router.replace(
           this.localePath({
             path: this.$route.path,
             query: query,
           })
-        )
+        );
       }
 
-      this.changeProducts()
+      this.changeProducts();
     },
 
     async changeProducts() {
@@ -114,9 +150,9 @@ export default {
         headers: {
           language: this.$i18n.locale,
         },
-      })
+      });
 
-      this.products = productsData
+      this.products = productsData;
     },
   },
 
@@ -137,7 +173,6 @@ export default {
 
         this.products = data;
       }
-
     },
   },
 };
@@ -292,6 +327,11 @@ export default {
   overflow: hidden;
   transition: 0.3s;
   margin-bottom: 52px;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .img img {

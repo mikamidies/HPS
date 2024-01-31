@@ -6,20 +6,43 @@
           <img src="@/assets/img/cloud.png" alt="" />
         </div>
         <div class="cont">
-          <h4 class="title">{{ $store.state.translations['about.9_key9'] }}</h4>
-          <p class="sub">{{ $store.state.translations['HomeFeedback.1_key1'] }}</p>
+          <h4 class="title">{{ $store.state.translations["about.9_key9"] }}</h4>
+          <p class="sub">
+            {{ $store.state.translations["HomeFeedback.1_key1"] }}
+          </p>
         </div>
         <form @submit.prevent="onSubmit">
           <div class="inputs">
-            <input v-model="full_name" required type="text" :placeholder="$store.state.translations['place.name']" />
-            <input v-model="number" required type="text" :placeholder="$store.state.translations['place.number']" />
+            <input
+              v-model="full_name"
+              required
+              type="text"
+              :placeholder="$store.state.translations['place.name']"
+            />
+            <input
+              v-model="number"
+              required
+              type="text"
+              :placeholder="$store.state.translations['place.number']"
+            />
           </div>
           <button type="submit">
-            {{ $store.state.translations['about.14_key14'] }}
+            {{ $store.state.translations["about.14_key14"] }}
             <p class="stick"></p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                stroke="#1AB99D"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </button>
         </form>
@@ -29,14 +52,14 @@
 </template>
 
 <script>
-import formApi from '@/api/form.js'
+import formApi from "@/api/form.js";
 
 export default {
   data() {
     return {
-      full_name: '',
-      number: '',
-    }
+      full_name: "",
+      number: "",
+    };
   },
 
   methods: {
@@ -44,25 +67,25 @@ export default {
       const formData = {
         full_name: this.full_name,
         number: this.number,
-      }
+      };
 
-      const res = await formApi.sendApplication(formData)
+      const res = await formApi.sendApplication(formData);
 
       if (res && res.status === 201) {
-        this.$notification['success']({
-          message: 'Успешно отправлено',
+        this.$notification["success"]({
+          message: "Успешно отправлено",
         });
       } else {
-        this.$notification['error']({
-          message: 'Ошибка',
+        this.$notification["error"]({
+          message: "Ошибка",
         });
       }
 
-      this.full_name = ''
-      this.number = ''
+      this.full_name = "";
+      this.number = "";
     },
   },
-}
+};
 </script>
 
 <style scoped>

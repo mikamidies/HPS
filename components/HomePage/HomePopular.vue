@@ -1,9 +1,16 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <h4 class="title">{{$store.state.translations['HomePopular.0_key0']}}</h4>
+      <h4 class="title">
+        {{ $store.state.translations["HomePopular.0_key0"] }}
+      </h4>
       <div class="items">
-        <div v-for="item in products" :key="item.id" v-show="item.top == true" class="cardo">
+        <div
+          v-for="item in products"
+          :key="item.id"
+          v-show="item.top == true"
+          class="cardo"
+        >
           <img src="@/assets/img/logo/vector.png" class="vector" />
           <NuxtLink :to="localePath(`/product/${item.slug}`)">
             <div class="content">
@@ -14,11 +21,22 @@
               </div>
             </div>
             <button>
-              {{$store.state.translations['_slug.4_key4']}}
+              {{ $store.state.translations["_slug.4_key4"] }}
               <p class="stick"></p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M14 8L18 12M18 12L14 16M18 12L6 12" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
+                  stroke="#1AB99D"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
           </NuxtLink>
@@ -26,11 +44,22 @@
       </div>
       <div class="more">
         <NuxtLink :to="localePath('/products')">
-          {{$store.state.translations['HomePopular.2_key2']}}
+          {{ $store.state.translations["HomePopular.2_key2"] }}
           <p class="stick"></p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M8 10L12 6M12 6L16 10M12 6V18" stroke="#1AB99D" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M8 10L12 6M12 6L16 10M12 6V18"
+              stroke="#1AB99D"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </NuxtLink>
       </div>
@@ -132,6 +161,12 @@ export default {
   overflow: hidden;
   transition: 0.3s;
   margin-bottom: 52px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .img img {

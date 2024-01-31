@@ -5,19 +5,24 @@
     <div class="container">
       <div class="cards">
         <div class="cardo">
-          <p class="sup">{{ $store.state.translations['about.9_key9'] }}</p>
+          <p class="sup">{{ $store.state.translations["about.9_key9"] }}</p>
 
           <a href="#" class="value"> {{ info.nbm }} </a>
         </div>
         <div class="cardo">
-          <p class="sup">{{ $store.state.translations['contacts.1_key1'] }}</p>
+          <p class="sup">{{ $store.state.translations["contacts.1_key1"] }}</p>
           <a href="#" class="value"> info@hpsuz.com </a>
         </div>
         <div class="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
-            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -27,12 +32,12 @@
 </template>
 
 <script>
-import infoApi from "@/api/info.js"
+import infoApi from "@/api/info.js";
 
 export default {
   data() {
     return {
-      title: this.$store.state.translations['site.contacts'],
+      title: this.$store.state.translations["site.contacts"],
       info: {},
     };
   },
@@ -41,7 +46,7 @@ export default {
     const infoData = await infoApi.getInfo(this.$axios);
 
     this.info = infoData.data;
-  }
+  },
 };
 </script>
 
