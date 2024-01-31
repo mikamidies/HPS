@@ -193,7 +193,7 @@
               {{ $store.state.translations["HomeCards.14_key14"] }}
               {{ $store.state.translations["HomeCards.15_key15"] }}
             </p>
-            <NuxtLink :to="localePath('/about')">
+            <a target="_blank" :href="info.telegram">
               {{ $store.state.translations["_slug.4_key4"] }}
               <div class="stick"></div>
               <div class="logo">
@@ -213,7 +213,7 @@
                   />
                 </svg>
               </div>
-            </NuxtLink>
+            </a>
           </div>
           <div class="right">
             <div class="partners">
@@ -289,6 +289,8 @@
 
 <script>
 export default {
+  props: ["info"],
+
   methods: {
     scrollElement(id) {
       const element = document.getElementById(id);

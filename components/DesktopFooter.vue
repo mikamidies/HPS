@@ -160,11 +160,18 @@
             <p class="sup">
               {{ $store.state.translations["contacts.1_key1"] }}
             </p>
-            <a href="#" class="value"> info@hpsuz.com </a>
+            <a :href="`mailto: ${info.email}`" class="value">
+              {{ info.email }}
+            </a>
           </div>
           <div class="cardo">
             <p class="sup">{{ $store.state.translations["about.9_key9"] }}</p>
-            <a href="#" class="value"> {{ info.nbm }} </a>
+            <a :href="`tel:${phoneArray[0]}`" class="value">
+              {{ phoneArray[0] }}
+            </a>
+            <a :href="`tel:${phoneArray[1]}`" class="value">
+              {{ phoneArray[1] }}
+            </a>
           </div>
           <div class="cardo">
             <p class="sup">
@@ -194,6 +201,7 @@ export default {
   data() {
     return {
       info: {},
+      phoneArray: [],
     };
   },
 
@@ -201,6 +209,10 @@ export default {
     const infoData = await infoApi.getInfo(this.$axios);
 
     this.info = infoData.data;
+
+    let phoneString = this.info.nbm;
+
+    this.phoneArray = phoneString.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
   },
 };
 </script>

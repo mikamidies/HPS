@@ -64,7 +64,7 @@
             {{ $store.state.translations["delivery.24_key24"] }}
           </p>
 
-          <div class="cardo">
+          <!-- <div class="cardo">
             <p>
               <span class="green">1</span> Бесплатная доставка до двери по РФ
               {{ $store.state.translations["delivery.26_key26"] }}
@@ -77,12 +77,12 @@
               <span class="green">3</span> В любой населенный пункт. Доставляем
               {{ $store.state.translations["delivery.30_key30"] }}
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 
-    <div class="third section">
+    <!-- <div class="third section">
       <div class="container small separator">
         <div class="left">
           <p class="paragraph">
@@ -109,7 +109,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="third section">
       <div class="container small separator">
@@ -131,11 +131,9 @@
           </p>
           <p>
             {{ $store.state.translations["delivery.46_key46"] }}
-            {{ $store.state.translations["delivery.47_key47"] }}
-            {{ $store.state.translations["delivery.48_key48"] }}
-            {{ $store.state.translations["delivery.49_key49"] }}
-            {{ $store.state.translations["delivery.50_key50"] }}
-            ord@ittelo.ru
+            <a :href="`tel: ${info.email} `">
+              {{ info.email }}
+            </a>
           </p>
           <div class="map">
             <iframe
@@ -155,11 +153,20 @@
 </template>
 
 <script>
+import infoApi from "@/api/info.js";
+
 export default {
   data() {
     return {
       title: this.$store.state.translations["site.delivery"],
+      info: {},
     };
+  },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
   },
 };
 </script>

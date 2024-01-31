@@ -2,7 +2,7 @@
   <div class="master">
     <HomeHero />
     <HomePopular :products="products" />
-    <HomeCards />
+    <HomeCards :info="info" />
     <HomeServices />
     <HomeWhat />
     <HomeForm />
@@ -14,10 +14,13 @@
 
 <script>
 import productsApi from "@/api/products.js";
+import infoApi from "@/api/info.js";
 
 export default {
   data() {
-    return {};
+    return {
+      info: "",
+    };
   },
 
   async asyncData({ $axios, query, i18n }) {
@@ -31,6 +34,12 @@ export default {
     return {
       products,
     };
+  },
+
+  async mounted() {
+    const infoData = await infoApi.getInfo(this.$axios);
+
+    this.info = infoData.data;
   },
 };
 </script>

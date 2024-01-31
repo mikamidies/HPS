@@ -3,7 +3,12 @@
     <div class="top">
       <div class="container">
         <div class="left">
-          <a href="#" class="num"> {{ info.nbm }} </a>
+          <a :href="`tel:${phoneArray[0]}`" class="value">
+            {{ phoneArray[0] }}
+          </a>
+          <a :href="`tel:${phoneArray[1]}`" class="value">
+            {{ phoneArray[1] }}
+          </a>
         </div>
         <div class="right">
           <div class="lang">
@@ -361,6 +366,7 @@ export default {
       products: "",
       search: "",
       info: {},
+      phoneArray: [],
     };
   },
 
@@ -368,6 +374,10 @@ export default {
     const infoData = await infoApi.getInfo(this.$axios);
 
     this.info = infoData.data;
+
+    let phoneString = this.info.nbm;
+
+    this.phoneArray = phoneString.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
 
     if (window.innerWidth > 1024) {
       function scrollHeader() {
@@ -505,7 +515,8 @@ export default {
   justify-content: space-between;
 }
 
-.current {
+.current,
+.left a {
   display: flex;
   align-items: center;
   gap: 8px;

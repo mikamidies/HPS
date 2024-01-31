@@ -166,6 +166,11 @@ li {
   margin: 0;
   padding: 0;
 }
+@media screen and (max-width: 1600px) {
+  .container {
+    padding: 0 16px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .container,
   .container.medium,
