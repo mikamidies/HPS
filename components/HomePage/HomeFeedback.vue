@@ -141,7 +141,7 @@ form {
 }
 
 .sub {
-  color: var(--Sertver-title, #b6bfd3);
+  color: var(--Sertver-title, #b6bfd3) !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

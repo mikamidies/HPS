@@ -305,7 +305,7 @@ export default {};
     grid-column: initial;
   }
 
-  .cardo:nth-child(1) a {
+  .cardo:nth-child(1) {
     grid-template-columns: repeat(1, 1fr);
   }
 

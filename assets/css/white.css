@@ -61,7 +61,9 @@
 .site.white #navbar .searcher svg path {
   stroke: var(--dark);
 }
-.site.white #navbar .langer a {
+.site.white #navbar .langer a,
+.site.white button,
+.site.white p {
   color: var(--dark);
 }
 @media screen and (max-width: 1024px) {

@@ -47,9 +47,7 @@ export default {
     },
   },
 
-  mounted() {
-    console.log(this.translations);
-  },
+  mounted() {},
 };
 </script>
 

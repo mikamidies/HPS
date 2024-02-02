@@ -79,9 +79,11 @@
                 {{ $store.state.translations["DesktopFooter.2_key2"] }}
               </NuxtLink>
             </li>
-            <!-- <li>
-              <NuxtLink to="/"> {{$store.state.translations['DesktopFooter.3_key3']}} </NuxtLink>
-            </li> -->
+            <li>
+              <NuxtLink to="/config">
+                {{ $store.state.translations["DesktopFooter.3_key3"] }}
+              </NuxtLink>
+            </li>
             <li>
               <NuxtLink :to="localePath('/contacts')">
                 {{ $store.state.translations["DesktopFooter.5_key5"] }}

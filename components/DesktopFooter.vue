@@ -19,9 +19,11 @@
                 {{ $store.state.translations["DesktopFooter.2_key2"] }}
               </NuxtLink>
             </li>
-            <!-- <li>
-              <NuxtLink :to="localePath('/')"> {{$store.state.translations['DesktopFooter.3_key3']}} </NuxtLink>
-            </li> -->
+            <li>
+              <NuxtLink :to="localePath('/config')">
+                {{ $store.state.translations["DesktopFooter.3_key3"] }}
+              </NuxtLink>
+            </li>
             <li>
               <NuxtLink :to="localePath('/contacts')">
                 {{ $store.state.translations["DesktopFooter.5_key5"] }}
@@ -181,7 +183,7 @@ export default {
 }
 
 .txt {
-  color: #898d97;
+  color: #898d97 !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -206,7 +208,7 @@ export default {
 }
 
 .sup {
-  color: #6c6f77;
+  color: #6c6f77 !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

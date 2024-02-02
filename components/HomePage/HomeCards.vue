@@ -631,7 +631,9 @@ export default {
   }
 
   .third a .stick,
-  .third a svg {
+  .third a svg,
+  .third button .stick,
+  .third button svg {
     display: none;
   }
 
