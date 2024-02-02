@@ -157,14 +157,44 @@
                 type="text"
                 :placeholder="$store.state.translations['place.email']"
               />
-              <input
-                id="filer"
-                type="file"
-                :placeholder="$store.state.translations['place.tz']"
-              />
-              <label for="filer" class="file_label">{{
-                $store.state.translations["about.11_key11"]
-              }}</label>
+              <a-upload
+                name="file"
+                :multiple="false"
+                action="https://admin.hpsuz.com/api/upload"
+                :headers="headers"
+                @change="handleChange"
+                :file="file"
+              >
+                <a-button>
+                  <p>
+                    Загрузить файл
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 6L12 3M12 3L15 6M12 3L12 15"
+                          stroke="#1AB99D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M7.5 9L7 9C4.79086 9 3 10.7909 3 13L3 17C3 19.2091 4.79086 21 7 21L17 21C19.2091 21 21 19.2091 21 17L21 13C21 10.7909 19.2091 9 17 9L16.5 9"
+                          stroke="#1AB99D"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </a-button>
+              </a-upload>
             </div>
             <div class="footer">
               <div class="checker">
@@ -263,21 +293,36 @@ import formApi from "@/api/form.js";
 export default {
   data() {
     return {
+      title: this.$store.state.translations["about.0_key0"],
       full_name: "",
       number: "",
       email: "",
+      file: "",
 
       token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
       chatId: "-1002084026037",
+
+      headers: {},
     };
   },
 
   methods: {
+    handleChange(info) {
+      if (info.file.status === "done") {
+        this.$message.success(`${info.file.name} file uploaded successfully`);
+
+        console.log(this.file);
+      } else if (info.file.status === "error") {
+        this.$message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+
     async onSubmit() {
       const formData = {
         full_name: this.full_name,
         number: this.number,
         email: this.email,
+        file: this.file,
       };
 
       const res = await formApi.sendApplication(formData);
@@ -303,6 +348,7 @@ export default {
           this.full_name = "";
           this.number = "";
           this.email = "";
+          this.file = "";
         }),
         (error) => {
           console.log(error);
@@ -539,6 +585,60 @@ export default {
 
 .partners :deep(.title) {
   display: none;
+}
+
+.second :deep(.ant-upload) {
+  width: 100%;
+  position: relative;
+}
+.second :deep(.ant-btn) {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #313641;
+  width: 100%;
+  height: 100%;
+  padding: 12px 0;
+}
+.second :deep(.ant-btn p) {
+  color: var(--White, #fff);
+  font-family: var(--medium);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.second :deep(.ant-upload-list) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 8;
+  color: white;
+  background: #12151c;
+  width: 90%;
+}
+.second :deep(.anticon-paper-clip) {
+  display: none;
+}
+.grid :deep(span) {
+  position: relative;
+}
+.grid :deep(.ant-upload-list-item-name) {
+  padding: 0;
+}
+.grid :deep(.ant-upload-list-item) {
+  margin: 0;
+}
+.grid :deep(.ant-upload-list-item-info) {
+  padding: 0;
+}
+.grid :deep(.ant-upload-list-item:hover .ant-upload-list-item-info) {
+  background: #12151c;
 }
 
 @media screen and (max-width: 1024px) {

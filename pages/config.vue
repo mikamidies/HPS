@@ -546,7 +546,7 @@ export default {
 
   data() {
     return {
-      title: "Конфигуратор",
+      title: this.$store.state.translations["DesktopFooter.3_key3"],
       select: "Выбрать",
 
       handleConfig: true,
