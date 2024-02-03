@@ -7,4 +7,16 @@ export default {
       console.log(e);
     }
   },
+
+  async sendServerApplication(formData) {
+    try {
+      const res = await $nuxt.$axios.post(
+        "/server/application/create",
+        formData
+      );
+      return res;
+    } catch (e) {
+      console.log(e);
+    }
+  },
 };
