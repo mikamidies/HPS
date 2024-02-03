@@ -420,117 +420,127 @@
             </div>
           </div>
           <div :class="{ active: handelTech == true }" class="tech tab">
-            <div class="upload">
-              <h4 class="title">Отправить готовый Т/З как файл:</h4>
-              <a-upload
-                name="file"
-                :multiple="false"
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                :headers="headers"
-                @change="handleChange"
-              >
-                <a-button>
-                  <p>Выберите файл</p>
-                  <span class="icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="22"
-                      height="23"
-                      viewBox="0 0 22 23"
-                      fill="none"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M1.75 5.5C1.75 3.70508 3.20507 2.25 5 2.25L13 2.25C13.4142 2.25 13.75 1.91422 13.75 1.5C13.75 1.08579 13.4142 0.750002 13 0.750002L5 0.750001C2.37665 0.75 0.25 2.87665 0.249999 5.5L0.249997 17.5C0.249997 20.1234 2.37664 22.25 5 22.25L17 22.25C19.6233 22.25 21.75 20.1234 21.75 17.5L21.75 9.5C21.75 9.08579 21.4142 8.75 21 8.75C20.5858 8.75 20.25 9.08579 20.25 9.5L20.25 13.0091C20.2049 12.973 20.158 12.9387 20.1094 12.9063L17.7285 11.319C16.142 10.2613 14.0295 10.4705 12.6812 11.8188L9.31875 15.1812C7.97049 16.5295 5.85802 16.7387 4.27153 15.681L1.75 14L1.75 5.5ZM18 8.25C18.4142 8.25 18.75 7.91422 18.75 7.5L18.75 3.31066L19.4697 4.03033C19.7626 4.32323 20.2374 4.32323 20.5303 4.03033C20.8232 3.73744 20.8232 3.26257 20.5303 2.96967L19.2374 1.67678C18.554 0.993362 17.446 0.993362 16.7626 1.67678L15.4697 2.96967C15.1768 3.26257 15.1768 3.73744 15.4697 4.03033C15.7626 4.32323 16.2374 4.32323 16.5303 4.03033L17.25 3.31066L17.25 7.5C17.25 7.91422 17.5858 8.25 18 8.25ZM7.5 10.5C8.88071 10.5 10 9.38071 10 8C10 6.61929 8.88071 5.5 7.5 5.5C6.11929 5.5 5 6.61929 5 8C5 9.38071 6.11929 10.5 7.5 10.5Z"
-                        fill="#1AB99D"
-                      />
-                    </svg>
-                  </span>
-                </a-button>
-              </a-upload>
-            </div>
+            <form @submit.prevent="onSubmit">
+              <div class="upload">
+                <h4 class="title">Отправить готовый Т/З как файл:</h4>
+                <a-upload
+                  name="file"
+                  :multiple="false"
+                  action="https://admin.hpsuz.com/api/upload"
+                  :headers="headers"
+                  @change="handleChange"
+                  :file="file"
+                >
+                  <a-button>
+                    <p>Выберите файл</p>
+                    <span class="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="23"
+                        viewBox="0 0 22 23"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M1.75 5.5C1.75 3.70508 3.20507 2.25 5 2.25L13 2.25C13.4142 2.25 13.75 1.91422 13.75 1.5C13.75 1.08579 13.4142 0.750002 13 0.750002L5 0.750001C2.37665 0.75 0.25 2.87665 0.249999 5.5L0.249997 17.5C0.249997 20.1234 2.37664 22.25 5 22.25L17 22.25C19.6233 22.25 21.75 20.1234 21.75 17.5L21.75 9.5C21.75 9.08579 21.4142 8.75 21 8.75C20.5858 8.75 20.25 9.08579 20.25 9.5L20.25 13.0091C20.2049 12.973 20.158 12.9387 20.1094 12.9063L17.7285 11.319C16.142 10.2613 14.0295 10.4705 12.6812 11.8188L9.31875 15.1812C7.97049 16.5295 5.85802 16.7387 4.27153 15.681L1.75 14L1.75 5.5ZM18 8.25C18.4142 8.25 18.75 7.91422 18.75 7.5L18.75 3.31066L19.4697 4.03033C19.7626 4.32323 20.2374 4.32323 20.5303 4.03033C20.8232 3.73744 20.8232 3.26257 20.5303 2.96967L19.2374 1.67678C18.554 0.993362 17.446 0.993362 16.7626 1.67678L15.4697 2.96967C15.1768 3.26257 15.1768 3.73744 15.4697 4.03033C15.7626 4.32323 16.2374 4.32323 16.5303 4.03033L17.25 3.31066L17.25 7.5C17.25 7.91422 17.5858 8.25 18 8.25ZM7.5 10.5C8.88071 10.5 10 9.38071 10 8C10 6.61929 8.88071 5.5 7.5 5.5C6.11929 5.5 5 6.61929 5 8C5 9.38071 6.11929 10.5 7.5 10.5Z"
+                          fill="#1AB99D"
+                        />
+                      </svg>
+                    </span>
+                  </a-button>
+                </a-upload>
+              </div>
 
-            <div class="app">
-              <h4 class="title">Введите контактные данные</h4>
-              <div class="inputs">
-                <div class="input">
-                  <label for="name">Имя <span class="dot"> * </span></label>
-                  <input type="text" id="name" placeholder="Введите имя" />
-                  <span class="pen">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="18"
-                      viewBox="0 0 19 18"
-                      fill="none"
+              <div class="app">
+                <h4 class="title">Введите контактные данные</h4>
+                <div class="inputs">
+                  <div class="input">
+                    <label for="name">Имя <span class="dot"> * </span></label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Введите имя"
+                      v-model="full_name"
+                    />
+                    <span class="pen">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="18"
+                        viewBox="0 0 19 18"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
+                          fill="#F3F5F7"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="input">
+                    <label for="number"
+                      >Тел. номер <span class="dot"> * </span></label
                     >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
-                        fill="#F3F5F7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="input">
-                  <label for="number"
-                    >Тел. номер <span class="dot"> * </span></label
-                  >
-                  <input
-                    type="text"
-                    id="number"
-                    placeholder="Введите Тел. номер"
-                  />
-                  <span class="pen">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="18"
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
-                        fill="#F3F5F7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="input">
-                  <label for="email">Электронная почта</label>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="Электронная почта"
-                  />
-                  <span class="pen">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="19"
-                      height="18"
-                      viewBox="0 0 19 18"
-                      fill="none"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
-                        fill="#F3F5F7"
-                      />
-                    </svg>
-                  </span>
+                    <input
+                      type="text"
+                      id="number"
+                      placeholder="Введите Тел. номер"
+                      v-model="number"
+                    />
+                    <span class="pen">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="18"
+                        viewBox="0 0 19 18"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
+                          fill="#F3F5F7"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="input">
+                    <label for="email">Электронная почта</label>
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Электронная почта"
+                      v-model="email"
+                    />
+                    <span class="pen">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="18"
+                        viewBox="0 0 19 18"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17.5168 0.816266C16.4284 -0.272087 14.6639 -0.272084 13.5755 0.816268L12.1704 2.22139L16.1117 6.16266L17.5168 4.75754C18.6051 3.66919 18.6051 1.90462 17.5168 0.816266ZM15.051 7.22332L11.1097 3.28205L2.12 12.2718C1.55946 12.8323 1.18044 13.5485 1.0322 14.3272L0.607981 16.5557C0.476024 17.2489 1.08416 17.857 1.77734 17.7251L4.00582 17.3008C4.78456 17.1526 5.50073 16.7736 6.06127 16.213L15.051 7.22332Z"
+                          fill="#F3F5F7"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="battons">
-              <button class="cancel">Bekor qilish</button>
-              <button class="submit">Yuborish</button>
-            </div>
+              <div class="battons">
+                <button class="cancel">Bekor qilish</button>
+                <button class="submit" type="submit">Yuborish</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -539,6 +549,8 @@
 </template>
 
 <script>
+import formApi from "@/api/form.js";
+
 export default {
   name: "config",
 
@@ -552,9 +564,15 @@ export default {
       handleConfig: true,
       handelTech: false,
 
-      headers: {
-        authorization: "authorization-text",
-      },
+      full_name: "",
+      number: "",
+      email: "",
+      file: "",
+
+      token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
+      chatId: "-1002084026037",
+
+      headers: {},
     };
   },
 
@@ -565,9 +583,49 @@ export default {
       }
       if (info.file.status === "done") {
         this.$message.success(`${info.file.name} file uploaded successfully`);
+
+        this.file = info.file.response.upload_url;
       } else if (info.file.status === "error") {
         this.$message.error(`${info.file.name} file upload failed.`);
       }
+    },
+
+    async onSubmit() {
+      const formData = {
+        full_name: this.full_name,
+        number: this.number,
+        email: this.email,
+        file: this.file,
+      };
+
+      const res = await formApi.sendApplication(formData);
+
+      if (res && res.status === 201) {
+        this.$notification["success"]({
+          message: "Успешно отправлено",
+        });
+      } else {
+        this.$notification["error"]({
+          message: "Ошибка",
+        });
+      }
+
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+
+      this.$axios
+        .post(
+          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+        )
+        .then((response) => {
+          console.log("Successfully", response);
+          this.full_name = "";
+          this.number = "";
+          this.email = "";
+          this.file = null;
+        }),
+        (error) => {
+          console.log(error);
+        };
     },
   },
 };

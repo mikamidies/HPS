@@ -130,7 +130,7 @@ export default {
       if (info.file.status === "done") {
         this.$message.success(`${info.file.name} file uploaded successfully`);
 
-        console.log(this.file);
+        this.file = info.file.response.upload_url;
       } else if (info.file.status === "error") {
         this.$message.error(`${info.file.name} file upload failed.`);
       }
