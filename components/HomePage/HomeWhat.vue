@@ -6,9 +6,7 @@
           {{ $store.state.translations["HomeWhat.0_key0"] }}
         </h2>
         <p class="sub">
-          {{ $store.state.translations["HomeCards.19_key19"] }}
-          {{ $store.state.translations["HomeWhat.2_key2"] }}
-          {{ $store.state.translations["HomeWhat.3_key3"] }}
+          {{ $store.state.translations["HomeReviews.3_key3"] }}
         </p>
         <NuxtLink :to="localePath('/config')" class="unbordered">{{
           $store.state.translations["DesktopNavbar.7_key7"]

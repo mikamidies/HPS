@@ -19,21 +19,15 @@
           <p>{{ $store.state.translations["delivery.3_key3"] }}</p>
           <p>
             {{ $store.state.translations["delivery.4_key4"] }}
-            {{ $store.state.translations["delivery.5_key5"] }}
-            {{ $store.state.translations["delivery.6_key6"] }}
-            {{ $store.state.translations["delivery.7_key7"] }}
-            {{ $store.state.translations["delivery.8_key8"] }}
-            {{ $store.state.translations["delivery.9_key9"] }}
-          </p>
-          <p>
-            {{ $store.state.translations["delivery.10_key10"] }}
-            {{ $store.state.translations["delivery.11_key11"] }}
+            <a href="mailto:info@hpsuz.com " target="_blank">
+              info@hpsuz.com
+            </a>
           </p>
         </div>
       </div>
     </div>
 
-    <div class="second section">
+    <!-- <div class="second section">
       <div class="container small separator">
         <div class="left">
           <p class="paragraph">
@@ -64,7 +58,7 @@
             {{ $store.state.translations["delivery.24_key24"] }}
           </p>
 
-          <!-- <div class="cardo">
+          <div class="cardo">
             <p>
               <span class="green">1</span> Бесплатная доставка до двери по РФ
               {{ $store.state.translations["delivery.26_key26"] }}
@@ -77,10 +71,10 @@
               <span class="green">3</span> В любой населенный пункт. Доставляем
               {{ $store.state.translations["delivery.30_key30"] }}
             </p>
-          </div> -->
+          </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- <div class="third section">
       <div class="container small separator">
@@ -113,39 +107,17 @@
 
     <div class="third section">
       <div class="container small separator">
-        <div class="left">
-          <p class="paragraph">
-            {{ $store.state.translations["delivery.0_key0"] }}
-          </p>
-        </div>
-        <div class="right">
-          <h4 class="title">
-            {{ $store.state.translations["delivery.42_key42"] }}
-            <span class="green">
-              {{ $store.state.translations["delivery.43_key43"] }}
-            </span>
-          </h4>
-          <p>
-            {{ $store.state.translations["delivery.44_key44"] }}
-            {{ $store.state.translations["delivery.45_key45"] }}
-          </p>
-          <p>
-            {{ $store.state.translations["delivery.46_key46"] }}
-            <a :href="`tel: ${info.email} `">
-              {{ info.email }}
-            </a>
-          </p>
-          <div class="map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+        <div></div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -207,6 +179,7 @@ export default {
   /* 27px */
   margin-bottom: 16px;
   display: flex;
+  flex-direction: column;
 }
 
 .right p:last-child {
@@ -214,7 +187,7 @@ export default {
 }
 
 .section {
-  margin-bottom: 120px;
+  margin-bottom: 40px;
 }
 
 .cardo {
@@ -237,7 +210,8 @@ export default {
 }
 
 .map {
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 .map iframe {

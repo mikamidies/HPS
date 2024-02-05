@@ -6,14 +6,9 @@
           <div class="content">
             <h4 class="title">
               {{ $store.state.translations["HomeCards.0_key0"] }}
-              {{ $store.state.translations["HomeCards.1_key1"] }}
             </h4>
             <p class="sub">
               {{ $store.state.translations["HomeCards.2_key2"] }}
-              {{ $store.state.translations["HomeCards.3_key3"] }}
-              {{ $store.state.translations["HomeCards.4_key4"] }}
-              {{ $store.state.translations["HomeCards.5_key5"] }}
-              {{ $store.state.translations["HomeCards.6_key6"] }}
             </p>
             <NuxtLink :to="localePath('/about')">
               {{ $store.state.translations["_slug.4_key4"] }}
