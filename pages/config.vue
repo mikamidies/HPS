@@ -129,8 +129,8 @@
                     </div>
                     <p>{{ attributes[1].title }} <span class="dot">*</span></p>
                   </div>
-                  <a-form-model-item required prop="server_options.cpu">
-                    <a-select
+                  <a-form-model-item prop="server_options.cpu">
+                    <!-- <a-select
                       :placeholder="select"
                       v-model="server_form.server_options.cpu"
                     >
@@ -141,7 +141,13 @@
                       >
                         {{ cpu.title }}
                       </a-select-option>
-                    </a-select>
+                    </a-select> -->
+                    <a-input
+                      v-model="server_form.server_options.cpu"
+                      :placeholder="
+                        $store.state.translations[`config.input_cpu`]
+                      "
+                    />
                   </a-form-model-item>
                 </div>
                 <div class="item">
@@ -843,7 +849,7 @@ export default {
 
       disableds: {
         1: ["U1", "U2", "U4"],
-        2: ["U3"],
+        2: ["U4"],
       },
 
       handleConfig: true,
@@ -1144,7 +1150,8 @@ export default {
 .dot {
   color: #f00;
 }
-.config :deep(.ant-select-selection) {
+.config :deep(.ant-select-selection),
+.config :deep(.ant-input) {
   padding: 12px 16px;
   border-radius: 8px;
   height: auto;
@@ -1157,7 +1164,8 @@ export default {
   line-height: inherit;
 }
 
-.config :deep(.ant-select-selection-selected-value) {
+.config :deep(.ant-select-selection-selected-value),
+.config :deep(.ant-input) {
   color: var(--Server-BG, #080b12);
   font-family: var(--medium);
   font-size: 16px;
