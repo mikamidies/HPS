@@ -19,6 +19,9 @@
           <p>{{ $store.state.translations["delivery.3_key3"] }}</p>
           <p>
             {{ $store.state.translations["delivery.4_key4"] }}
+          </p>
+          <p class="flexer">
+            {{ $store.state.translations["delivery.question"] }}
             <a href="mailto:info@hpsuz.com " target="_blank">
               info@hpsuz.com
             </a>
@@ -110,7 +113,7 @@
         <div></div>
         <div class="map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.895214981805!2d69.27701777656321!3d41.311143100720365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b2931f41f23%3A0x81095e06b654b845!2z0KHQutCy0LXRgCDQkNC80LjRgNCwINCi0LXQvNGD0YDQsA!5e0!3m2!1sru!2s!4v1706349011967!5m2!1sru!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.2154118923213!2d69.26125407656384!3d41.32592899980429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b6a78b7bb25%3A0x3f3559ce60239dfe!2z0YPQu9C40YbQsCDQm9Cw0LHQt9Cw0LogMzAsIDEwMDEyOCwg0KLQvnNoa2VudCwgVG9zaGtlbnQsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1707136289576!5m2!1sru!2s"
             width="600"
             height="450"
             style="border: 0"
@@ -147,6 +150,12 @@ export default {
 .separator {
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
+}
+.flexer {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 4px;
 }
 
 .paragraph {
