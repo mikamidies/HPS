@@ -10,25 +10,9 @@
           {{ $store.state.translations["HomeWhat.2_key2"] }}
           {{ $store.state.translations["HomeWhat.3_key3"] }}
         </p>
-        <NuxtLink :to="localePath('/about')">
-          {{ $store.state.translations["DesktopFooter.1_key1"] }}
-          <p class="stick"></p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              d="M14 8L18 12M18 12L14 16M18 12L6 12"
-              stroke="#1AB99D"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </NuxtLink>
+        <NuxtLink :to="localePath('/config')" class="unbordered">{{
+          $store.state.translations["DesktopNavbar.7_key7"]
+        }}</NuxtLink>
       </div>
       <div class="right">
         <img src="@/assets/img/mother.png" alt="" />

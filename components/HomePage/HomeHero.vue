@@ -37,8 +37,8 @@
                       />
                     </svg>
                   </button>
-                  <NuxtLink :to="localePath('/about')" class="unbordered">{{
-                    $store.state.translations["DesktopFooter.1_key1"]
+                  <NuxtLink :to="localePath('/config')" class="unbordered">{{
+                    $store.state.translations["DesktopNavbar.7_key7"]
                   }}</NuxtLink>
                 </div>
               </div>

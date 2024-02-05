@@ -1060,7 +1060,15 @@ export default {
           message: this.$store.state.translations["config.success_upload"],
         });
 
-        const message = `Name: ${this.server_form.name}%0APhone Number: ${this.server_form.phone_number} %0AEmail: ${this.server_form.email}`;
+        console.log(res);
+
+        let messageOptions = "";
+
+        for (let item of res.data.options) {
+          messageOptions += `${item.attribute.title} : ${item.title} %0A`;
+        }
+
+        const message = `Name: ${this.server_form.name}%0APhone Number: ${this.server_form.phone_number} %0AEmail: ${this.server_form.email} %0A %0AХарактеристики: %0A${messageOptions} %0AТип исполнения: ${this.server_form.execution_type}%0AКоличество ОЗУ: ${this.server_form.ram_count}%0AКоличество Жестого диска-1: ${this.server_form.hard_disks_first_count}%0AКоличество Жестого диска-2: ${this.server_form.hard_disks_second_count} %0AКоличество сетевых интерфейсов: ${this.server_form.network_interfaces_count}%0AКоличество Блоков питания: ${this.server_form.power_unit_count}%0AКоличество ССД накопителей: ${this.server_form.ssd_count}`;
 
         this.$axios
           .post(
@@ -1075,14 +1083,14 @@ export default {
         this.server_form.phone_number = "";
         this.server_form.email = "";
         this.server_form.execution_type = "";
-        this.server_form.ram_count = "";
-        this.server_form.hard_disks_first_count = "";
-        this.server_form.hard_disks_second_count = "";
-        this.server_form.network_interfaces_count = "";
-        this.server_form.power_unit_count = "";
+        this.server_form.ram_count = undefined;
+        this.server_form.hard_disks_first_count = undefined;
+        this.server_form.hard_disks_second_count = undefined;
+        this.server_form.network_interfaces_count = undefined;
+        this.server_form.power_unit_count = undefined;
         this.server_form.server_options = "";
-        this.server_form.cpu = "";
-        this.server_form.ssd_count = "";
+        this.server_form.cpu = undefined;
+        this.server_form.ssd_count = undefined;
       } else {
         this.$notification["error"]({
           message: this.$store.state.translations["config.error"],
