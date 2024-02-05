@@ -172,7 +172,7 @@
                 }}</span>
               </label>
             </div>
-            <button type="submit">
+            <button type="submit" class="samarkand">
               {{ $store.state.translations["about.14_key14"] }}
               <p class="stick"></p>
               <svg
@@ -293,12 +293,17 @@ export default {
         (error) => {
           console.log(error);
         };
+
+      this.modalHandle = false;
     },
   },
 };
 </script>
 
 <style scoped>
+.samarkand {
+  color: var(--green) !important;
+}
 .modaller {
   position: fixed;
   top: 0;

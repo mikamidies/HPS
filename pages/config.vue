@@ -9,13 +9,13 @@
             @click="(handleConfig = true), (handelTech = false)"
             :class="{ active: handleConfig == true }"
           >
-            Конфигурировать сервер
+            {{ $store.state.translations["config.title"] }}
           </button>
           <button
             @click="(handelTech = true), (handleConfig = false)"
             :class="{ active: handelTech }"
           >
-            Отправить техническое задание
+            {{ $store.state.translations["config.send_tz"] }}
           </button>
         </div>
         <div class="body">
@@ -26,7 +26,9 @@
               :rules="rules"
               @submit.prevent="serverSubmit"
             >
-              <h4 class="title">Выберите параметры сервера</h4>
+              <h4 class="title">
+                {{ $store.state.translations["config.params"] }}
+              </h4>
               <div class="items">
                 <div class="item">
                   <div class="name">
@@ -63,7 +65,7 @@
 
                   <a-form-model-item required prop="execution_type">
                     <a-select
-                      placeholder="Тип"
+                      :placeholder="$store.state.translations['config.type']"
                       v-model="server_form.execution_type"
                     >
                       <a-select-option
@@ -153,7 +155,7 @@
                         fill="none"
                       >
                         <path
-                          d="M23.251 3.83331H33.3333C34.2538 3.83331 35 4.57951 35 5.49998V35.5C35 36.4205 34.2538 37.1666 33.3333 37.1666H6.66667C5.7462 37.1666 5 36.4205 5 35.5V22.0843C5.54818 22.1388 6.10417 22.1666 6.66667 22.1666C15.8714 22.1666 23.3333 14.7047 23.3333 5.49998C23.3333 4.93748 23.3055 4.3815 23.251 3.83331ZM25 27.1666V30.5H28.3333V27.1666H25ZM19.8968 3.83331C19.965 4.3793 20 4.93555 20 5.49998C20 12.8638 14.0305 18.8333 6.66667 18.8333C6.10223 18.8333 5.54598 18.7983 5 18.7301V5.49998C5 4.57951 5.7462 3.83331 6.66667 3.83331H19.8968Z"
+                          d="M3.33366 8.83337C2.41319 8.83337 1.66699 9.57957 1.66699 10.5V30.5C1.66699 31.4205 2.41319 32.1667 3.33366 32.1667H8.33366V28.8334H11.667V32.1667H15.0003V28.8334H18.3337V32.1667H21.667V28.8334H25.0003V32.1667H28.3337V28.8334H31.667V32.1667H36.667C37.5875 32.1667 38.3337 31.4205 38.3337 30.5V10.5C38.3337 9.57957 37.5875 8.83337 36.667 8.83337H3.33366ZM8.33366 15.5H18.3337V20.5H8.33366V15.5ZM21.667 15.5H31.667V20.5H21.667V15.5Z"
                           fill="#1AB99D"
                         />
                       </svg>
@@ -177,11 +179,14 @@
 
                   <a-form-model-item required prop="ram_count">
                     <a-select
-                      placeholder="Количество"
+                      :placeholder="$store.state.translations['config.count']"
                       v-model="server_form.ram_count"
                     >
                       <a-select-option value="1"> 1 </a-select-option>
                       <a-select-option value="2"> 2 </a-select-option>
+                      <a-select-option value="4"> 4 </a-select-option>
+                      <a-select-option value="8"> 8 </a-select-option>
+                      <a-select-option value="10"> 10+ </a-select-option>
                     </a-select>
                   </a-form-model-item>
                 </div>
@@ -196,12 +201,15 @@
                         fill="none"
                       >
                         <path
-                          d="M3.33366 8.83337C2.41319 8.83337 1.66699 9.57957 1.66699 10.5V30.5C1.66699 31.4205 2.41319 32.1667 3.33366 32.1667H8.33366V28.8334H11.667V32.1667H15.0003V28.8334H18.3337V32.1667H21.667V28.8334H25.0003V32.1667H28.3337V28.8334H31.667V32.1667H36.667C37.5875 32.1667 38.3337 31.4205 38.3337 30.5V10.5C38.3337 9.57957 37.5875 8.83337 36.667 8.83337H3.33366ZM8.33366 15.5H18.3337V20.5H8.33366V15.5ZM21.667 15.5H31.667V20.5H21.667V15.5Z"
+                          d="M23.251 3.83331H33.3333C34.2538 3.83331 35 4.57951 35 5.49998V35.5C35 36.4205 34.2538 37.1666 33.3333 37.1666H6.66667C5.7462 37.1666 5 36.4205 5 35.5V22.0843C5.54818 22.1388 6.10417 22.1666 6.66667 22.1666C15.8714 22.1666 23.3333 14.7047 23.3333 5.49998C23.3333 4.93748 23.3055 4.3815 23.251 3.83331ZM25 27.1666V30.5H28.3333V27.1666H25ZM19.8968 3.83331C19.965 4.3793 20 4.93555 20 5.49998C20 12.8638 14.0305 18.8333 6.66667 18.8333C6.10223 18.8333 5.54598 18.7983 5 18.7301V5.49998C5 4.57951 5.7462 3.83331 6.66667 3.83331H19.8968Z"
                           fill="#1AB99D"
                         />
                       </svg>
                     </div>
-                    <p>{{ attributes[3].title }} <span class="dot">*</span></p>
+                    <p>
+                      {{ $store.state.translations["config.ssd"] }}
+                      <span class="dot">*</span>
+                    </p>
                   </div>
                   <a-form-model-item required prop="server_options.raid">
                     <a-select
@@ -217,6 +225,54 @@
                       </a-select-option>
                     </a-select>
                   </a-form-model-item>
+                  <a-form-model-item>
+                    <a-select
+                      :placeholder="$store.state.translations['config.storage']"
+                    >
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_1`]"
+                      >
+                        {{ $store.state.translations["config.ssd_1"] }}
+                      </a-select-option>
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_2`]"
+                      >
+                        {{ $store.state.translations["config.ssd_2"] }}
+                      </a-select-option>
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_3`]"
+                      >
+                        {{ $store.state.translations["config.ssd_3"] }}
+                      </a-select-option>
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_4`]"
+                      >
+                        {{ $store.state.translations["config.ssd_4"] }}
+                      </a-select-option>
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_5`]"
+                      >
+                        {{ $store.state.translations["config.ssd_5"] }}
+                      </a-select-option>
+                      <a-select-option
+                        :value="$store.state.translations[`config.ssd_6`]"
+                      >
+                        {{ $store.state.translations["config.ssd_6"] }}
+                      </a-select-option>
+                    </a-select>
+                  </a-form-model-item>
+                  <div class="div"></div>
+                  <a-form-model-item>
+                    <a-select
+                      :placeholder="$store.state.translations['config.count']"
+                    >
+                      <a-select-option value="1"> 1 </a-select-option>
+                      <a-select-option value="2"> 2 </a-select-option>
+                      <a-select-option value="4"> 4 </a-select-option>
+                      <a-select-option value="8"> 8 </a-select-option>
+                      <a-select-option value="10"> 10+ </a-select-option>
+                    </a-select>
+                  </a-form-model-item>
                 </div>
                 <div class="item">
                   <div class="name">
@@ -234,7 +290,10 @@
                         />
                       </svg>
                     </div>
-                    <p>{{ attributes[4].title }}</p>
+                    <p>
+                      {{ attributes[4].title }}
+                      {{ $store.state.translations["config.hdd"] }}
+                    </p>
                   </div>
                   <a-select
                     :placeholder="select"
@@ -250,11 +309,14 @@
                   </a-select>
 
                   <a-select
-                    placeholder="Количество"
+                    :placeholder="$store.state.translations['config.count']"
                     v-model="server_form.hard_disks_first_count"
                   >
                     <a-select-option value="1"> 1 </a-select-option>
                     <a-select-option value="2"> 2 </a-select-option>
+                    <a-select-option value="4"> 4 </a-select-option>
+                    <a-select-option value="8"> 8 </a-select-option>
+                    <a-select-option value="10"> 10+ </a-select-option>
                   </a-select>
                 </div>
                 <div class="item">
@@ -273,7 +335,10 @@
                         />
                       </svg>
                     </div>
-                    <p>{{ attributes[5].title }}</p>
+                    <p>
+                      {{ attributes[5].title }}
+                      {{ $store.state.translations["config.hdd"] }}
+                    </p>
                   </div>
 
                   <a-select
@@ -290,11 +355,14 @@
                   </a-select>
 
                   <a-select
-                    placeholder="Количество"
+                    :placeholder="$store.state.translations['config.count']"
                     v-model="server_form.hard_disks_second_count"
                   >
                     <a-select-option value="1"> 1 </a-select-option>
                     <a-select-option value="2"> 2 </a-select-option>
+                    <a-select-option value="4"> 4 </a-select-option>
+                    <a-select-option value="8"> 8 </a-select-option>
+                    <a-select-option value="10"> 10+ </a-select-option>
                   </a-select>
                 </div>
                 <div class="item">
@@ -332,15 +400,18 @@
 
                   <a-form-model-item required prop="network_interfaces_count">
                     <a-select
-                      placeholder="Количество"
+                      :placeholder="$store.state.translations['config.count']"
                       v-model="server_form.network_interfaces_count"
                     >
                       <a-select-option value="1"> 1 </a-select-option>
                       <a-select-option value="2"> 2 </a-select-option>
+                      <a-select-option value="4"> 4 </a-select-option>
+                      <a-select-option value="8"> 8 </a-select-option>
+                      <a-select-option value="10"> 10+ </a-select-option>
                     </a-select>
                   </a-form-model-item>
                 </div>
-                <div class="item">
+                <!-- <div class="item">
                   <div class="name">
                     <div class="logo">
                       <svg
@@ -371,7 +442,7 @@
                       {{ distance.title }}
                     </a-select-option>
                   </a-select>
-                </div>
+                </div> -->
                 <div class="item">
                   <div class="name">
                     <div class="logo">
@@ -408,11 +479,14 @@
 
                   <a-form-model-item required prop="power_unit_count">
                     <a-select
-                      placeholder="Количество"
+                      :placeholder="$store.state.translations['config.count']"
                       v-model="server_form.power_unit_count"
                     >
                       <a-select-option value="1"> 1 </a-select-option>
                       <a-select-option value="2"> 2 </a-select-option>
+                      <a-select-option value="4"> 4 </a-select-option>
+                      <a-select-option value="8"> 8 </a-select-option>
+                      <a-select-option value="10"> 10+ </a-select-option>
                     </a-select>
                   </a-form-model-item>
                 </div>
@@ -488,24 +562,29 @@
                       />
                     </svg>
                   </span>
-                  Siz tanlagan konfigurator final holatda emas!
+                  {{ $store.state.translations["config.not_yet"] }}
                 </h4>
                 <p>
-                  Наш логист всегда на связи, знает где ваш заказ, что с ним,
-                  когда приедет. Потеряли трек-номер? Он есть у нашего логиста.
-                  В ТК перепутали заказы — логист знает что делать.
+                  {{ $store.state.translations["config.not_txt"] }}
                 </p>
               </div>
 
               <div class="app">
-                <h4 class="title">Введите контактные данные</h4>
+                <h4 class="title">
+                  {{ $store.state.translations["config.contacts"] }}
+                </h4>
                 <div class="inputs">
                   <div class="input">
-                    <label for="name">Имя <span class="dot"> * </span></label>
+                    <label for="name"
+                      >{{ $store.state.translations["config.name"] }}
+                      <span class="dot"> * </span></label
+                    >
                     <input
                       type="text"
                       id="name"
-                      placeholder="Введите имя"
+                      :placeholder="
+                        $store.state.translations['config.submit_name']
+                      "
                       v-model="server_form.name"
                       required
                     />
@@ -528,12 +607,15 @@
                   </div>
                   <div class="input">
                     <label for="number"
-                      >Тел. номер <span class="dot"> * </span></label
+                      >{{ $store.state.translations["config.number"] }}
+                      <span class="dot"> * </span></label
                     >
                     <input
                       type="text"
                       id="number"
-                      placeholder="Введите Тел. номер"
+                      :placeholder="
+                        $store.state.translations['config.submit_number']
+                      "
                       v-model="server_form.phone_number"
                       required
                     />
@@ -555,11 +637,13 @@
                     </span>
                   </div>
                   <div class="input">
-                    <label for="email">Электронная почта</label>
+                    <label for="email">{{
+                      $store.state.translations["config.email"]
+                    }}</label>
                     <input
                       type="text"
                       id="email"
-                      placeholder="Электронная почта"
+                      :placeholder="$store.state.translations['config.email']"
                       v-model="server_form.email"
                     />
                     <span class="pen">
@@ -583,15 +667,21 @@
               </div>
 
               <div class="battons">
-                <button class="cancel">Bekor qilish</button>
-                <button class="submit" type="submit">Yuborish</button>
+                <button class="cancel">
+                  {{ $store.state.translations["config.cancel"] }}
+                </button>
+                <button class="submit" type="submit">
+                  {{ $store.state.translations["config.send"] }}
+                </button>
               </div>
             </a-form-model>
           </div>
           <div :class="{ active: handelTech == true }" class="tech tab">
             <form @submit.prevent="onSubmit">
               <div class="upload">
-                <h4 class="title">Отправить готовый Т/З как файл:</h4>
+                <h4 class="title">
+                  {{ $store.state.translations["config.send_file"] }}
+                </h4>
                 <a-upload
                   name="file"
                   :multiple="false"
@@ -601,7 +691,7 @@
                   :file="file"
                 >
                   <a-button>
-                    <p>Выберите файл</p>
+                    <p>{{ $store.state.translations["config.choose_file"] }}</p>
                     <span class="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -623,14 +713,21 @@
               </div>
 
               <div class="app">
-                <h4 class="title">Введите контактные данные</h4>
+                <h4 class="title">
+                  {{ $store.state.translations["config.contacts"] }}
+                </h4>
                 <div class="inputs">
                   <div class="input">
-                    <label for="name">Имя <span class="dot"> * </span></label>
+                    <label for="name"
+                      >{{ $store.state.translations["config.name"] }}
+                      <span class="dot"> * </span></label
+                    >
                     <input
                       type="text"
                       id="name"
-                      placeholder="Введите имя"
+                      :placeholder="
+                        $store.state.translations['config.submit_name']
+                      "
                       v-model="full_name"
                       required
                     />
@@ -653,12 +750,15 @@
                   </div>
                   <div class="input">
                     <label for="number"
-                      >Тел. номер <span class="dot"> * </span></label
+                      >{{ $store.state.translations["config.number"] }}
+                      <span class="dot"> * </span></label
                     >
                     <input
                       type="text"
                       id="number"
-                      placeholder="Введите Тел. номер"
+                      :placeholder="
+                        $store.state.translations['config.submit_number']
+                      "
                       v-model="number"
                       required
                     />
@@ -680,11 +780,15 @@
                     </span>
                   </div>
                   <div class="input">
-                    <label for="email">Электронная почта</label>
+                    <label for="email">{{
+                      $store.state.translations["config.email"]
+                    }}</label>
                     <input
                       type="text"
                       id="email"
-                      placeholder="Электронная почта"
+                      p:placeholder="
+                        $store.state.translations['config.email']
+                      "
                       v-model="email"
                     />
                     <span class="pen">
@@ -708,8 +812,12 @@
               </div>
 
               <div class="battons">
-                <button class="cancel">Bekor qilish</button>
-                <button class="submit" type="submit">Yuborish</button>
+                <button class="cancel">
+                  {{ $store.state.translations["config.cancel"] }}
+                </button>
+                <button class="submit" type="submit">
+                  {{ $store.state.translations["config.send"] }}
+                </button>
               </div>
             </form>
           </div>
@@ -731,7 +839,7 @@ export default {
   data() {
     return {
       title: this.$store.state.translations["DesktopFooter.3_key3"],
-      select: "Выбрать",
+      select: this.$store.state.translations["config.choose"],
 
       disableds: {
         1: ["U1", "U2", "U4"],
@@ -769,7 +877,7 @@ export default {
           rom_1: undefined,
           rom_2: undefined,
           connect: undefined,
-          distance: undefined,
+          distance: 1,
           power: undefined,
         },
       },
@@ -778,28 +886,28 @@ export default {
         execution_type: [
           {
             required: true,
-            message: "Это поле обязательна",
+            message: this.$store.state.translations["config.required"],
             trigger: "change",
           },
         ],
         ram_count: [
           {
             required: true,
-            message: "Это поле обязательна",
+            message: this.$store.state.translations["config.required"],
             trigger: "change",
           },
         ],
         network_interfaces_count: [
           {
             required: true,
-            message: "Это поле обязательна",
+            message: this.$store.state.translations["config.required"],
             trigger: "change",
           },
         ],
         power_unit_count: [
           {
             required: true,
-            message: "Это поле обязательна",
+            message: this.$store.state.translations["config.required"],
             trigger: "change",
           },
         ],
@@ -807,35 +915,35 @@ export default {
           type: [
             {
               required: true,
-              message: "Это поле обязательна",
+              message: this.$store.state.translations["config.required"],
               trigger: "change",
             },
           ],
           cpu: [
             {
               required: true,
-              message: "Это поле обязательна",
+              message: this.$store.state.translations["config.required"],
               trigger: "change",
             },
           ],
           ram: [
             {
               required: true,
-              message: "Это поле обязательна",
+              message: this.$store.state.translations["config.required"],
               trigger: "change",
             },
           ],
           connect: [
             {
               required: true,
-              message: "Это поле обязательна",
+              message: this.$store.state.translations["config.required"],
               trigger: "change",
             },
           ],
           power: [
             {
               required: true,
-              message: "Это поле обязательна",
+              message: this.$store.state.translations["config.required"],
               trigger: "change",
             },
           ],
@@ -851,8 +959,6 @@ export default {
         language: i18n.locale,
       },
     });
-
-    console.log(attributes);
 
     return {
       attributes,
@@ -883,32 +989,39 @@ export default {
 
       const res = await formApi.sendApplication(formData);
 
-      if (res && res.status === 201) {
-        this.$notification["success"]({
-          message: "Успешно отправлено",
-        });
+      if (this.file.length > 0) {
+        if (res && res.status === 201) {
+          this.$notification["success"]({
+            message: this.$store.state.translations["config.success_upload"],
+          });
+        } else {
+          this.$notification["error"]({
+            message: this.$store.state.translations["config.error"],
+          });
+        }
+
+        const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+
+        this.$axios
+          .post(
+            `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+          )
+          .then((response) => {
+            console.log("Successfully", response);
+            this.full_name = "";
+            this.number = "";
+            this.email = "";
+            this.file = null;
+          }),
+          (error) => {
+            console.log(error);
+          };
       } else {
+        this.error = true;
         this.$notification["error"]({
-          message: "Ошибка",
+          message: this.$store.state.translations["config.upload_file"],
         });
       }
-
-      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
-
-      this.$axios
-        .post(
-          `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
-        )
-        .then((response) => {
-          console.log("Successfully", response);
-          this.full_name = "";
-          this.number = "";
-          this.email = "";
-          this.file = null;
-        }),
-        (error) => {
-          console.log(error);
-        };
     },
 
     async serverSubmit() {
@@ -938,11 +1051,11 @@ export default {
 
       if (res && res.status === 201) {
         this.$notification["success"]({
-          message: "Успешно отправлено",
+          message: this.$store.state.translations["config.success_upload"],
         });
       } else {
         this.$notification["error"]({
-          message: "Ошибка",
+          message: this.$store.state.translations["config.error"],
         });
       }
     },
