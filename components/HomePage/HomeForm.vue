@@ -156,7 +156,7 @@ export default {
         });
       }
 
-      const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+      const message = `Name: ${this.full_name}%0APhone Number: ${this.number} %0AEmail: ${this.email}`;
 
       this.$axios
         .post(
@@ -167,7 +167,7 @@ export default {
           this.full_name = "";
           this.number = "";
           this.email = "";
-          this.file = "";
+          this.file = null;
         }),
         (error) => {
           console.log(error);

@@ -129,7 +129,7 @@
                     </div>
                     <p>{{ attributes[1].title }} <span class="dot">*</span></p>
                   </div>
-                  <a-form-model-item prop="server_options.cpu">
+                  <a-form-model-item prop="cpu">
                     <!-- <a-select
                       :placeholder="select"
                       v-model="server_form.server_options.cpu"
@@ -143,7 +143,7 @@
                       </a-select-option>
                     </a-select> -->
                     <a-input
-                      v-model="server_form.server_options.cpu"
+                      v-model="server_form.cpu"
                       :placeholder="
                         $store.state.translations[`config.input_cpu`]
                       "
@@ -233,43 +233,22 @@
                   </a-form-model-item>
                   <a-form-model-item>
                     <a-select
+                      v-model="server_form.server_options.ssd_storage"
                       :placeholder="$store.state.translations['config.storage']"
                     >
                       <a-select-option
-                        :value="$store.state.translations[`config.ssd_1`]"
+                        v-for="storage in attributes[9].options"
+                        :key="storage.key"
+                        :value="storage.id"
                       >
-                        {{ $store.state.translations["config.ssd_1"] }}
-                      </a-select-option>
-                      <a-select-option
-                        :value="$store.state.translations[`config.ssd_2`]"
-                      >
-                        {{ $store.state.translations["config.ssd_2"] }}
-                      </a-select-option>
-                      <a-select-option
-                        :value="$store.state.translations[`config.ssd_3`]"
-                      >
-                        {{ $store.state.translations["config.ssd_3"] }}
-                      </a-select-option>
-                      <a-select-option
-                        :value="$store.state.translations[`config.ssd_4`]"
-                      >
-                        {{ $store.state.translations["config.ssd_4"] }}
-                      </a-select-option>
-                      <a-select-option
-                        :value="$store.state.translations[`config.ssd_5`]"
-                      >
-                        {{ $store.state.translations["config.ssd_5"] }}
-                      </a-select-option>
-                      <a-select-option
-                        :value="$store.state.translations[`config.ssd_6`]"
-                      >
-                        {{ $store.state.translations["config.ssd_6"] }}
+                        {{ storage.title }}
                       </a-select-option>
                     </a-select>
                   </a-form-model-item>
                   <div class="div"></div>
                   <a-form-model-item>
                     <a-select
+                      v-model="server_form.ssd_count"
                       :placeholder="$store.state.translations['config.count']"
                     >
                       <a-select-option value="1"> 1 </a-select-option>
@@ -673,9 +652,9 @@
               </div>
 
               <div class="battons">
-                <button class="cancel">
+                <NuxtLink to="/" class="cancel">
                   {{ $store.state.translations["config.cancel"] }}
-                </button>
+                </NuxtLink>
                 <button class="submit" type="submit">
                   {{ $store.state.translations["config.send"] }}
                 </button>
@@ -792,9 +771,7 @@
                     <input
                       type="text"
                       id="email"
-                      p:placeholder="
-                        $store.state.translations['config.email']
-                      "
+                      :placeholder="$store.state.translations['config.email']"
                       v-model="email"
                     />
                     <span class="pen">
@@ -818,9 +795,9 @@
               </div>
 
               <div class="battons">
-                <button class="cancel">
+                <NuxtLink to="/" class="cancel">
                   {{ $store.state.translations["config.cancel"] }}
-                </button>
+                </NuxtLink>
                 <button class="submit" type="submit">
                   {{ $store.state.translations["config.send"] }}
                 </button>
@@ -859,6 +836,7 @@ export default {
       number: "",
       email: "",
       file: "",
+      info: "",
 
       token: "6273572946:AAFPB99kVWMrOWoR9NCHoO3ziAzv0Nh1WTM",
       chatId: "-1002084026037",
@@ -875,6 +853,8 @@ export default {
         hard_disks_second_count: undefined,
         network_interfaces_count: undefined,
         power_unit_count: undefined,
+        cpu: "",
+        ssd_count: undefined,
         server_options: {
           type: undefined,
           cpu: undefined,
@@ -885,11 +865,19 @@ export default {
           connect: undefined,
           distance: 1,
           power: undefined,
+          ssd_storage: undefined,
         },
       },
 
       rules: {
         execution_type: [
+          {
+            required: true,
+            message: this.$store.state.translations["config.required"],
+            trigger: "change",
+          },
+        ],
+        ssd_count: [
           {
             required: true,
             message: this.$store.state.translations["config.required"],
@@ -917,15 +905,15 @@ export default {
             trigger: "change",
           },
         ],
+        cpu: [
+          {
+            required: true,
+            message: this.$store.state.translations["config.required"],
+            trigger: "change",
+          },
+        ],
         server_options: {
           type: [
-            {
-              required: true,
-              message: this.$store.state.translations["config.required"],
-              trigger: "change",
-            },
-          ],
-          cpu: [
             {
               required: true,
               message: this.$store.state.translations["config.required"],
@@ -953,6 +941,13 @@ export default {
               trigger: "change",
             },
           ],
+          ssd_storage: [
+            {
+              required: true,
+              message: this.$store.state.translations["config.required"],
+              trigger: "change",
+            },
+          ],
         },
       },
     };
@@ -974,12 +969,12 @@ export default {
   methods: {
     handleChange(info) {
       if (info.file.status !== "uploading") {
-        console.log(info.file, info.fileList);
       }
       if (info.file.status === "done") {
         this.$message.success(`${info.file.name} file uploaded successfully`);
 
         this.file = info.file.response.upload_url;
+        this.info = info;
       } else if (info.file.status === "error") {
         this.$message.error(`${info.file.name} file upload failed.`);
       }
@@ -1006,7 +1001,7 @@ export default {
           });
         }
 
-        const message = `Name: ${this.full_name}%0APhone Number: ${this.number}`;
+        const message = `Name: ${this.full_name}%0APhone Number: ${this.number} %0AEmail: ${this.email}`;
 
         this.$axios
           .post(
@@ -1018,6 +1013,7 @@ export default {
             this.number = "";
             this.email = "";
             this.file = null;
+            this.info.file = [];
           }),
           (error) => {
             console.log(error);
@@ -1042,6 +1038,7 @@ export default {
 
       const formData = {
         name: this.server_form.name,
+        cpu: this.server_form.cpu,
         phone_number: this.server_form.phone_number,
         email: this.server_form.email,
         execution_type: this.server_form.execution_type,
@@ -1050,7 +1047,10 @@ export default {
         hard_disks_second_count: this.server_form.hard_disks_second_count,
         network_interfaces_count: this.server_form.network_interfaces_count,
         power_unit_count: this.server_form.power_unit_count,
-        options: Object.values(this.server_form.server_options),
+        ssd_count: this.server_form.ssd_count,
+        options: Object.values(this.server_form.server_options).filter(
+          (item) => item
+        ),
       };
 
       const res = await formApi.sendServerApplication(formData);
@@ -1059,6 +1059,30 @@ export default {
         this.$notification["success"]({
           message: this.$store.state.translations["config.success_upload"],
         });
+
+        const message = `Name: ${this.server_form.name}%0APhone Number: ${this.server_form.phone_number} %0AEmail: ${this.server_form.email}`;
+
+        this.$axios
+          .post(
+            `https://api.telegram.org/bot${this.token}/sendMessage?chat_id=${this.chatId}&text=${message}`
+          )
+          .then((response) => {}),
+          (error) => {
+            console.log(error);
+          };
+
+        this.server_form.name = "";
+        this.server_form.phone_number = "";
+        this.server_form.email = "";
+        this.server_form.execution_type = "";
+        this.server_form.ram_count = "";
+        this.server_form.hard_disks_first_count = "";
+        this.server_form.hard_disks_second_count = "";
+        this.server_form.network_interfaces_count = "";
+        this.server_form.power_unit_count = "";
+        this.server_form.server_options = "";
+        this.server_form.cpu = "";
+        this.server_form.ssd_count = "";
       } else {
         this.$notification["error"]({
           message: this.$store.state.translations["config.error"],
@@ -1070,6 +1094,9 @@ export default {
 </script>
 
 <style scoped>
+.config :deep(.has-error .ant-input) {
+  border-color: red !important;
+}
 .buttons {
   max-width: 1330px;
   border-radius: 12px;

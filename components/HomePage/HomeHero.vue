@@ -134,7 +134,7 @@
         <div class="cards">
           <div class="cardo">
             <div class="cardo_back"></div>
-            <NuxtLink :to="localePath('/')">
+            <NuxtLink :to="localePath('/products?category=1')">
               <div class="top_vector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -277,7 +277,7 @@
           </div>
           <div class="cardo">
             <div class="cardo_back"></div>
-            <NuxtLink :to="localePath('/')">
+            <NuxtLink :to="localePath('/products?category=1')">
               <div class="top_vector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -422,7 +422,7 @@
           </div>
           <div class="cardo">
             <div class="cardo_back"></div>
-            <NuxtLink :to="localePath('/')">
+            <NuxtLink :to="localePath('/products?category=1')">
               <div class="top_vector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -564,7 +564,7 @@
           </div>
           <div class="cardo">
             <div class="cardo_back"></div>
-            <NuxtLink :to="localePath('/')">
+            <NuxtLink :to="localePath('/products?category=1')">
               <div class="top_vector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -721,7 +721,7 @@
           </div>
           <div class="cardo">
             <div class="cardo_back"></div>
-            <NuxtLink :to="localePath('/')">
+            <NuxtLink :to="localePath('/products?category=1')">
               <div class="top_vector">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
