@@ -5,17 +5,14 @@
         {{ $store.state.translations["HomeServices.0_key0"] }}
       </h4>
       <div class="cards">
-        <div class="cardo">
+        <div class="cardo" v-for="item in services" :key="item.id">
           <div class="left">
-            <p class="sup">
-              {{ $store.state.translations["HomeCards.12_key12"] }}
-            </p>
+            <p class="sup">{{ item.category.title }}</p>
             <h2 class="name">
-              {{ $store.state.translations["HomeCards.13_key13"] }}
+              {{ item.title }}
             </h2>
             <p class="sub">
-              {{ $store.state.translations["HomeCards.14_key14"] }}
-              {{ $store.state.translations["HomeCards.15_key15"] }}
+              {{ item.subtitle }}
             </p>
             <button>
               {{ $store.state.translations["HomeServices.5_key5"] }}
@@ -41,139 +38,15 @@
             <img src="@/assets/img/server.png" alt="" />
           </div>
         </div>
-        <div class="cardo">
-          <p class="sup">
-            {{ $store.state.translations["HomeCards.12_key12"] }}
-          </p>
-          <h2 class="name">
-            {{ $store.state.translations["HomeCards.13_key13"] }}
-          </h2>
-          <p class="sub">
-            {{ $store.state.translations["HomeCards.14_key14"] }}
-            {{ $store.state.translations["HomeCards.15_key15"] }}
-          </p>
-          <div class="footer">
-            <button>
-              {{ $store.state.translations["HomeServices.5_key5"] }}
-              <p class="stick"></p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                  stroke="#1AB99D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-
-            <div class="arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 64 64"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.180368 64L59.5476 64C60.7285 64 61.861 63.5309 62.6959 62.6959C63.5309 61.861 64 60.7285 64 59.5476L64 0.180364L55.0953 0.180364L55.0953 48.7985L6.29672 5.04458e-06L5.50605e-07 6.29819L48.7985 55.0938L0.180368 55.0938L0.180368 64Z"
-                  fill="url(#paint0_linear_193_2501)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_193_2501"
-                    x1="59.5476"
-                    y1="59.5476"
-                    x2="0.180361"
-                    y2="0.180369"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0.521" stop-color="#30333A" />
-                    <stop offset="1" stop-color="#12151C" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="cardo">
-          <p class="sup">
-            {{ $store.state.translations["HomeCards.12_key12"] }}
-          </p>
-          <h2 class="name">
-            {{ $store.state.translations["HomeCards.13_key13"] }}
-          </h2>
-          <p class="sub">
-            {{ $store.state.translations["HomeCards.14_key14"] }}
-            {{ $store.state.translations["HomeCards.15_key15"] }}
-          </p>
-          <div class="footer">
-            <button>
-              {{ $store.state.translations["HomeServices.5_key5"] }}
-              <p class="stick"></p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M14 8L18 12M18 12L14 16M18 12L6 12"
-                  stroke="#1AB99D"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-
-            <div class="arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewBox="0 0 64 64"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.180368 64L59.5476 64C60.7285 64 61.861 63.5309 62.6959 62.6959C63.5309 61.861 64 60.7285 64 59.5476L64 0.180364L55.0953 0.180364L55.0953 48.7985L6.29672 5.04458e-06L5.50605e-07 6.29819L48.7985 55.0938L0.180368 55.0938L0.180368 64Z"
-                  fill="url(#paint0_linear_193_2501)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_193_2501"
-                    x1="59.5476"
-                    y1="59.5476"
-                    x2="0.180361"
-                    y2="0.180369"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0.521" stop-color="#30333A" />
-                    <stop offset="1" stop-color="#12151C" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["services"],
+};
 </script>
 
 <style scoped>
@@ -219,7 +92,10 @@ export default {};
   background: var(--Server-BG, #080b12);
   padding: 56px;
 }
-
+.cardo:nth-child(2) img,
+.cardo:nth-child(3) img {
+  display: none;
+}
 .right img {
   width: auto;
   height: 100%;

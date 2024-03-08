@@ -3,17 +3,20 @@
     <HomeHero />
     <HomePopular :products="products" />
     <HomeCards :info="info" />
-    <HomeServices />
+    <HomeServices :services="services" />
     <HomeWhat />
     <HomeForm />
-    <HomeReviews />
-    <HomePartners />
+    <HomeReviews :reviews="reviews" />
+    <HomePartners :partners="partners" />
     <HomeText />
   </div>
 </template>
 
 <script>
 import productsApi from "@/api/products.js";
+import servicesApi from "@/api/services.js";
+import partnersApi from "@/api/partners.js";
+import reviewsApi from "@/api/reviews.js";
 import infoApi from "@/api/info.js";
 
 export default {
@@ -31,8 +34,32 @@ export default {
       },
     });
 
+    const services = await servicesApi.getServices($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+
+    const partners = await partnersApi.getPartners($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+
+    const reviews = await reviewsApi.getReviews($axios, {
+      params: query,
+      headers: {
+        language: i18n.locale,
+      },
+    });
+
     return {
       products,
+      services,
+      partners,
+      reviews,
     };
   },
 

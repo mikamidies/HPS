@@ -24,15 +24,15 @@
         </div>
         <div class="swiper" ref="reviewsSwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" v-for="item in reviews" :key="item.id">
               <div class="cardo">
                 <div class="header">
                   <p class="name">
-                    {{ $store.state.translations["HomeReviews.1_key1"] }}
+                    {{ item.name }}
                   </p>
 
                   <p class="stars">
-                    5
+                    {{ item.rating }}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -47,113 +47,7 @@
                     </svg>
                   </p>
                 </div>
-                <div class="content">
-                  <p>
-                    {{ $store.state.translations["HomeReviews.3_key3"] }}
-                    {{ $store.state.translations["HomeReviews.4_key4"] }}
-                    {{ $store.state.translations["HomeReviews.5_key5"] }}
-                    {{ $store.state.translations["HomeReviews.6_key6"] }}
-                    {{ $store.state.translations["HomeReviews.7_key7"] }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="cardo">
-                <div class="header">
-                  <p class="name">
-                    {{ $store.state.translations["HomeReviews.1_key1"] }}
-                  </p>
-
-                  <p class="stars">
-                    5
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M6.68846 2.1811C7.22492 1.05096 8.77492 1.05096 9.31138 2.1811L10.2385 4.13428C10.4515 4.58306 10.8633 4.89412 11.3397 4.96609L13.4128 5.27929C14.6124 5.46052 15.0913 6.99319 14.2233 7.87288L12.7232 9.39322C12.3785 9.74255 12.2212 10.2459 12.3026 10.7391L12.6567 12.8859C12.8616 14.128 11.6077 15.0753 10.5347 14.4888L8.68047 13.4752C8.25442 13.2423 7.74542 13.2423 7.31937 13.4752L5.46509 14.4888C4.39218 15.0753 3.1382 14.128 3.34311 12.8859L3.69724 10.7391C3.77861 10.2459 3.62133 9.74255 3.27664 9.39322L1.7765 7.87289C0.908496 6.99319 1.38747 5.46052 2.58703 5.27929L4.66017 4.96609C5.13651 4.89412 5.5483 4.58306 5.76132 4.13428L6.68846 2.1811Z"
-                        fill="#1AB99D"
-                      />
-                    </svg>
-                  </p>
-                </div>
-                <div class="content">
-                  <p>
-                    {{ $store.state.translations["HomeReviews.3_key3"] }}
-                    {{ $store.state.translations["HomeReviews.4_key4"] }}
-                    {{ $store.state.translations["HomeReviews.5_key5"] }}
-                    {{ $store.state.translations["HomeReviews.6_key6"] }}
-                    {{ $store.state.translations["HomeReviews.7_key7"] }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="cardo">
-                <div class="header">
-                  <p class="name">
-                    {{ $store.state.translations["HomeReviews.1_key1"] }}
-                  </p>
-
-                  <p class="stars">
-                    5
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M6.68846 2.1811C7.22492 1.05096 8.77492 1.05096 9.31138 2.1811L10.2385 4.13428C10.4515 4.58306 10.8633 4.89412 11.3397 4.96609L13.4128 5.27929C14.6124 5.46052 15.0913 6.99319 14.2233 7.87288L12.7232 9.39322C12.3785 9.74255 12.2212 10.2459 12.3026 10.7391L12.6567 12.8859C12.8616 14.128 11.6077 15.0753 10.5347 14.4888L8.68047 13.4752C8.25442 13.2423 7.74542 13.2423 7.31937 13.4752L5.46509 14.4888C4.39218 15.0753 3.1382 14.128 3.34311 12.8859L3.69724 10.7391C3.77861 10.2459 3.62133 9.74255 3.27664 9.39322L1.7765 7.87289C0.908496 6.99319 1.38747 5.46052 2.58703 5.27929L4.66017 4.96609C5.13651 4.89412 5.5483 4.58306 5.76132 4.13428L6.68846 2.1811Z"
-                        fill="#1AB99D"
-                      />
-                    </svg>
-                  </p>
-                </div>
-                <div class="content">
-                  <p>
-                    {{ $store.state.translations["HomeReviews.3_key3"] }}
-                    {{ $store.state.translations["HomeReviews.4_key4"] }}
-                    {{ $store.state.translations["HomeReviews.19_key19"] }}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="cardo">
-                <div class="header">
-                  <p class="name">
-                    {{ $store.state.translations["HomeReviews.1_key1"] }}
-                  </p>
-
-                  <p class="stars">
-                    5
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M6.68846 2.1811C7.22492 1.05096 8.77492 1.05096 9.31138 2.1811L10.2385 4.13428C10.4515 4.58306 10.8633 4.89412 11.3397 4.96609L13.4128 5.27929C14.6124 5.46052 15.0913 6.99319 14.2233 7.87288L12.7232 9.39322C12.3785 9.74255 12.2212 10.2459 12.3026 10.7391L12.6567 12.8859C12.8616 14.128 11.6077 15.0753 10.5347 14.4888L8.68047 13.4752C8.25442 13.2423 7.74542 13.2423 7.31937 13.4752L5.46509 14.4888C4.39218 15.0753 3.1382 14.128 3.34311 12.8859L3.69724 10.7391C3.77861 10.2459 3.62133 9.74255 3.27664 9.39322L1.7765 7.87289C0.908496 6.99319 1.38747 5.46052 2.58703 5.27929L4.66017 4.96609C5.13651 4.89412 5.5483 4.58306 5.76132 4.13428L6.68846 2.1811Z"
-                        fill="#1AB99D"
-                      />
-                    </svg>
-                  </p>
-                </div>
-                <div class="content">
-                  <p>
-                    {{ $store.state.translations["HomeReviews.3_key3"] }}
-                    {{ $store.state.translations["HomeReviews.4_key4"] }}
-                    {{ $store.state.translations["HomeReviews.24_key24"] }}
-                  </p>
-                </div>
+                <div class="content" v-html="item.text"></div>
               </div>
             </div>
           </div>
@@ -168,6 +62,8 @@ import Swiper from "swiper/swiper-bundle.js";
 import "swiper/swiper-bundle.min.css";
 
 export default {
+  props: ["reviews"],
+
   mounted() {
     new Swiper(this.$refs.reviewsSwiper, {
       slidesPerView: 1.2,
@@ -240,6 +136,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
+  max-width: 80%;
 }
 .stars {
   display: flex;
