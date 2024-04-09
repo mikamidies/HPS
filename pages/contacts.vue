@@ -23,13 +23,8 @@
         <div class="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.2154118923213!2d69.26125407656384!3d41.32592899980429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b6a78b7bb25%3A0x3f3559ce60239dfe!2z0YPQu9C40YbQsCDQm9Cw0LHQt9Cw0LogMzAsIDEwMDEyOCwg0KLQvnNoa2VudCwgVG9zaGtlbnQsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1707136289576!5m2!1sru!2s"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -57,7 +52,7 @@ export default {
 
     let phoneString = this.info.nbm;
 
-    this.phoneArray = phoneString.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
+    this.phoneArray = phoneString?.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
   },
 };
 </script>

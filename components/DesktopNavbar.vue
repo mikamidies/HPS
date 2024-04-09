@@ -15,28 +15,17 @@
             <p class="current">
               <span v-if="$i18n.locale == 'ru'"> Ру </span>
               <span v-if="$i18n.locale == 'en'"> En </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="6"
-                viewBox="0 0 10 6"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M0.345232 0.942921C0.560863 0.673382 0.954171 0.629681 1.22371 0.845312L4.99994 3.8663L8.77617 0.845312C9.04571 0.629681 9.43902 0.673382 9.65465 0.942921C9.87028 1.21246 9.82658 1.60577 9.55704 1.8214L5.39038 5.15473C5.16211 5.33734 4.83777 5.33734 4.60951 5.15473L0.442841 1.8214C0.173302 1.60577 0.129601 1.21246 0.345232 0.942921Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </p>
 
             <div class="drop">
-              <NuxtLink :to="switchLocalePath('ru')"
-                >{{ $store.state.translations["DesktopNavbar.0_key0"] }}
+              <NuxtLink :to="switchLocalePath('ru')">{{ $store.state.translations["DesktopNavbar.0_key0"] }}
               </NuxtLink>
-              <NuxtLink :to="switchLocalePath('en')"
-                >{{ $store.state.translations["DesktopNavbar.2_key2"] }}
+              <NuxtLink :to="switchLocalePath('en')">{{ $store.state.translations["DesktopNavbar.2_key2"] }}
               </NuxtLink>
             </div>
           </div>
@@ -51,8 +40,8 @@
           </NuxtLink>
 
           <NuxtLink class="black" :to="localePath('/')">
-            <img src="@/assets/img/logo/black.svg" alt=""
-          /></NuxtLink>
+            <img src="@/assets/img/logo/black.svg" alt="" />
+          </NuxtLink>
         </div>
         <button class="burger" @click="menuHandle = !menuHandle">
           <div class="pick"></div>
@@ -93,20 +82,10 @@
           <p class="stick"></p>
           <div class="search" @click="searchHandle = !searchHandle">
             <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="none"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                 <path
                   d="M22 22.5L20 20.5M2 12C2 6.75329 6.25329 2.5 11.5 2.5C16.7467 2.5 21 6.75329 21 12C21 17.2467 16.7467 21.5 11.5 21.5C6.25329 21.5 2 17.2467 2 12Z"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+                  stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </button>
           </div>
@@ -114,29 +93,17 @@
             <div class="searcher">
               <button @click="searchHandle = !searchHandle">
                 <p>{{ $store.state.translations["DesktopNavbar.10_key10"] }}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                   <path
                     d="M22 22.5L20 20.5M2 12C2 6.75329 6.25329 2.5 11.5 2.5C16.7467 2.5 21 6.75329 21 12C21 17.2467 16.7467 21.5 11.5 21.5C6.25329 21.5 2 17.2467 2 12Z"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </button>
             </div>
             <div class="langer">
-              <NuxtLink :to="switchLocalePath('ru')"
-                >{{ $store.state.translations["DesktopNavbar.0_key0"] }}
+              <NuxtLink :to="switchLocalePath('ru')">{{ $store.state.translations["DesktopNavbar.0_key0"] }}
               </NuxtLink>
-              <NuxtLink :to="switchLocalePath('en')"
-                >{{ $store.state.translations["DesktopNavbar.2_key2"] }}
+              <NuxtLink :to="switchLocalePath('en')">{{ $store.state.translations["DesktopNavbar.2_key2"] }}
               </NuxtLink>
             </div>
           </div>
@@ -146,35 +113,19 @@
 
     <div class="dropdown" :class="{ active: searchHandle == true }">
       <button class="x" @click="searchHandle = false">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="88"
-          height="88"
-          viewBox="0 0 88 88"
-          fill="none"
-        >
-          <path
-            d="M59.5565 28.4437L28.4438 59.5564M59.5565 59.5562L28.4438 28.4435"
-            stroke="white"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88" fill="none">
+          <path d="M59.5565 28.4437L28.4438 59.5564M59.5565 59.5562L28.4438 28.4435" stroke="white" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
       <div class="container small">
         <div class="input">
-          <input
-            type="text"
-            :placeholder="$store.state.translations['place.search']"
-            v-model="search"
-          />
+          <input type="text" :placeholder="$store.state.translations['place.search']" v-model="search" />
         </div>
         <div class="products" v-show="products.length > 0">
           <div v-for="item in products" :key="item.id" class="product">
             <NuxtLink :to="localePath(`/product/${item.slug}`)">
-              {{ item.title }}</NuxtLink
-            >
+              {{ item.title }}</NuxtLink>
           </div>
         </div>
       </div>
@@ -205,7 +156,7 @@ export default {
 
     let phoneString = this.info.nbm;
 
-    this.phoneArray = phoneString.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
+    this.phoneArray = phoneString?.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
 
     if (window.innerWidth > 1024) {
       function scrollHeader() {
@@ -468,6 +419,7 @@ export default {
 }
 
 @media screen and (max-width: 1024px) {
+
   .burger,
   .mobile {
     display: flex;

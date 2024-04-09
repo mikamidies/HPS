@@ -127,7 +127,7 @@ export default {
 
     let phoneString = this.info.nbm;
 
-    this.phoneArray = phoneString.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
+    this.phoneArray = phoneString?.match(/\+\d{3} \d{2} \d{3} \d{2} \d{2}/g);
   },
 };
 </script>
